@@ -1,0 +1,3 @@
+## 2024-06-23 - Focus Rings and ARIA Labels on Main Layout Controls
+**Learning:** In standard icon-only buttons (like `✕` close controls or `☰` hamburger menus) within the main App structure, standardizing on a focus ring format (`focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded`) alongside descriptive `aria-label`s makes keyboard navigation significantly more reliable without disturbing visual layout. The combination guarantees visual feedback for keyboard users without causing unappealing focus rings for mouse users.
+**Action:** Always verify icon-only buttons have an `aria-label` and `focus-visible` ring. Implement this pattern for all new icon buttons added across the site.

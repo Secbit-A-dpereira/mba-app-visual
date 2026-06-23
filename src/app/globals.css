@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Dark mode contrast fixes */
+.dark .chapter-content {
+  color: #f1f5f9 !important; /* slate-100 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark .chapter-content .text-slate-900,
+.dark .chapter-content .text-slate-800,
+.dark .chapter-content .text-slate-700,
+.dark .chapter-content .text-gray-900,
+.dark .chapter-content .text-gray-800,
+.dark .chapter-content .text-gray-700 {
+  color: #f1f5f9 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark .chapter-content .text-slate-600,
+.dark .chapter-content .text-slate-500,
+.dark .chapter-content .text-gray-600,
+.dark .chapter-content .text-gray-500 {
+  color: #cbd5e1 !important; /* slate-300 */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark .chapter-content p,
+.dark .chapter-content li {
+  color: #e2e8f0 !important; /* slate-200 */
+}
+
+.dark .chapter-content .bg-blue-50 {
+  background-color: #1e3a5f !important;
+  color: #e0f2fe !important; /* sky-100 - mais contraste */
+}
+
+.dark .chapter-content .bg-green-50 {
+  background-color: #14532d !important;
+  color: #dcfce7 !important; /* green-100 - mais contraste */
+}
+
+.dark .chapter-content .bg-yellow-50 {
+  background-color: #713f12 !important;
+  color: #fef9c3 !important; /* yellow-100 - mais contraste */
+}
+
+.dark .chapter-content .bg-slate-50 {
+  background-color: #1e293b !important;
+}
+
+.dark .chapter-content .bg-slate-50\/50 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.dark .chapter-content .bg-white {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+.dark .chapter-content label,
+.dark .chapter-content .text-sm.font-medium,
+.dark .chapter-content .font-medium {
+  color: #f1f5f9 !important;
+}
+
+.dark .chapter-content input,
+.dark .chapter-content select,
+.dark .chapter-content textarea {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important;
 }

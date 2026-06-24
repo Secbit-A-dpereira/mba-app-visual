@@ -105,7 +105,7 @@ function HelpPanel({ chapterId, onClose }: { chapterId: number; onClose: () => v
       ">
         <div className="flex items-center justify-between mb-3 md:hidden">
           <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">📖 {help.title}</p>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
+          <button onClick={onClose} aria-label="Close help panel" className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
         </div>
         <div className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
           <div className="hidden md:block pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -178,7 +178,7 @@ function MBAApp() {
             <h1 className="text-sm font-bold text-emerald-600 dark:text-emerald-500 tracking-tight">The Visual MBA</h1>
             <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider">Executive Toolkit</p>
           </div>
-          <button onClick={() => setSidebarOpen(false)} className="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
+          <button onClick={() => setSidebarOpen(false)} aria-label="Close sidebar" className="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
         </div>
         <nav className="flex-1 overflow-y-auto overflow-x-hidden py-1.5 px-1.5 space-y-0 min-h-0">
           {/* Dashboard home button */}
@@ -242,7 +242,7 @@ function MBAApp() {
           {/* Top bar */}
           <header className="h-12 md:h-12 border-b border-slate-200 dark:border-slate-850 flex items-center justify-between px-3 md:px-4 bg-white dark:bg-slate-900/50 backdrop-blur-sm shrink-0">
             <div className="flex items-center gap-2 md:gap-3 min-w-0">
-              <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-350 text-lg transition-colors focus:outline-none cursor-pointer shrink-0">
+              <button onClick={() => setSidebarOpen(!sidebarOpen)} aria-label="Toggle sidebar" className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-350 text-lg transition-colors focus:outline-none cursor-pointer shrink-0">
                 ☰
               </button>
               <h2 className="font-semibold text-xs md:text-sm truncate">

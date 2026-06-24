@@ -271,7 +271,7 @@ export default function Ch30MarketingAudit() {
           Positioning Strategy Wizard
         </h2>
       </div>
-      <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
+      <p className="text-base text-slate-500 dark:text-slate-400 mb-6">
         Answer 6 questions to get a personalized positioning strategy recommendation.
       </p>
 
@@ -282,7 +282,7 @@ export default function Ch30MarketingAudit() {
             key={q.id}
             className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm"
           >
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
+            <p className="text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">
               {q.label}
             </p>
             <div className="space-y-1">
@@ -303,7 +303,7 @@ export default function Ch30MarketingAudit() {
                     onChange={() => handleAnswer(q.id, opt.value)}
                     className="accent-emerald-500"
                   />
-                  <span className="text-xs text-slate-600 dark:text-slate-400">
+                  <span className="text-base text-slate-600 dark:text-slate-400">
                     {opt.label}
                   </span>
                 </label>
@@ -316,25 +316,25 @@ export default function Ch30MarketingAudit() {
       {/* Results */}
       {allAnswered && (
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-6 shadow-sm space-y-4">
-          <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">
             Recommended Strategy: {result.title}
           </h3>
-          <p className="text-xs text-slate-600 dark:text-slate-300">
+          <p className="text-base text-slate-600 dark:text-slate-300">
             {result.description}
           </p>
-          <div className="text-xs text-slate-700 dark:text-slate-300">
+          <div className="text-base text-slate-700 dark:text-slate-300">
             <strong className="text-emerald-600 dark:text-emerald-400 block mb-1">
               Action:
             </strong>
             {result.action}
           </div>
-          <div className="text-xs text-slate-500 dark:text-slate-400">
+          <div className="text-base text-slate-500 dark:text-slate-400">
             <strong className="block mb-1">Relevant Laws:</strong>
             <div className="flex flex-wrap gap-2">
               {result.laws.map((lawId) => (
                 <span
                   key={lawId}
-                  className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] font-medium"
+                  className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-base font-medium"
                 >
                   {LAW_NAMES[lawId] || `Law ${lawId}`}
                 </span>
@@ -346,7 +346,7 @@ export default function Ch30MarketingAudit() {
 
       {/* Positioning Map */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-6 shadow-sm">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
+        <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
           Positioning Map
         </h3>
         <div className="relative w-full max-w-xs mx-auto aspect-square">
@@ -365,7 +365,7 @@ export default function Ch30MarketingAudit() {
             <circle cx={mapX} cy={mapY} r="4" fill="#10b981" stroke="#fff" strokeWidth="1" />
           </svg>
         </div>
-        <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center mt-2">
+        <p className="text-base text-slate-400 dark:text-slate-500 text-center mt-2">
           Your position based on market maturity and product uniqueness.
         </p>
       </div>
@@ -373,16 +373,16 @@ export default function Ch30MarketingAudit() {
       {/* --- New Interactive Tool 1: Brand Strength Scorecard --- */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-6 shadow-sm space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Brand Strength Scorecard
           </h3>
-          <span className="text-[10px] text-slate-400 font-mono">Rate each dimension 1-5</span>
+          <span className="text-base text-slate-400 font-mono">Rate each dimension 1-5</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {scores.map((item, idx) => (
             <div key={idx} className="space-y-1">
-              <label className="text-xs font-medium text-slate-600 dark:text-slate-300 capitalize">
+              <label className="text-base font-medium text-slate-600 dark:text-slate-300 capitalize">
                 {item.name}
               </label>
               <div className="flex items-center gap-2">
@@ -399,7 +399,7 @@ export default function Ch30MarketingAudit() {
                   }}
                   className="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-purple-500"
                 />
-                <span className="text-xs font-mono w-4 text-right text-slate-500">{item.score}</span>
+                <span className="text-base font-mono w-4 text-right text-slate-500">{item.score}</span>
               </div>
             </div>
           ))}
@@ -407,12 +407,12 @@ export default function Ch30MarketingAudit() {
 
         <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 mt-2">
           <div className="flex justify-between items-center">
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Average Score:</span>
-            <span className="text-sm font-mono font-bold text-purple-600 dark:text-purple-400">{averageScore.toFixed(1)} / 5</span>
+            <span className="text-base font-semibold text-slate-600 dark:text-slate-300">Average Score:</span>
+            <span className="text-base font-mono font-bold text-purple-600 dark:text-purple-400">{averageScore.toFixed(1)} / 5</span>
           </div>
           <div className="flex justify-between items-center mt-1">
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Brand Strength:</span>
-            <span className="text-sm font-bold text-purple-600 dark:text-purple-400">{brandStrengthLabel}</span>
+            <span className="text-base font-semibold text-slate-600 dark:text-slate-300">Brand Strength:</span>
+            <span className="text-base font-bold text-purple-600 dark:text-purple-400">{brandStrengthLabel}</span>
           </div>
         </div>
       </div>
@@ -420,14 +420,14 @@ export default function Ch30MarketingAudit() {
       {/* --- New Interactive Tool 2: Competitive Position Matrix --- */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-6 shadow-sm space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Competitive Position Matrix
           </h3>
-          <span className="text-[10px] text-slate-400 font-mono">Compare yourself vs. a key competitor</span>
+          <span className="text-base text-slate-400 font-mono">Compare yourself vs. a key competitor</span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+          <table className="w-full text-base">
             <thead>
               <tr className="border-b border-slate-200 dark:border-slate-700">
                 <th className="text-left py-2 pr-4 font-semibold text-slate-500">Attribute</th>
@@ -475,7 +475,7 @@ export default function Ch30MarketingAudit() {
 
         <button
           onClick={addMatrixRow}
-          className="text-xs text-emerald-600 dark:text-emerald-400 font-medium hover:underline"
+          className="text-base text-emerald-600 dark:text-emerald-400 font-medium hover:underline"
         >
           + Add Attribute
         </button>
@@ -485,8 +485,8 @@ export default function Ch30MarketingAudit() {
           advantage < 0 ? 'bg-rose-500/10 border-rose-500/20 text-rose-700 dark:text-rose-450' :
           'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
         }`}>
-          <span className="text-xs font-bold uppercase tracking-wider">{advantageLabel}</span>
-          <span className="text-sm font-mono font-bold">
+          <span className="text-base font-bold uppercase tracking-wider">{advantageLabel}</span>
+          <span className="text-base font-mono font-bold">
             {advantage > 0 ? '+' : ''}{advantage} pts
           </span>
         </div>

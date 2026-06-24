@@ -116,7 +116,7 @@ export default function Ch18BalancedScorecard() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           🎯 Balanced Scorecard
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Define objectives, KPIs, and targets across 4 strategic perspectives. Track status and monitor overall execution health.
         </p>
       </div>
@@ -125,10 +125,10 @@ export default function Ch18BalancedScorecard() {
       {allItems.length > 0 && (
         <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-4">
           <div className="flex items-center justify-between">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+            <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
               Overall Strategic Status
             </h4>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-505 font-mono">
+            <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-505 font-mono">
               {statusSummary.total} item{statusSummary.total !== 1 ? 's' : ''}
             </span>
           </div>
@@ -165,7 +165,7 @@ export default function Ch18BalancedScorecard() {
           </div>
 
           {/* Legend */}
-          <div className="flex flex-wrap gap-4 text-xs font-semibold text-slate-500 dark:text-slate-450">
+          <div className="flex flex-wrap gap-4 text-base font-semibold text-slate-500 dark:text-slate-450">
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
               <span>
@@ -211,15 +211,15 @@ export default function Ch18BalancedScorecard() {
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{perspective.icon}</span>
                   <div className="text-left">
-                    <h4 className="text-sm font-semibold text-slate-850 dark:text-slate-200">
+                    <h4 className="text-base font-semibold text-slate-850 dark:text-slate-200">
                       {perspective.label}
                     </h4>
-                    <p className="text-[10px] text-slate-450 dark:text-slate-500 font-medium">
+                    <p className="text-base text-slate-450 dark:text-slate-500 font-medium">
                       {items.length} objective{items.length !== 1 ? 's' : ''}
                     </p>
                   </div>
                 </div>
-                <span className="text-slate-400 dark:text-slate-550 text-xs font-bold">
+                <span className="text-slate-400 dark:text-slate-550 text-base font-bold">
                   {isActive ? '▲' : '▼'}
                 </span>
               </button>
@@ -229,10 +229,10 @@ export default function Ch18BalancedScorecard() {
                 <div className="px-5 pb-5 space-y-4 border-t border-slate-100 dark:border-slate-855 pt-4">
                   {/* Form */}
                   <div className="bg-slate-50/50 dark:bg-slate-950/20 rounded-xl border border-slate-150 dark:border-slate-850 p-4 space-y-3">
-                    <h5 className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Add Objective</h5>
+                    <h5 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Add Objective</h5>
                     <div className="space-y-3">
                       <div className="space-y-1">
-                        <label className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Objective Description</label>
+                        <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Objective Description</label>
                         <input
                           type="text"
                           placeholder="e.g., Increase repeat customer rate"
@@ -243,12 +243,12 @@ export default function Ch18BalancedScorecard() {
                               objective: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                          className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                         />
                       </div>
                       <div className="grid grid-cols-1 grid-cols-1 md:grid-cols-2 gap-3">
                         <div className="space-y-1">
-                          <label className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">KPI</label>
+                          <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">KPI</label>
                           <input
                             type="text"
                             placeholder="e.g., Retention %"
@@ -259,11 +259,11 @@ export default function Ch18BalancedScorecard() {
                                 kpi: e.target.value,
                               }))
                             }
-                            className="w-full px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                           />
                         </div>
                         <div className="space-y-1">
-                          <label className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Target Value</label>
+                          <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Target Value</label>
                           <input
                             type="number"
                             placeholder="e.g., 85"
@@ -274,7 +274,7 @@ export default function Ch18BalancedScorecard() {
                                 target: e.target.value,
                               }))
                             }
-                            className="w-full px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
+                            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
                           />
                         </div>
                       </div>
@@ -288,7 +288,7 @@ export default function Ch18BalancedScorecard() {
                             onClick={() =>
                               setFormData((prev) => ({ ...prev, status: s }))
                             }
-                            className={`px-3 py-1 text-xs rounded-lg font-bold transition-all border cursor-pointer ${
+                            className={`px-3 py-1 text-base rounded-lg font-bold transition-all border cursor-pointer ${
                               formData.status === s
                                 ? STATUS_CONFIG[s].color
                                 : 'bg-slate-100 dark:bg-slate-850 border-slate-200 dark:border-slate-800 text-slate-550 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800'
@@ -305,7 +305,7 @@ export default function Ch18BalancedScorecard() {
                           !formData.kpi.trim() ||
                           !formData.target.trim()
                         }
-                        className="ml-auto px-4 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                        className="ml-auto px-4 py-1.5 text-base font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                       >
                         + Add Objective
                       </button>
@@ -318,7 +318,7 @@ export default function Ch18BalancedScorecard() {
                       {items.map((item) => (
                         <div
                           key={item.id}
-                          className="group flex items-start gap-3 px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 text-xs shadow-sm"
+                          className="group flex items-start gap-3 px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 text-base shadow-sm"
                         >
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2.5 mb-1.5">
@@ -326,14 +326,14 @@ export default function Ch18BalancedScorecard() {
                                 {item.objective}
                               </span>
                               <span
-                                className={`shrink-0 px-2 py-0.5 text-[9px] font-bold rounded-full border uppercase tracking-wider ${
+                                className={`shrink-0 px-2 py-0.5 text-base font-bold rounded-full border uppercase tracking-wider ${
                                   STATUS_CONFIG[item.status].color
                                 }`}
                               >
                                 {STATUS_CONFIG[item.status].label}
                               </span>
                             </div>
-                            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-455 dark:text-slate-450 font-semibold text-[10px]">
+                            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-455 dark:text-slate-450 font-semibold text-base">
                               <span>
                                 KPI: <strong className="text-slate-700 dark:text-slate-300 font-bold">{item.kpi}</strong>
                               </span>
@@ -377,7 +377,7 @@ export default function Ch18BalancedScorecard() {
                   )}
 
                   {items.length === 0 && (
-                    <p className="text-xs text-slate-400 dark:text-slate-550 italic text-center py-4 font-medium">
+                    <p className="text-base text-slate-400 dark:text-slate-550 italic text-center py-4 font-medium">
                       No items yet. Add your first objective above.
                     </p>
                   )}
@@ -391,7 +391,7 @@ export default function Ch18BalancedScorecard() {
       {/* Summary section */}
       {allItems.length > 0 && (
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+          <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
             📊 Scorecard Summary by Perspective
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-4 gap-3">
@@ -409,12 +409,12 @@ export default function Ch18BalancedScorecard() {
                   className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3.5 space-y-2"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-sm">{p.icon}</span>
-                    <span className="text-xs font-bold text-slate-750 dark:text-slate-300">
+                    <span className="text-base">{p.icon}</span>
+                    <span className="text-base font-bold text-slate-750 dark:text-slate-300">
                       {p.label}
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-x-1.5 gap-y-0.5 text-[9px] font-semibold">
+                  <div className="flex flex-wrap gap-x-1.5 gap-y-0.5 text-base font-semibold">
                     <span className="text-emerald-600 dark:text-emerald-400">
                       {onTrack} on track
                     </span>
@@ -435,7 +435,7 @@ export default function Ch18BalancedScorecard() {
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-505">
+                  <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-505">
                     {items.length} item{items.length !== 1 ? 's' : ''}
                   </p>
                 </div>
@@ -447,16 +447,16 @@ export default function Ch18BalancedScorecard() {
 
       {/* ============= NEW TOOL 1: STRATEGY MAP VISUAL ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           🧭 Strategy Map – Weighted Score
         </h4>
-        <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium">
+        <p className="text-base text-slate-450 dark:text-slate-505 font-medium">
           Adjust weight for each perspective (total must sum to 100%). The weighted score reflects overall execution health based on objectives status.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {PERSPECTIVES.map((p) => (
             <div key={p.key} className="space-y-2">
-              <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{p.label}</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{p.label}</label>
               <input
                 type="number"
                 min={0}
@@ -465,7 +465,7 @@ export default function Ch18BalancedScorecard() {
                 onChange={(e) =>
                   setWeights({ ...weights, [p.key]: parseInt(e.target.value) || 0 })
                 }
-                className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
               <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                 <div
@@ -477,24 +477,24 @@ export default function Ch18BalancedScorecard() {
           ))}
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Total Weight: {totalWeight}%
             {totalWeight !== 100 && (
               <span className="text-red-500 ml-2">(must equal 100%)</span>
             )}
           </span>
-          <span className={`text-sm font-bold font-mono tabular-nums ${totalWeight === 100 ? 'text-emerald-600' : 'text-slate-400'}`}>
+          <span className={`text-base font-bold font-mono tabular-nums ${totalWeight === 100 ? 'text-emerald-600' : 'text-slate-400'}`}>
             Score: {totalWeight === 100 ? `${weightedScore.toFixed(1)}%` : '—'}
           </span>
         </div>
         {totalWeight === 100 && (
           <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-3 text-center">
-            <span className={`px-2.5 py-0.5 text-[9px] font-bold rounded-full uppercase tracking-wider ${
+            <span className={`px-2.5 py-0.5 text-base font-bold rounded-full uppercase tracking-wider ${
               weightedScore >= 70 ? 'bg-emerald-50 text-emerald-700' : weightedScore >= 40 ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-600'
             }`}>
               {weightedScoreLabel}
             </span>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-base text-slate-500 mt-1">
               Weighted performance based on objectives status per perspective.
             </p>
           </div>
@@ -503,40 +503,40 @@ export default function Ch18BalancedScorecard() {
 
       {/* ============= NEW TOOL 2: GOAL TIMELINE ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           📅 Goal Timeline (Quarterly Progress)
         </h4>
-        <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium">
+        <p className="text-base text-slate-450 dark:text-slate-505 font-medium">
           Add an objective and set expected completion % for each quarter. Visualise progress throughout the year.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 items-end">
           <div className="sm:col-span-1 space-y-1">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Objective</label>
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Objective</label>
             <input
               type="text"
               value={milestoneForm.objective}
               onChange={(e) => setMilestoneForm({ ...milestoneForm, objective: e.target.value })}
               placeholder="e.g., Reduce churn"
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           {(['q1', 'q2', 'q3', 'q4'] as const).map((q) => (
             <div key={q} className="space-y-1">
-              <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{q.toUpperCase()}</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{q.toUpperCase()}</label>
               <input
                 type="number"
                 min={0}
                 max={100}
                 value={milestoneForm[q]}
                 onChange={(e) => setMilestoneForm({ ...milestoneForm, [q]: parseInt(e.target.value) || 0 })}
-                className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
           ))}
           <button
             onClick={addMilestone}
             disabled={!milestoneForm.objective.trim()}
-            className="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+            className="px-3 py-1.5 text-base font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
             + Add
           </button>
@@ -544,7 +544,7 @@ export default function Ch18BalancedScorecard() {
         {milestones.length > 0 && (
           <div className="space-y-2">
             {milestones.map((m) => (
-              <div key={m.id} className="flex items-center gap-4 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 text-xs">
+              <div key={m.id} className="flex items-center gap-4 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 text-base">
                 <span className="font-semibold text-slate-800 dark:text-slate-200 w-1/3 truncate">{m.objective}</span>
                 <div className="flex-1 grid grid-cols-4 gap-1">
                   {(['q1', 'q2', 'q3', 'q4'] as const).map((q) => {
@@ -554,7 +554,7 @@ export default function Ch18BalancedScorecard() {
                         <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                           <div className="h-full rounded-full bg-emerald-500" style={{ width: `${val}%` }} />
                         </div>
-                        <span className="text-[8px] font-bold text-slate-400 dark:text-slate-500 mt-0.5 block">{q.toUpperCase()} {val}%</span>
+                        <span className="text-base font-bold text-slate-400 dark:text-slate-500 mt-0.5 block">{q.toUpperCase()} {val}%</span>
                       </div>
                     );
                   })}
@@ -565,7 +565,7 @@ export default function Ch18BalancedScorecard() {
           </div>
         )}
         {milestones.length === 0 && (
-          <p className="text-xs text-slate-400 dark:text-slate-550 italic font-medium text-center py-2">
+          <p className="text-base text-slate-400 dark:text-slate-550 italic font-medium text-center py-2">
             No milestones yet. Add one above.
           </p>
         )}
@@ -573,7 +573,7 @@ export default function Ch18BalancedScorecard() {
 
       {/* Info footer */}
       {allItems.length === 0 && (
-        <div className="text-xs text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
+        <div className="text-base text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
           <p>
             <strong>Getting started:</strong> Click on any of the 4 perspective
             cards above to expand it, then fill in your objective, KPI, target

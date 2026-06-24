@@ -57,7 +57,7 @@ export default function Ch23CustomerJourney() {
             Customer Journey Lifecycle Designer
           </h2>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Design your product launch customer lifecycle from end-to-end. Detail critical transition touchpoints, key performance metrics, and track qualitative health scores.
         </p>
       </div>
@@ -66,19 +66,19 @@ export default function Ch23CustomerJourney() {
         {/* Funnel SVG Visualization Left Panel */}
         <div className="lg:col-span-1 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm flex flex-col items-center justify-center text-center space-y-6">
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Funnel Health Index
             </h3>
             <span className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 tabular-nums">
               {averageScore}
-              <span className="text-xs text-slate-400 dark:text-slate-550 font-normal"> / 5</span>
+              <span className="text-base text-slate-400 dark:text-slate-550 font-normal"> / 5</span>
             </span>
             {/* New: Weighted Score display */}
             <div className="mt-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Weighted Score</span>
+              <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Weighted Score</span>
               <span className="block text-xl font-semibold text-emerald-600 dark:text-emerald-400 tabular-nums">
                 {overallWeightedScore}
-                <span className="text-xs text-slate-400 font-normal"> / 5</span>
+                <span className="text-base text-slate-400 font-normal"> / 5</span>
               </span>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Ch23CustomerJourney() {
                       x={center}
                       y={y1 + 16}
                       textAnchor="middle"
-                      className="fill-white font-extrabold text-[8px] tracking-wider pointer-events-none select-none"
+                      className="fill-white font-extrabold text-base tracking-wider pointer-events-none select-none"
                     >
                       {stage?.stage.toUpperCase()}: {score || '-'}
                     </text>
@@ -129,7 +129,7 @@ export default function Ch23CustomerJourney() {
             </svg>
           </div>
 
-          <div className="w-full text-left text-[10px] text-slate-400 dark:text-slate-500 space-y-1">
+          <div className="w-full text-left text-base text-slate-400 dark:text-slate-500 space-y-1">
             <span className="font-bold block uppercase tracking-wider mb-1">Color Key:</span>
             <div className="grid grid-cols-2 gap-1.5 font-semibold">
               <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-500" /> 5 - Excellent</span>
@@ -143,7 +143,7 @@ export default function Ch23CustomerJourney() {
 
         {/* Journey Stage Form Fields Right Panel */}
         <div className="lg:col-span-3 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-5">
-          <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
             Touchpoint & Metric Configurations
           </h3>
 
@@ -152,10 +152,10 @@ export default function Ch23CustomerJourney() {
               <div key={item.stage} className={`pt-4 ${idx === 0 ? 'pt-0 border-t-0' : ''} space-y-3`}>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
+                    <span className="text-base font-bold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
                       Stage {idx + 1}
                     </span>
-                    <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">{item.stage}</h4>
+                    <h4 className="text-base font-bold text-slate-800 dark:text-slate-200">{item.stage}</h4>
                   </div>
 
                   {/* Status Dropdown & Score */}
@@ -163,7 +163,7 @@ export default function Ch23CustomerJourney() {
                     <select
                       value={item.status}
                       onChange={(e) => handleFieldChange(idx, 'status', e.target.value)}
-                      className="text-xs px-2 py-1 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-350 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="text-base px-2 py-1 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-350 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     >
                       <option value="Not Started">Not Started</option>
                       <option value="In Progress">In Progress</option>
@@ -176,7 +176,7 @@ export default function Ch23CustomerJourney() {
                         <button
                           key={s}
                           onClick={() => handleFieldChange(idx, 'score', s)}
-                          className={`w-5 h-5 rounded text-[10px] font-bold transition-colors ${
+                          className={`w-5 h-5 rounded text-base font-bold transition-colors ${
                             item.score === s
                               ? 'bg-emerald-500 text-white'
                               : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200'
@@ -189,9 +189,9 @@ export default function Ch23CustomerJourney() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-base">
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <label className="text-base font-bold text-slate-400 uppercase tracking-wider">
                       Touchpoints
                     </label>
                     <input
@@ -199,12 +199,12 @@ export default function Ch23CustomerJourney() {
                       value={item.touchpoints}
                       onChange={(e) => handleFieldChange(idx, 'touchpoints', e.target.value)}
                       placeholder="e.g. Sales deck, website"
-                      className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <label className="text-base font-bold text-slate-400 uppercase tracking-wider">
                       Tracking Metrics
                     </label>
                     <input
@@ -212,12 +212,12 @@ export default function Ch23CustomerJourney() {
                       value={item.metrics}
                       onChange={(e) => handleFieldChange(idx, 'metrics', e.target.value)}
                       placeholder="e.g. Lead conversion, NPS"
-                      className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <label className="text-base font-bold text-slate-400 uppercase tracking-wider">
                       Stage Owner
                     </label>
                     <input
@@ -225,15 +225,15 @@ export default function Ch23CustomerJourney() {
                       value={item.owner}
                       onChange={(e) => handleFieldChange(idx, 'owner', e.target.value)}
                       placeholder="e.g. Marketing, CS"
-                      className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
                 </div>
 
                 {/* NEW: Duration & Importance Weight */}
-                <div className="grid grid-cols-2 gap-3 text-xs mt-2">
+                <div className="grid grid-cols-2 gap-3 text-base mt-2">
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <label className="text-base font-bold text-slate-400 uppercase tracking-wider">
                       Duration (days)
                     </label>
                     <input
@@ -242,11 +242,11 @@ export default function Ch23CustomerJourney() {
                       value={item.duration || ''}
                       onChange={(e) => handleFieldChange(idx, 'duration', parseInt(e.target.value))}
                       placeholder="e.g. 30"
-                      className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <label className="text-base font-bold text-slate-400 uppercase tracking-wider">
                       Importance Weight (0-10)
                     </label>
                     <input
@@ -257,7 +257,7 @@ export default function Ch23CustomerJourney() {
                       value={item.importance || ''}
                       onChange={(e) => handleFieldChange(idx, 'importance', parseFloat(e.target.value))}
                       placeholder="e.g. 8"
-                      className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
                 </div>

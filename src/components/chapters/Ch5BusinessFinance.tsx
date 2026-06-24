@@ -89,7 +89,7 @@ export default function Ch5BusinessFinance() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Initial Investment (C₀)
             </label>
             <input
@@ -100,7 +100,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Discount Rate (%)
             </label>
             <input
@@ -111,7 +111,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Cash Flows (comma separated)
             </label>
             <input
@@ -142,7 +142,7 @@ export default function Ch5BusinessFinance() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Market Value of Equity (E)
             </label>
             <input
@@ -153,7 +153,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Market Value of Debt (D)
             </label>
             <input
@@ -164,7 +164,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Cost of Equity (Re) %
             </label>
             <input
@@ -175,7 +175,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Cost of Debt (Rd) %
             </label>
             <input
@@ -186,7 +186,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Tax Rate (Tc) %
             </label>
             <input
@@ -217,7 +217,7 @@ export default function Ch5BusinessFinance() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Risk‑free Rate (Rf) %
             </label>
             <input
@@ -228,7 +228,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Beta (β)
             </label>
             <input
@@ -240,7 +240,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Market Return (Rm) %
             </label>
             <input
@@ -267,7 +267,7 @@ export default function Ch5BusinessFinance() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               EBIT (Earnings before interest and tax)
             </label>
             <input
@@ -278,7 +278,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Interest Expense
             </label>
             <input
@@ -303,7 +303,7 @@ export default function Ch5BusinessFinance() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Fixed Costs
             </label>
             <input
@@ -314,7 +314,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Price per Unit
             </label>
             <input
@@ -325,7 +325,7 @@ export default function Ch5BusinessFinance() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-base font-medium text-gray-700">
               Variable Cost per Unit
             </label>
             <input

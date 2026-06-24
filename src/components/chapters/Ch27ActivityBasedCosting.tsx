@@ -128,7 +128,7 @@ export default function Ch27ActivityBasedCosting() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <span>🔬</span> Activity-Based Costing (ABC) Calculator
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Discover product profitability distortions by comparing traditional plant-wide labor overhead allocation against Activity-Based Costing.
         </p>
       </div>
@@ -137,7 +137,7 @@ export default function Ch27ActivityBasedCosting() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Overhead Activity Pools */}
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+          <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
             1. Indirect Cost Pools
           </h3>
           <div className="space-y-4">
@@ -150,23 +150,23 @@ export default function Ch27ActivityBasedCosting() {
 
               return (
                 <div key={a.name} className="space-y-1.5">
-                  <div className="flex justify-between text-xs">
+                  <div className="flex justify-between text-base">
                     <span className="font-semibold text-slate-700 dark:text-slate-350">{a.name} ({a.driver})</span>
-                    <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono">Rate: {currency(currentRate)}</span>
+                    <span className="text-base text-slate-400 dark:text-slate-500 font-mono">Rate: {currency(currentRate)}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg px-2.5 py-1">
-                    <span className="text-slate-400 text-xs">$</span>
+                    <span className="text-slate-400 text-base">$</span>
                     <input
                       type="number"
                       value={a.costPool}
                       onChange={e => handleActivityChange(i, e.target.value)}
-                      className="w-full bg-transparent border-none outline-none py-0.5 text-xs text-slate-900 dark:text-slate-100 focus:ring-0"
+                      className="w-full bg-transparent border-none outline-none py-0.5 text-base text-slate-900 dark:text-slate-100 focus:ring-0"
                     />
                   </div>
                 </div>
               );
             })}
-            <div className="pt-2 border-t border-slate-100 dark:border-slate-850 flex justify-between text-xs">
+            <div className="pt-2 border-t border-slate-100 dark:border-slate-850 flex justify-between text-base">
               <span className="font-bold text-slate-400 uppercase tracking-wider">Total Indirect OH:</span>
               <span className="font-mono font-bold text-emerald-600 dark:text-emerald-450">{currency(totalOverhead)}</span>
             </div>
@@ -175,11 +175,11 @@ export default function Ch27ActivityBasedCosting() {
 
         {/* Product Parameters */}
         <div className="lg:col-span-2 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+          <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
             2. Product Settings & Driver Consumption
           </h3>
           <div className="space-y-4 overflow-x-auto">
-            <table className="w-full text-left border-collapse text-xs min-w-[500px]">
+            <table className="w-full text-left border-collapse text-base min-w-[500px]">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 font-bold uppercase tracking-wider">
                   <th className="py-2 pr-2">Product Name</th>
@@ -202,7 +202,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.volume}
                         onChange={e => handleProductChange(prodIndex, 'volume', e.target.value)}
-                        className="w-14 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-14 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -210,7 +210,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.materials}
                         onChange={e => handleProductChange(prodIndex, 'materials', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -218,7 +218,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.labor}
                         onChange={e => handleProductChange(prodIndex, 'labor', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -227,7 +227,7 @@ export default function Ch27ActivityBasedCosting() {
                         step="0.1"
                         value={p.dlhPerUnit}
                         onChange={e => handleProductChange(prodIndex, 'dlhPerUnit', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -235,7 +235,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.orders}
                         onChange={e => handleProductChange(prodIndex, 'orders', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -243,7 +243,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.setups}
                         onChange={e => handleProductChange(prodIndex, 'setups', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -251,7 +251,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.machineHours}
                         onChange={e => handleProductChange(prodIndex, 'machineHours', e.target.value)}
-                        className="w-14 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-14 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                     <td className="py-2 px-1">
@@ -259,7 +259,7 @@ export default function Ch27ActivityBasedCosting() {
                         type="number"
                         value={p.inspections}
                         onChange={e => handleProductChange(prodIndex, 'inspections', e.target.value)}
-                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-xs"
+                        className="w-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-1.5 py-0.5 text-center text-base"
                       />
                     </td>
                   </tr>
@@ -267,7 +267,7 @@ export default function Ch27ActivityBasedCosting() {
               </tbody>
             </table>
           </div>
-          <div className="text-[10px] text-slate-400 leading-relaxed font-medium">
+          <div className="text-base text-slate-400 leading-relaxed font-medium">
             💡 <strong className="text-slate-500">Note:</strong> DLH/unit is the direct labor hours per unit, which acts as the allocation driver for the traditional method. Setting cost pools and product volumes recalculates all overhead assignments instantaneously.
           </div>
         </div>
@@ -275,17 +275,17 @@ export default function Ch27ActivityBasedCosting() {
 
       {/* SVG Bar Chart Comparison */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
           3. Distortions Visualized: Overhead Per Unit Allocation
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
           {/* Legend and explanation */}
           <div className="md:col-span-1 space-y-3">
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">
               Traditional costing averages overhead, overcharging simple standard products and undercharging complex, custom ones. ABC allocates costs based on actual consumption.
             </p>
-            <div className="flex flex-col gap-1 text-[11px]">
+            <div className="flex flex-col gap-1 text-base">
               <span className="flex items-center gap-1.5 font-semibold text-rose-500">
                 <span className="w-3.5 h-3.5 rounded bg-rose-500 inline-block"></span> Traditional OH Per Unit
               </span>
@@ -391,23 +391,23 @@ export default function Ch27ActivityBasedCosting() {
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 dark:border-slate-800 pb-3 gap-2">
           <div>
-            <h3 className="text-sm font-bold text-slate-800 dark:text-slate-150">4. Side-by-Side Cost Breakdown (Detailed Distortion)</h3>
-            <p className="text-[11px] text-slate-400">Select any two products below to compare full unit costs and overhead absorption pathways.</p>
+            <h3 className="text-base font-bold text-slate-800 dark:text-slate-150">4. Side-by-Side Cost Breakdown (Detailed Distortion)</h3>
+            <p className="text-base text-slate-400">Select any two products below to compare full unit costs and overhead absorption pathways.</p>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
             <select
               value={compProductIndex1}
               onChange={e => setCompProductIndex1(parseInt(e.target.value))}
-              className="text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-2.5 py-1 text-slate-800 dark:text-slate-200 focus:outline-none"
+              className="text-base bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-2.5 py-1 text-slate-800 dark:text-slate-200 focus:outline-none"
             >
               {products.map((p, idx) => <option key={idx} value={idx} disabled={idx === compProductIndex2}>{p.name}</option>)}
             </select>
-            <span className="text-xs text-slate-400 font-bold">vs</span>
+            <span className="text-base text-slate-400 font-bold">vs</span>
             <select
               value={compProductIndex2}
               onChange={e => setCompProductIndex2(parseInt(e.target.value))}
-              className="text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-2.5 py-1 text-slate-800 dark:text-slate-200 focus:outline-none"
+              className="text-base bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded px-2.5 py-1 text-slate-800 dark:text-slate-200 focus:outline-none"
             >
               {products.map((p, idx) => <option key={idx} value={idx} disabled={idx === compProductIndex1}>{p.name}</option>)}
             </select>
@@ -418,12 +418,12 @@ export default function Ch27ActivityBasedCosting() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Product 1 Compare */}
           <div className="bg-slate-50/50 dark:bg-slate-950/20 rounded-lg border border-slate-150 dark:border-slate-850 p-4 space-y-4">
-            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-250 flex items-center justify-between">
+            <h4 className="text-base font-bold text-slate-800 dark:text-slate-250 flex items-center justify-between">
               <span>{p1.name}</span>
-              <span className="text-[10px] text-slate-400 font-normal">Vol: {p1.volume} units</span>
+              <span className="text-base text-slate-400 font-normal">Vol: {p1.volume} units</span>
             </h4>
 
-            <div className="space-y-2.5 text-xs">
+            <div className="space-y-2.5 text-base">
               <div className="flex justify-between">
                 <span className="text-slate-500">Direct Materials:</span>
                 <span className="font-medium text-slate-700 dark:text-slate-300">{currency(p1.materials)}</span>
@@ -434,7 +434,7 @@ export default function Ch27ActivityBasedCosting() {
               </div>
               
               <div className="pt-2 border-t border-slate-100 dark:border-slate-850/50 space-y-1.5">
-                <div className="flex justify-between font-bold text-[10px] uppercase text-rose-500">
+                <div className="flex justify-between font-bold text-base uppercase text-rose-500">
                   <span>Traditional Method (DLH Based)</span>
                   <span>{currency(p1.tradOHPerUnit)}</span>
                 </div>
@@ -445,13 +445,13 @@ export default function Ch27ActivityBasedCosting() {
               </div>
 
               <div className="pt-2 border-t border-slate-100 dark:border-slate-850/50 space-y-1.5">
-                <div className="flex justify-between font-bold text-[10px] uppercase text-emerald-500">
+                <div className="flex justify-between font-bold text-base uppercase text-emerald-500">
                   <span>ABC Method (Activities Breakdown)</span>
                   <span>{currency(p1.abcOHPerUnit)}</span>
                 </div>
                 
                 {/* ABC activity pool details */}
-                <div className="pl-3 space-y-1 text-[11px] text-slate-400">
+                <div className="pl-3 space-y-1 text-base text-slate-400">
                   <div className="flex justify-between">
                     <span>Ordering ({p1.orders} orders @ {currency(orderRate)}):</span>
                     <span>{currency(p1.breakdown.Ordering)}</span>
@@ -492,12 +492,12 @@ export default function Ch27ActivityBasedCosting() {
 
           {/* Product 2 Compare */}
           <div className="bg-slate-50/50 dark:bg-slate-950/20 rounded-lg border border-slate-150 dark:border-slate-850 p-4 space-y-4">
-            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-250 flex items-center justify-between">
+            <h4 className="text-base font-bold text-slate-800 dark:text-slate-250 flex items-center justify-between">
               <span>{p2.name}</span>
-              <span className="text-[10px] text-slate-400 font-normal">Vol: {p2.volume} units</span>
+              <span className="text-base text-slate-400 font-normal">Vol: {p2.volume} units</span>
             </h4>
 
-            <div className="space-y-2.5 text-xs">
+            <div className="space-y-2.5 text-base">
               <div className="flex justify-between">
                 <span className="text-slate-500">Direct Materials:</span>
                 <span className="font-medium text-slate-700 dark:text-slate-350">{currency(p2.materials)}</span>
@@ -508,7 +508,7 @@ export default function Ch27ActivityBasedCosting() {
               </div>
               
               <div className="pt-2 border-t border-slate-100 dark:border-slate-850/50 space-y-1.5">
-                <div className="flex justify-between font-bold text-[10px] uppercase text-rose-500">
+                <div className="flex justify-between font-bold text-base uppercase text-rose-500">
                   <span>Traditional Method (DLH Based)</span>
                   <span>{currency(p2.tradOHPerUnit)}</span>
                 </div>
@@ -519,13 +519,13 @@ export default function Ch27ActivityBasedCosting() {
               </div>
 
               <div className="pt-2 border-t border-slate-100 dark:border-slate-850/50 space-y-1.5">
-                <div className="flex justify-between font-bold text-[10px] uppercase text-emerald-500">
+                <div className="flex justify-between font-bold text-base uppercase text-emerald-500">
                   <span>ABC Method (Activities Breakdown)</span>
                   <span>{currency(p2.abcOHPerUnit)}</span>
                 </div>
                 
                 {/* ABC activity pool details */}
-                <div className="pl-3 space-y-1 text-[11px] text-slate-400">
+                <div className="pl-3 space-y-1 text-base text-slate-400">
                   <div className="flex justify-between">
                     <span>Ordering ({p2.orders} orders @ {currency(orderRate)}):</span>
                     <span>{currency(p2.breakdown.Ordering)}</span>
@@ -570,10 +570,10 @@ export default function Ch27ActivityBasedCosting() {
 
       {/* Tool 1: Driver Sensitivity Simulator */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
           🎛️ Driver Sensitivity Simulator
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-base text-slate-500 dark:text-slate-400">
           Adjust the volume of any driver (orders, setups, machine hours, inspections) to see how ABC rates and per-unit overhead change in real time. Useful for what-if analysis.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -584,8 +584,8 @@ export default function Ch27ActivityBasedCosting() {
             return (
               <div key={driver} className="border border-slate-100 dark:border-slate-800 rounded-lg p-3">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 capitalize">{driver.replace(/([A-Z])/g, ' $1')}</span>
-                  <span className="text-[11px] text-slate-400">Current total: {total}</span>
+                  <span className="text-base font-semibold text-slate-700 dark:text-slate-300 capitalize">{driver.replace(/([A-Z])/g, ' $1')}</span>
+                  <span className="text-base text-slate-400">Current total: {total}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -600,9 +600,9 @@ export default function Ch27ActivityBasedCosting() {
                       // No permanent change to driver consumption to avoid breaking other logic
                     }}
                   />
-                  <span className="text-xs font-medium text-slate-500 w-8">1.0x</span>
+                  <span className="text-base font-medium text-slate-500 w-8">1.0x</span>
                 </div>
-                <p className="text-[10px] text-slate-400 mt-1">
+                <p className="text-base text-slate-400 mt-1">
                   Drag to simulate a change in this driver's consumption. The overhead rate for this driver will adjust inversely with total volume changes.
                 </p>
               </div>
@@ -613,10 +613,10 @@ export default function Ch27ActivityBasedCosting() {
 
       {/* Tool 2: Product Profitability Matrix */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
           📊 Product Profitability Matrix
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-base text-slate-500 dark:text-slate-400">
           Compares each product's overhead per unit (cost driver) versus its gross margin contribution. Helps identify which products are truly profitable after ABC allocation.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -630,10 +630,10 @@ export default function Ch27ActivityBasedCosting() {
             return (
               <div key={p.name} className="border border-slate-100 dark:border-slate-800 rounded-lg p-3 space-y-1">
                 <div className="flex justify-between items-start">
-                  <h5 className="text-xs font-semibold text-slate-800 dark:text-slate-200">{p.name}</h5>
-                  <span className="text-[10px] text-slate-400">Vol: {p.volume}</span>
+                  <h5 className="text-base font-semibold text-slate-800 dark:text-slate-200">{p.name}</h5>
+                  <span className="text-base text-slate-400">Vol: {p.volume}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                <div className="grid grid-cols-2 gap-2 text-base">
                   <div>
                     <span className="text-slate-400">ABC OH/unit: </span>
                     <span className="font-medium text-emerald-500">{currency(overheadPerUnit)}</span>

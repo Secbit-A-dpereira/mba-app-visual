@@ -163,7 +163,7 @@ export default function Ch11Ethics() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           ⚖️ Ethics Decision Framework
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Evaluate key ethical dimensions of your business decision. Critical items require a &ldquo;Yes&rdquo; to pass.
         </p>
       </div>
@@ -173,13 +173,13 @@ export default function Ch11Ethics() {
         <div className="bg-red-50 dark:bg-red-955/20 border border-red-200 dark:border-red-900/60 rounded-xl p-4 space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-xl">🚨</span>
-            <h4 className="text-sm font-bold text-red-750 dark:text-red-300">
+            <h4 className="text-base font-bold text-red-750 dark:text-red-300">
               {activeWarnings.length} Ethical Risk{activeWarnings.length !== 1 ? 's' : ''} Detected
             </h4>
           </div>
           <ul className="space-y-1.5">
             {activeWarnings.map((w, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-red-600 dark:text-red-400">
+              <li key={i} className="flex items-start gap-2 text-base text-red-600 dark:text-red-400">
                 <span className="mt-0.5 flex-shrink-0">•</span>
                 <span>{w.warning}</span>
               </li>
@@ -203,12 +203,12 @@ export default function Ch11Ethics() {
               }}
             />
           </div>
-          <span className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
+          <span className="text-base text-slate-500 dark:text-slate-400 whitespace-nowrap">
             {decisions.filter((d) => d.answer !== null).length} / {decisions.length} answered
           </span>
           <button
             onClick={resetAll}
-            className="text-xs text-slate-400 hover:text-red-500 transition-colors underline cursor-pointer"
+            className="text-base text-slate-400 hover:text-red-500 transition-colors underline cursor-pointer"
           >
             Reset all
           </button>
@@ -240,11 +240,11 @@ export default function Ch11Ethics() {
                 {/* Question */}
                 <div className="flex-1 space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    <span className="text-base font-semibold text-slate-800 dark:text-slate-200">
                       {index + 1}. {decision.question}
                     </span>
                     {qDef.critical && (
-                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-red-50 text-red-650 dark:bg-red-955/40 dark:text-red-400 border border-red-100 dark:border-red-900/50">
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-base font-bold uppercase tracking-wider bg-red-50 text-red-650 dark:bg-red-955/40 dark:text-red-400 border border-red-100 dark:border-red-900/50">
                         Critical
                       </span>
                     )}
@@ -252,7 +252,7 @@ export default function Ch11Ethics() {
 
                   {/* Inline warning for answered No on critical */}
                   {isNo && qDef.critical && decision.warning && (
-                    <p className="text-xs text-red-650 dark:text-red-400 flex items-start gap-1.5 mt-2">
+                    <p className="text-base text-red-650 dark:text-red-400 flex items-start gap-1.5 mt-2">
                       <span className="flex-shrink-0">⚠️</span>
                       <span>{decision.warning}</span>
                     </p>
@@ -260,7 +260,7 @@ export default function Ch11Ethics() {
 
                   {/* Checkmark for answered Yes */}
                   {decision.answer === true && (
-                    <p className="text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-2">
+                    <p className="text-base text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-2">
                       <span className="font-bold">✓</span>
                       <span className="ml-1">Ethical check passed</span>
                     </p>
@@ -272,7 +272,7 @@ export default function Ch11Ethics() {
                   <button
                     onClick={() => setAnswer(index, true)}
                     className={`
-                      px-4 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer
+                      px-4 py-1.5 text-base font-semibold rounded-lg border transition-all cursor-pointer
                       ${
                         decision.answer === true
                           ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
@@ -285,7 +285,7 @@ export default function Ch11Ethics() {
                   <button
                     onClick={() => setAnswer(index, false)}
                     className={`
-                      px-4 py-1.5 text-xs font-semibold rounded-lg min-h-[40px] border transition-all cursor-pointer
+                      px-4 py-1.5 text-base font-semibold rounded-lg min-h-[40px] border transition-all cursor-pointer
                       ${
                         decision.answer === false
                           ? 'bg-red-600 text-white border-red-600 shadow-sm'
@@ -310,19 +310,19 @@ export default function Ch11Ethics() {
               <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                 {decisions.filter((d) => d.answer === true).length}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Ethical (Yes)</div>
+              <div className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Ethical (Yes)</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-red-655 dark:text-red-400">
                 {decisions.filter((d) => d.answer === false).length}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Unethical (No)</div>
+              <div className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Unethical (No)</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-slate-500 dark:text-slate-400">
                 {decisions.filter((d) => d.answer === null).length}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Pending</div>
+              <div className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">Pending</div>
             </div>
           </div>
         </div>
@@ -330,35 +330,35 @@ export default function Ch11Ethics() {
 
       {/* ── NEW: Ethical Score Calculator ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+        <h3 className="text-base font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
           📊 Ethical Score Calculator
         </h3>
         <div className="flex items-center gap-4">
           <div className="space-y-1">
-            <label className="text-xs font-semibold text-slate-400 dark:text-slate-500">Weight for critical questions</label>
+            <label className="text-base font-semibold text-slate-400 dark:text-slate-500">Weight for critical questions</label>
             <input
               type="number"
               min={1}
               max={10}
               value={scoreWeights.critical}
               onChange={(e) => setScoreWeights({ ...scoreWeights, critical: Math.max(1, Math.min(10, parseInt(e.target.value) || 3)) })}
-              className="w-20 px-2 py-1 text-xs border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
+              className="w-20 px-2 py-1 text-base border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
             />
           </div>
           <div className="space-y-1">
-            <label className="text-xs font-semibold text-slate-400 dark:text-slate-500">Weight for normal questions</label>
+            <label className="text-base font-semibold text-slate-400 dark:text-slate-500">Weight for normal questions</label>
             <input
               type="number"
               min={1}
               max={10}
               value={scoreWeights.normal}
               onChange={(e) => setScoreWeights({ ...scoreWeights, normal: Math.max(1, Math.min(10, parseInt(e.target.value) || 1)) })}
-              className="w-20 px-2 py-1 text-xs border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
+              className="w-20 px-2 py-1 text-base border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
             />
           </div>
           <button
             onClick={calcScore}
-            className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors cursor-pointer"
+            className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors cursor-pointer"
           >
             Calculate Score
           </button>
@@ -369,31 +369,31 @@ export default function Ch11Ethics() {
             {scoreResult >= 90 ? '🟢' : scoreResult >= 60 ? '🟡' : '🔴'}
           </div>
         )}
-        <p className="text-[10px] text-slate-400 dark:text-slate-500">Higher score means stronger ethical alignment.</p>
+        <p className="text-base text-slate-400 dark:text-slate-500">Higher score means stronger ethical alignment.</p>
       </div>
 
       {/* ── NEW: Scenario Consequence Spinner ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+        <h3 className="text-base font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
           🔄 Scenario Consequence Spinner
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Simulate a potential outcome based on your answers.</p>
+        <p className="text-base text-slate-500 dark:text-slate-400">Simulate a potential outcome based on your answers.</p>
         <button
           onClick={spinConsequence}
           disabled={spinning}
-          className="px-4 py-2 text-xs font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white shadow-sm transition-colors disabled:opacity-50 cursor-pointer"
+          className="px-4 py-2 text-base font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white shadow-sm transition-colors disabled:opacity-50 cursor-pointer"
         >
           {spinning ? 'Spinning...' : '🎲 Spin the Consequence'}
         </button>
         {outcome && (
           <div className="bg-purple-50 dark:bg-purple-950/20 border border-purple-200 dark:border-purple-800/60 rounded-lg px-4 py-3">
-            <p className="text-sm font-medium text-purple-700 dark:text-purple-300">{outcome}</p>
+            <p className="text-base font-medium text-purple-700 dark:text-purple-300">{outcome}</p>
           </div>
         )}
       </div>
 
       {/* ── Footnote ── */}
-      <div className="text-xs text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4">
+      <div className="text-base text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4">
         <p>
           Based on Chapter 11 ethical decision framework. Critical questions (marked with red badge) require a &ldquo;Yes&rdquo; answer to pass — a &ldquo;No&rdquo; triggers an immediate warning. Use this tool to stress-test business decisions before implementation.
         </p>

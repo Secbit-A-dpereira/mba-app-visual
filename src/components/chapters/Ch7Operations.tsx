@@ -152,7 +152,7 @@ export default function Ch7Operations() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           ⚙️ Operations Metrics
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Adjust key operational parameters to monitor system performance and identify bottlenecks.
         </p>
       </div>
@@ -171,16 +171,16 @@ export default function Ch7Operations() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     {cfg.label}
                   </label>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5 font-medium leading-normal">
+                  <p className="text-base text-slate-400 dark:text-slate-500 mt-0.5 font-medium leading-normal">
                     {cfg.description}
                   </p>
                 </div>
                 <span className={`text-2xl font-bold tabular-nums ${colorClass}`}>
                   {value}
-                  <span className="text-xs font-semibold text-slate-400 ml-1 uppercase">{cfg.unit}</span>
+                  <span className="text-base font-semibold text-slate-400 ml-1 uppercase">{cfg.unit}</span>
                 </span>
               </div>
 
@@ -195,7 +195,7 @@ export default function Ch7Operations() {
                   onChange={(e) => handleChange(cfg.key, parseFloat(e.target.value))}
                   className="w-full h-1.5 bg-slate-200 dark:bg-slate-750 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                 />
-                <div className="flex justify-between text-[10px] font-bold text-slate-400 dark:text-slate-550 mt-1 uppercase tracking-wider">
+                <div className="flex justify-between text-base font-bold text-slate-400 dark:text-slate-550 mt-1 uppercase tracking-wider">
                   <span>{cfg.min}</span>
                   <span>{cfg.max}</span>
                 </div>
@@ -228,50 +228,50 @@ export default function Ch7Operations() {
 
       {/* Little's Law & Insights */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm">
-        <h4 className="text-xs font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
+        <h4 className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
           📐 Operational Insights
         </h4>
         <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Throughput</p>
-            <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{throughputRate} <span className="text-xs font-normal text-slate-450 dark:text-slate-505">u/hr</span></p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Throughput</p>
+            <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{throughputRate} <span className="text-base font-normal text-slate-450 dark:text-slate-505">u/hr</span></p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">WIP (Inventory)</p>
-            <p className="text-lg font-bold text-amber-600 dark:text-amber-400">{wip} <span className="text-xs font-normal text-slate-455 dark:text-slate-505">units</span></p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">WIP (Inventory)</p>
+            <p className="text-lg font-bold text-amber-600 dark:text-amber-400">{wip} <span className="text-base font-normal text-slate-455 dark:text-slate-505">units</span></p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cycle Time</p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cycle Time</p>
             <p className="text-lg font-bold text-emerald-700 dark:text-emerald-350">
-              {isFinite(littleSLaw) ? littleSLaw.toFixed(1) : '—'} <span className="text-xs font-normal text-slate-455 dark:text-slate-505">hrs</span>
+              {isFinite(littleSLaw) ? littleSLaw.toFixed(1) : '—'} <span className="text-base font-normal text-slate-455 dark:text-slate-505">hrs</span>
             </p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Quality Rate</p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Quality Rate</p>
             <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{qualityRate}%</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">First Pass Yield</p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">First Pass Yield</p>
             <p className="text-lg font-bold text-amber-550 dark:text-amber-400">{firstPassYield.toFixed(1)}%</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Effective OEE</p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Effective OEE</p>
             <p className="text-lg font-bold text-emerald-800 dark:text-emerald-300">{effectiveOee.toFixed(1)}%</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Defect Rate</p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Defect Rate</p>
             <p className="text-lg font-bold text-red-600 dark:text-red-400">{metrics.defectRate}%</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Flow Time</p>
-            <p className="text-lg font-bold text-emerald-600 dark:text-emerald-350">{metrics.flowTime} <span className="text-xs font-normal text-slate-455 dark:text-slate-505">days</span></p>
+            <p className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">Flow Time</p>
+            <p className="text-lg font-bold text-emerald-600 dark:text-emerald-350">{metrics.flowTime} <span className="text-base font-normal text-slate-455 dark:text-slate-505">days</span></p>
           </div>
         </div>
       </div>
 
       {/* OEE Gauge */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm">
-        <h4 className="text-xs font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
+        <h4 className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
           🎯 OEE Performance Gauge
         </h4>
         <div className="flex items-center gap-6">
@@ -301,7 +301,7 @@ export default function Ch7Operations() {
               </span>
             </div>
           </div>
-          <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-450 font-medium">
+          <div className="space-y-1.5 text-base text-slate-500 dark:text-slate-450 font-medium">
             <p className="flex items-center"><span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 mr-2" />85–100%: World Class</p>
             <p className="flex items-center"><span className="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 mr-2" />60–84%: Typical</p>
             <p className="flex items-center"><span className="inline-block w-2.5 h-2.5 rounded-full bg-red-500 mr-2" />{'<'}60%: Needs Improvement</p>
@@ -311,36 +311,36 @@ export default function Ch7Operations() {
 
       {/* Cost of Quality & Waste */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm">
-        <h4 className="text-xs font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
+        <h4 className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
           💰 Cost of Quality &amp; Waste
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Inputs */}
           <div className="space-y-3">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Total Units Produced</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Total Units Produced</label>
               <input type="number" min={0} value={totalUnitsProduced} onChange={e => setTotalUnitsProduced(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Defective / Rework Units</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Defective / Rework Units</label>
               <input type="number" min={0} value={defectiveUnits} onChange={e => setDefectiveUnits(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Cost per Unit (€)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Cost per Unit (€)</label>
               <input type="number" min={0} step={0.01} value={costPerUnit} onChange={e => setCostPerUnit(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Scrap / Defective Cost per Unit (€)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Scrap / Defective Cost per Unit (€)</label>
               <input type="number" min={0} step={0.01} value={scrapCostPerUnit} onChange={e => setScrapCostPerUnit(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Rework Cost per Unit (€)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Rework Cost per Unit (€)</label>
               <input type="number" min={0} step={0.01} value={reworkCostPerUnit} onChange={e => setReworkCostPerUnit(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
           </div>
           {/* Results */}
@@ -355,23 +355,23 @@ export default function Ch7Operations() {
               return (
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Good Units</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Good Units</p>
                     <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">${costGood.toFixed(2)}</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Defective Units</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Defective Units</p>
                     <p className="text-lg font-bold text-red-600 dark:text-red-400">${costDefective.toFixed(2)}</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Rework</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Cost of Rework</p>
                     <p className="text-lg font-bold text-amber-600 dark:text-amber-400">${costRework.toFixed(2)}</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Total Cost of Poor Quality</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Total Cost of Poor Quality</p>
                     <p className="text-lg font-bold text-red-700 dark:text-red-300">${totalPoorQuality.toFixed(2)}</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 col-span-2">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Quality Yield %</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Quality Yield %</p>
                     <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{qualityYield.toFixed(1)}%</p>
                   </div>
                 </div>
@@ -383,25 +383,25 @@ export default function Ch7Operations() {
 
       {/* EOQ Calculator */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm">
-        <h4 className="text-xs font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
+        <h4 className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mb-4">
           📦 EOQ Calculator
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="space-y-3">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Annual Demand (units)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Annual Demand (units)</label>
               <input type="number" min={0} value={annualDemand} onChange={e => setAnnualDemand(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Ordering Cost per Order (€)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Ordering Cost per Order (€)</label>
               <input type="number" min={0} step={0.01} value={orderingCost} onChange={e => setOrderingCost(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Holding Cost per Unit per Year (€)</label>
+              <label className="text-base font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Holding Cost per Unit per Year (€)</label>
               <input type="number" min={0} step={0.01} value={holdingCost} onChange={e => setHoldingCost(Number(e.target.value))}
-                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white" />
+                className="w-full mt-1 px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-base text-slate-900 dark:text-white" />
             </div>
           </div>
           <div className="space-y-2">
@@ -412,15 +412,15 @@ export default function Ch7Operations() {
               return (
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">EOQ</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">EOQ</p>
                     <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{eoq.toFixed(1)} units</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Orders per Year</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Orders per Year</p>
                     <p className="text-lg font-bold text-amber-600 dark:text-amber-400">{ordersPerYear.toFixed(1)}</p>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 col-span-2">
-                    <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Total Inventory Cost</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Total Inventory Cost</p>
                     <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">${totalInvCost.toFixed(2)}</p>
                   </div>
                 </div>

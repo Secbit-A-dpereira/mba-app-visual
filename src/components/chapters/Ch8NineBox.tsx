@@ -179,7 +179,7 @@ export default function Ch8NineBox() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           👥 HR 9-Box Matrix
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Map team members by Performance (rows) vs Potential (columns). Click a member card to cycle their position. Hover any box for strategic guidance.
         </p>
       </div>
@@ -187,7 +187,7 @@ export default function Ch8NineBox() {
       {/* Add member form */}
       {showAddForm ? (
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-4 shadow-sm animate-in fade-in duration-200">
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
             Add Team Member
           </h4>
           <div className="flex gap-3">
@@ -196,7 +196,7 @@ export default function Ch8NineBox() {
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="flex-1 px-3 py-1.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="flex-1 px-3 py-1.5 text-base rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               onKeyDown={(e) => e.key === 'Enter' && addMember()}
             />
             <input
@@ -204,7 +204,7 @@ export default function Ch8NineBox() {
               placeholder="Role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="flex-1 px-3 py-1.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="flex-1 px-3 py-1.5 text-base rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               onKeyDown={(e) => e.key === 'Enter' && addMember()}
             />
           </div>
@@ -212,13 +212,13 @@ export default function Ch8NineBox() {
             <button
               onClick={addMember}
               disabled={!name.trim() || !role.trim()}
-              className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+              className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
             >
               Add Member
             </button>
             <button
               onClick={() => { setShowAddForm(false); setName(''); setRole(''); }}
-              className="px-4 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
+              className="px-4 py-1.5 text-base font-semibold rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
             >
               Cancel
             </button>
@@ -227,7 +227,7 @@ export default function Ch8NineBox() {
       ) : (
         <button
           onClick={() => setShowAddForm(true)}
-          className="px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition-colors cursor-pointer"
+          className="px-4 py-2 text-base font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition-colors cursor-pointer"
         >
           + Add Team Member
         </button>
@@ -235,7 +235,7 @@ export default function Ch8NineBox() {
 
       {/* Team count */}
       {team.length > 0 && (
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-base text-slate-500 dark:text-slate-400">
           {team.length} team member{team.length !== 1 ? 's' : ''} mapped
         </p>
       )}
@@ -245,14 +245,14 @@ export default function Ch8NineBox() {
         <div className="grid grid-cols-[auto_repeat(3,1fr)] gap-1.5 min-w-[500px]">
         {/* Empty top-left corner */}
         <div className="flex items-end justify-center pb-2">
-          <span className="text-xs text-slate-400 font-medium writing-mode-vertical-lr hidden sm:block">
+          <span className="text-base text-slate-400 font-medium writing-mode-vertical-lr hidden sm:block">
             Performance →
           </span>
         </div>
         {/* Column headers — Potential */}
         {([3, 2, 1] as const).map((pot) => (
           <div key={`col-${pot}`} className="text-center pb-2">
-            <div className="text-[10px] text-slate-450 dark:text-slate-500 font-bold uppercase tracking-wider">{POTENTIAL_LABELS[pot]} Potential</div>
+            <div className="text-base text-slate-450 dark:text-slate-500 font-bold uppercase tracking-wider">{POTENTIAL_LABELS[pot]} Potential</div>
             <div className="text-lg font-bold text-slate-700 dark:text-slate-300 mt-0.5">{pot}</div>
           </div>
         ))}
@@ -264,7 +264,7 @@ export default function Ch8NineBox() {
             <div className="flex items-center pr-3 pl-1">
               <div className="text-right">
                 <div className="text-lg font-bold text-slate-700 dark:text-slate-300">{perf}</div>
-                <div className="text-[10px] text-slate-450 dark:text-slate-500 font-bold uppercase tracking-wider">{PERFORMANCE_LABELS[perf]} Perf.</div>
+                <div className="text-base text-slate-450 dark:text-slate-500 font-bold uppercase tracking-wider">{PERFORMANCE_LABELS[perf]} Perf.</div>
               </div>
             </div>
 
@@ -290,7 +290,7 @@ export default function Ch8NineBox() {
                 >
                   {/* Strategy label on hover */}
                   {isHovered && (
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow uppercase tracking-wider">
+                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-base font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow uppercase tracking-wider">
                       {boxStrategy.label}
                     </div>
                   )}
@@ -298,7 +298,7 @@ export default function Ch8NineBox() {
                   {/* Member cards */}
                   {members.length === 0 && !isHovered && (
                     <div className="flex items-center justify-center h-full">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                      <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                         {boxStrategy.label}
                       </span>
                     </div>
@@ -314,7 +314,7 @@ export default function Ch8NineBox() {
                         }}
                         title="Click to cycle performance level"
                         className={`
-                          group relative px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-all
+                          group relative px-2.5 py-1.5 rounded-lg text-base cursor-pointer transition-all
                           ${isHovered
                             ? 'bg-white/20 text-white hover:bg-white/30'
                             : 'bg-slate-50 dark:bg-slate-950/60 border border-slate-150 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900/80 shadow-sm'
@@ -334,13 +334,13 @@ export default function Ch8NineBox() {
                           </button>
                         </div>
                         <span className={`block truncate mt-0.5 ${
-                          isHovered ? 'text-white/70 text-[10px]' : 'text-slate-500 dark:text-slate-500 text-[10px]'
+                          isHovered ? 'text-white/70 text-base' : 'text-slate-500 dark:text-slate-500 text-base'
                         }`}>
                           {member.role}
                         </span>
                         {/* Cycle indicator */}
                         {!isHovered && (
-                          <span className="absolute right-1 bottom-1 text-[9px] text-slate-300 dark:text-slate-600 opacity-0 group-hover:opacity-100">
+                          <span className="absolute right-1 bottom-1 text-base text-slate-300 dark:text-slate-600 opacity-0 group-hover:opacity-100">
                             ⇄
                           </span>
                         )}
@@ -361,22 +361,22 @@ export default function Ch8NineBox() {
           <div className="flex items-center gap-3">
             <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${strategy.color} shadow-sm`} />
             <div>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+              <h4 className="text-base font-bold text-slate-900 dark:text-white">
                 Box ({hoveredBox.p}, {hoveredBox.pt}) — {strategy.label}
               </h4>
-              <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{strategy.description}</p>
+              <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{strategy.description}</p>
             </div>
           </div>
-          <p className="text-sm text-slate-600 dark:text-slate-350 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
+          <p className="text-base text-slate-600 dark:text-slate-350 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
             <span className="font-bold text-emerald-600 dark:text-emerald-450">Recommended action: </span>
             {strategy.action}
           </p>
           {hoveredMembers.length > 0 && (
             <div className="space-y-1.5">
-              <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Members in this box:</p>
+              <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Members in this box:</p>
               <div className="flex flex-wrap gap-2">
                 {hoveredMembers.map(m => (
-                  <span key={m.id} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-350">
+                  <span key={m.id} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-base rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-350">
                     <span className="font-semibold">{m.name}</span>
                     <span className="text-slate-300 dark:text-slate-700">|</span>
                     <span className="text-slate-500 dark:text-slate-450">{m.role}</span>
@@ -389,17 +389,17 @@ export default function Ch8NineBox() {
       )}
 
       {/* Legend */}
-      <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
+      <div className="text-base font-medium text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
         <p>Click a member card to cycle their Performance level (1→2→3→1). Hover any box to see its talent strategy recommendation.</p>
       </div>
 
       {/* ── NEW: SWOT Analysis ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
             🔍 SWOT Analysis
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Capture your organization&apos;s Strengths, Weaknesses, Opportunities, and Threats.
           </p>
         </div>
@@ -407,13 +407,13 @@ export default function Ch8NineBox() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {(['strengths', 'weaknesses', 'opportunities', 'threats'] as const).map((key) => (
             <div key={key}>
-              <label className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block mb-1">{key}</label>
+              <label className="text-base font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block mb-1">{key}</label>
               <textarea
                 value={swot[key]}
                 onChange={(e) => setSwot({ ...swot, [key]: e.target.value })}
                 rows={3}
                 placeholder={`Enter ${key}...`}
-                className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               />
             </div>
           ))}
@@ -423,10 +423,10 @@ export default function Ch8NineBox() {
       {/* ── NEW: Balanced Scorecard ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
             ⚖️ Balanced Scorecard
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Define goals and rate current performance (1-10) for each perspective.
           </p>
         </div>
@@ -435,7 +435,7 @@ export default function Ch8NineBox() {
           <select
             value={bscPerspective}
             onChange={(e) => setBscPerspective(e.target.value)}
-            className="px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           >
             <option>Financial</option>
             <option>Customer</option>
@@ -447,25 +447,25 @@ export default function Ch8NineBox() {
             placeholder="Goal name"
             value={bscGoal}
             onChange={(e) => setBscGoal(e.target.value)}
-            className="flex-1 px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="flex-1 px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <div>
-            <label className="text-[10px] font-medium text-slate-500 block">Performance: {bscPerf}</label>
+            <label className="text-base font-medium text-slate-500 block">Performance: {bscPerf}</label>
             <input type="range" min={1} max={10} value={bscPerf} onChange={(e) => setBscPerf(Number(e.target.value))} className="w-24 h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
           </div>
-          <button onClick={addBsc} disabled={!bscGoal.trim()} className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
+          <button onClick={addBsc} disabled={!bscGoal.trim()} className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
             + Add Goal
           </button>
         </div>
 
         {bsc.length > 0 && (
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-850">
                 <tr>
-                  <th className="text-left py-2 px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Perspective</th>
-                  <th className="text-left py-2 px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Goal</th>
-                  <th className="text-center py-2 px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Performance</th>
+                  <th className="text-left py-2 px-3 text-base font-semibold text-slate-500 uppercase tracking-wider">Perspective</th>
+                  <th className="text-left py-2 px-3 text-base font-semibold text-slate-500 uppercase tracking-wider">Goal</th>
+                  <th className="text-center py-2 px-3 text-base font-semibold text-slate-500 uppercase tracking-wider">Performance</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-850">
@@ -474,7 +474,7 @@ export default function Ch8NineBox() {
                     <td className="py-2 px-3 font-semibold text-slate-700 dark:text-slate-300">{item.perspective}</td>
                     <td className="py-2 px-3 text-slate-600 dark:text-slate-400">{item.goal}</td>
                     <td className="py-2 px-3 text-center">
-                      <span className={`inline-block px-2 py-0.5 text-xs font-bold rounded-full ${
+                      <span className={`inline-block px-2 py-0.5 text-base font-bold rounded-full ${
                         item.performance >= 8 ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-300' :
                         item.performance >= 4 ? 'bg-amber-50 text-amber-600 dark:bg-amber-950/40 dark:text-amber-300' :
                         'bg-red-50 text-red-600 dark:bg-red-950/40 dark:text-red-300'
@@ -496,7 +496,7 @@ export default function Ch8NineBox() {
         </p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium">Budgeted Fixed Overhead (€)</label>
+            <label className="block text-base font-medium">Budgeted Fixed Overhead (€)</label>
             <input
               type="number"
               value={budgetedFixedOH}
@@ -505,7 +505,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Actual Fixed Overhead (€)</label>
+            <label className="block text-base font-medium">Actual Fixed Overhead (€)</label>
             <input
               type="number"
               value={actualFixedOH}
@@ -514,7 +514,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Budgeted Machine Hours</label>
+            <label className="block text-base font-medium">Budgeted Machine Hours</label>
             <input
               type="number"
               value={budgetedFOHHours}
@@ -523,7 +523,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Actual Machine Hours</label>
+            <label className="block text-base font-medium">Actual Machine Hours</label>
             <input
               type="number"
               value={actualMachineHours}
@@ -544,7 +544,7 @@ export default function Ch8NineBox() {
         </p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium">Budgeted Variable Rate (€/hour)</label>
+            <label className="block text-base font-medium">Budgeted Variable Rate (€/hour)</label>
             <input
               type="number"
               value={budgetedVarRate}
@@ -553,7 +553,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Actual Variable Rate (€/hour)</label>
+            <label className="block text-base font-medium">Actual Variable Rate (€/hour)</label>
             <input
               type="number"
               value={actualVarRate}
@@ -562,7 +562,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Actual Hours Worked</label>
+            <label className="block text-base font-medium">Actual Hours Worked</label>
             <input
               type="number"
               value={actualVarHours}
@@ -571,7 +571,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Standard Hours Allowed</label>
+            <label className="block text-base font-medium">Standard Hours Allowed</label>
             <input
               type="number"
               value={standardVarHours}
@@ -592,7 +592,7 @@ export default function Ch8NineBox() {
         </p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium">Budgeted Total Overhead (€)</label>
+            <label className="block text-base font-medium">Budgeted Total Overhead (€)</label>
             <input
               type="number"
               value={budgetedTotalOverhead}
@@ -601,7 +601,7 @@ export default function Ch8NineBox() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Budgeted Activity Level (hours)</label>
+            <label className="block text-base font-medium">Budgeted Activity Level (hours)</label>
             <input
               type="number"
               value={budgetedActivity}

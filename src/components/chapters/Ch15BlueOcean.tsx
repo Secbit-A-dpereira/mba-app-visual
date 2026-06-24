@@ -78,17 +78,17 @@ function QuadrantCard({ quadrant, items, onAdd, onRemove, onEdit }: {
     <div className={`rounded-xl border ${config.color} p-5 flex flex-col min-h-[260px] shadow-sm`}>
       <div className="flex items-center gap-2 mb-1">
         <span className="text-base">{config.icon}</span>
-        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200">{config.label}</h3>
-        <span className="text-[10px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider ml-auto">
+        <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">{config.label}</h3>
+        <span className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider ml-auto">
           {items.length} item{items.length !== 1 ? 's' : ''}
         </span>
       </div>
-      <p className="text-[10px] text-slate-450 dark:text-slate-500 font-medium leading-normal mb-4">{config.description}</p>
+      <p className="text-base text-slate-450 dark:text-slate-500 font-medium leading-normal mb-4">{config.description}</p>
 
       {/* Items list */}
       <div className="flex-1 space-y-2 min-h-[100px] mb-4 overflow-y-auto">
         {items.length === 0 && (
-          <p className="text-xs text-slate-400 dark:text-slate-550 italic text-center py-6 font-medium">
+          <p className="text-base text-slate-400 dark:text-slate-550 italic text-center py-6 font-medium">
             Add items to the {config.label.toLowerCase()} quadrant...
           </p>
         )}
@@ -104,17 +104,17 @@ function QuadrantCard({ quadrant, items, onAdd, onRemove, onEdit }: {
                     if (e.key === 'Enter') saveEdit(item.id);
                     if (e.key === 'Escape') setEditingId(null);
                   }}
-                  className="flex-1 px-2.5 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="flex-1 px-2.5 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   autoFocus
                 />
-                <button onClick={() => saveEdit(item.id)} className="text-xs font-bold text-emerald-600 dark:text-emerald-450 hover:text-emerald-700 cursor-pointer">✓</button>
-                <button onClick={() => setEditingId(null)} className="text-xs font-bold text-slate-400 hover:text-red-500 cursor-pointer">✕</button>
+                <button onClick={() => saveEdit(item.id)} className="text-base font-bold text-emerald-600 dark:text-emerald-450 hover:text-emerald-700 cursor-pointer">✓</button>
+                <button onClick={() => setEditingId(null)} className="text-base font-bold text-slate-400 hover:text-red-500 cursor-pointer">✕</button>
               </div>
             ) : (
               <>
-                <span className="text-xs text-slate-400 select-none font-bold mt-[1px]">•</span>
+                <span className="text-base text-slate-400 select-none font-bold mt-[1px]">•</span>
                 <span
-                  className="flex-1 text-xs text-slate-700 dark:text-slate-300 font-medium cursor-pointer hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors leading-relaxed"
+                  className="flex-1 text-base text-slate-700 dark:text-slate-300 font-medium cursor-pointer hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors leading-relaxed"
                   onClick={() => startEdit(item)}
                   title="Click to edit"
                 >
@@ -122,7 +122,7 @@ function QuadrantCard({ quadrant, items, onAdd, onRemove, onEdit }: {
                 </span>
                 <button
                   onClick={() => onRemove(item.id)}
-                  className="opacity-0 group-hover:opacity-100 text-xs text-slate-400 hover:text-red-500 transition-all px-1 cursor-pointer"
+                  className="opacity-0 group-hover:opacity-100 text-base text-slate-400 hover:text-red-500 transition-all px-1 cursor-pointer"
                   title="Remove"
                 >
                   ✕
@@ -141,12 +141,12 @@ function QuadrantCard({ quadrant, items, onAdd, onRemove, onEdit }: {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
           placeholder={`Add ${config.label.toLowerCase()} item...`}
-          className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+          className="flex-1 px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
         />
         <button
           onClick={handleAdd}
           disabled={!input.trim()}
-          className="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+          className="px-3 py-1.5 text-base font-bold rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
         >
           +
         </button>
@@ -180,15 +180,15 @@ function CompetitiveFactorsEditor() {
 
   return (
     <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-3">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+      <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
         📊 Competitive Factors (Value Curve Editor)
       </h3>
-      <p className="text-[10px] text-slate-450 dark:text-slate-500 font-medium">
+      <p className="text-base text-slate-450 dark:text-slate-500 font-medium">
         Define factors and their current score vs desired (blue ocean) score.
       </p>
       <div className="space-y-2">
         {factors.map((factor, idx) => (
-          <div key={idx} className="flex items-center gap-2 text-xs">
+          <div key={idx} className="flex items-center gap-2 text-base">
             <input
               type="text"
               value={factor.name}
@@ -225,7 +225,7 @@ function CompetitiveFactorsEditor() {
         ))}
         <button
           onClick={addFactor}
-          className="w-full py-1.5 text-xs font-bold rounded-lg border border-dashed border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
+          className="w-full py-1.5 text-base font-bold rounded-lg border border-dashed border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
         >
           + Add Factor
         </button>
@@ -246,21 +246,21 @@ function ValueInnovationScore({ errcItems }: { errcItems: ERRCItem[] }) {
 
   return (
     <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-3">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+      <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
         💡 Value Innovation Score
       </h3>
-      <div className="flex flex-wrap gap-4 text-xs font-medium">
+      <div className="flex flex-wrap gap-4 text-base font-medium">
         <div className="flex items-center gap-1"><span className="text-blue-500 font-bold">{countRaise}</span> Raise</div>
         <div className="flex items-center gap-1"><span className="text-emerald-500 font-bold">{countCreate}</span> Create</div>
         <div className="flex items-center gap-1"><span className="text-amber-500 font-bold">{countReduce}</span> Reduce</div>
         <div className="flex items-center gap-1"><span className="text-red-500 font-bold">{countEliminate}</span> Eliminate</div>
       </div>
       <div className="flex items-center gap-2">
-        <span className="text-xs font-semibold text-slate-500">Net Innovation:</span>
+        <span className="text-base font-semibold text-slate-500">Net Innovation:</span>
         <span className={`text-lg font-bold tabular-nums ${innovationScore > 0 ? 'text-emerald-600' : innovationScore < 0 ? 'text-red-500' : 'text-slate-400'}`}>
           {innovationScore > 0 ? '+' : ''}{innovationScore}
         </span>
-        <span className="text-[10px] text-slate-450 dark:text-slate-500">(higher = more innovative)</span>
+        <span className="text-base text-slate-450 dark:text-slate-500">(higher = more innovative)</span>
       </div>
     </div>
   );
@@ -367,7 +367,7 @@ export default function Ch15BlueOcean() {
       {/* Header */}
       <div className="space-y-1">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">Blue Ocean Strategy — ERRC Matrix</h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Build your Blue Ocean strategy using the Eliminate-Reduce-Raise-Create (ERRC) grid.
           Add bullet points to each quadrant, then generate a Strategy Canvas profile.
         </p>
@@ -392,7 +392,7 @@ export default function Ch15BlueOcean() {
         <button
           onClick={handleGenerateCanvas}
           disabled={errc.length === 0}
-          className="px-5 py-2 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+          className="px-5 py-2 text-base font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
         >
           📈 Generate Strategy Canvas
         </button>
@@ -400,7 +400,7 @@ export default function Ch15BlueOcean() {
         <button
           onClick={handleExportMarkdown}
           disabled={errc.length === 0 && !strategyCanvas.show}
-          className="px-5 py-2 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-800 text-slate-655 dark:text-slate-350 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+          className="px-5 py-2 text-base font-semibold rounded-lg border border-slate-200 dark:border-slate-800 text-slate-655 dark:text-slate-350 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
         >
           📤 Export Markdown
         </button>
@@ -416,8 +416,8 @@ export default function Ch15BlueOcean() {
       {strategyCanvas.show && (
         <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-6 rounded-xl shadow-sm space-y-5">
           <div className="flex items-center justify-between">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">📈 Strategy Canvas Profile</h3>
-            <span className="text-[10px] font-semibold text-slate-450 dark:text-slate-505 font-mono">{strategyCanvas.profileName}</span>
+            <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">📈 Strategy Canvas Profile</h3>
+            <span className="text-base font-semibold text-slate-450 dark:text-slate-505 font-mono">{strategyCanvas.profileName}</span>
           </div>
 
           {/* Visual bar chart */}
@@ -429,7 +429,7 @@ export default function Ch15BlueOcean() {
                   : 'bg-red-500';
               return (
                 <div key={dim} className="space-y-1">
-                  <div className="flex justify-between text-xs font-semibold">
+                  <div className="flex justify-between text-base font-semibold">
                     <span className="text-slate-700 dark:text-slate-300">{dim}</span>
                     <span className="text-slate-500 dark:text-slate-400 tabular-nums">{score.toFixed(1)}/10</span>
                   </div>
@@ -446,21 +446,21 @@ export default function Ch15BlueOcean() {
 
           {/* Comparative profile text */}
           <div className="rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-150 dark:border-slate-850/60 p-5">
-            <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 mb-3">Comparative Analysis</h4>
+            <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 mb-3">Comparative Analysis</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <p className="text-xs font-bold text-slate-500 mb-1.5">⬤ Traditional Industry</p>
+                <p className="text-base font-bold text-slate-500 mb-1.5">⬤ Traditional Industry</p>
                 <ul className="space-y-1 font-medium text-slate-450 dark:text-slate-500">
                   {STRATEGY_CANVAS_DIMS.traditional.map((d, i) => (
-                    <li key={i} className="text-xs">• {d}</li>
+                    <li key={i} className="text-base">• {d}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1.5">⬤ Blue Ocean Strategy</p>
+                <p className="text-base font-bold text-emerald-600 dark:text-emerald-400 mb-1.5">⬤ Blue Ocean Strategy</p>
                 <ul className="space-y-1 font-medium text-emerald-600/80 dark:text-emerald-400/80">
                   {STRATEGY_CANVAS_DIMS.blueOcean.map((d, i) => (
-                    <li key={i} className="text-xs">• {d}</li>
+                    <li key={i} className="text-base">• {d}</li>
                   ))}
                 </ul>
               </div>
@@ -469,7 +469,7 @@ export default function Ch15BlueOcean() {
 
           {/* Monospace text profile */}
           <div className="rounded-xl bg-slate-950 border border-slate-850 p-4">
-            <pre className="text-[10px] text-slate-400 font-mono whitespace-pre-wrap leading-relaxed">
+            <pre className="text-base text-slate-400 font-mono whitespace-pre-wrap leading-relaxed">
               {canvasProfileText}
             </pre>
           </div>

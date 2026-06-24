@@ -34,7 +34,7 @@ export default function Ch26OperatingCadences() {
             Operating Cadences & Routines
           </h2>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Establish disciplined routines to drive mutual accountability and avoid deal slippage. RevOps stewards operational command by reviewing pipeline generation and forecast accuracy metrics consistently.
         </p>
       </div>
@@ -42,33 +42,33 @@ export default function Ch26OperatingCadences() {
       {/* Cadence Dashboard Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Routines Active</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Routines Active</span>
           <span className="text-2xl font-extrabold text-slate-850 dark:text-slate-100 tabular-nums">
             {cadences.length}
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Core operating rhythms defined</span>
+          <span className="text-base text-slate-400 block mt-1">Core operating rhythms defined</span>
         </div>
 
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Meeting Time Burden</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Meeting Time Burden</span>
           <span className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-450 tabular-nums">
-            {totalDurationMin} <span className="text-xs font-semibold text-slate-450">min / cycle</span>
+            {totalDurationMin} <span className="text-base font-semibold text-slate-450">min / cycle</span>
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Aggregated meeting minutes</span>
+          <span className="text-base text-slate-400 block mt-1">Aggregated meeting minutes</span>
         </div>
 
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Avg. Rhythm Effectiveness</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Avg. Rhythm Effectiveness</span>
           <span className={`text-2xl font-extrabold tabular-nums ${parseFloat(averageEffectiveness) >= 4 ? 'text-emerald-500' : parseFloat(averageEffectiveness) >= 2.5 ? 'text-amber-500' : 'text-red-500'}`}>
-            {averageEffectiveness} <span className="text-xs font-semibold text-slate-450">/ 5</span>
+            {averageEffectiveness} <span className="text-base font-semibold text-slate-450">/ 5</span>
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Target score: &gt;4.0 rating</span>
+          <span className="text-base text-slate-400 block mt-1">Target score: &gt;4.0 rating</span>
         </div>
       </div>
 
       {/* SVG Cadence Timeline Calendar */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+        <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
           Rhythm Rhythm Calendar (Timeline Track)
         </h3>
 
@@ -98,15 +98,15 @@ export default function Ch26OperatingCadences() {
                   {/* Node Circle */}
                   <circle cx={x} cy={y} r={radius} className={`${nodeColor} stroke-2 transition-all duration-300 group-hover:brightness-110`} />
                   {/* Duration Text */}
-                  <text x={x} y={y + 3} textAnchor="middle" className="fill-white text-[8px] font-bold pointer-events-none select-none">
+                  <text x={x} y={y + 3} textAnchor="middle" className="fill-white text-base font-bold pointer-events-none select-none">
                     {cad.duration}m
                   </text>
                   {/* Frequency top label */}
-                  <text x={x} y={y - radius - 6} textAnchor="middle" className="fill-slate-450 dark:fill-slate-500 text-[8px] font-bold uppercase tracking-wider">
+                  <text x={x} y={y - radius - 6} textAnchor="middle" className="fill-slate-450 dark:fill-slate-500 text-base font-bold uppercase tracking-wider">
                     {cad.frequency}
                   </text>
                   {/* Name bottom label */}
-                  <text x={x} y={y + radius + 12} textAnchor="middle" className="fill-slate-800 dark:fill-slate-350 text-[9px] font-bold">
+                  <text x={x} y={y + radius + 12} textAnchor="middle" className="fill-slate-800 dark:fill-slate-350 text-base font-bold">
                     {cad.name.split(' ')[0]}
                   </text>
                 </g>
@@ -119,13 +119,13 @@ export default function Ch26OperatingCadences() {
       {/* Cadence Configuration Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {cadences.map((cad, idx) => (
-          <div key={cad.name} className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-3 text-xs">
+          <div key={cad.name} className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-3 text-base">
             <div className="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                 <h4 className="font-bold text-slate-800 dark:text-slate-200">{cad.name}</h4>
               </div>
-              <span className="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+              <span className="text-base uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
                 {cad.frequency}
               </span>
             </div>
@@ -134,7 +134,7 @@ export default function Ch26OperatingCadences() {
               {/* Duration & Effectiveness */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Duration (Min)</label>
+                  <label className="text-base font-bold text-slate-400 uppercase tracking-wider">Duration (Min)</label>
                   <input
                     type="number"
                     value={cad.duration || ''}
@@ -143,13 +143,13 @@ export default function Ch26OperatingCadences() {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Effectiveness (1-5)</label>
+                  <label className="text-base font-bold text-slate-400 uppercase tracking-wider">Effectiveness (1-5)</label>
                   <div className="flex gap-1 items-center h-7">
                     {[1, 2, 3, 4, 5].map((val) => (
                       <button
                         key={val}
                         onClick={() => handleFieldChange(idx, 'effectiveness', val)}
-                        className={`w-5 h-5 rounded text-[9px] font-bold transition-colors ${
+                        className={`w-5 h-5 rounded text-base font-bold transition-colors ${
                           cad.effectiveness === val
                             ? 'bg-emerald-500 text-white'
                             : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200'
@@ -164,7 +164,7 @@ export default function Ch26OperatingCadences() {
 
               {/* Attendees */}
               <div className="space-y-1">
-                <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Attendees</label>
+                <label className="text-base font-bold text-slate-400 uppercase tracking-wider">Attendees</label>
                 <input
                   type="text"
                   value={cad.attendees}
@@ -176,7 +176,7 @@ export default function Ch26OperatingCadences() {
 
               {/* Agenda */}
               <div className="space-y-1">
-                <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Agenda Focus</label>
+                <label className="text-base font-bold text-slate-400 uppercase tracking-wider">Agenda Focus</label>
                 <input
                   type="text"
                   value={cad.agenda}
@@ -194,24 +194,24 @@ export default function Ch26OperatingCadences() {
 
       {/* Tool 1: Meeting Feedback Collector */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
           📝 Meeting Feedback Collector
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-base text-slate-500 dark:text-slate-400">
           Collect real-time feedback on the value of each cadence from attendees. Use this to continuously improve your rhythms.
         </p>
         <div className="space-y-3">
           {cadences.length === 0 && (
-            <p className="text-xs text-slate-400 italic">No cadences defined yet. Add cadences above to enable feedback collection.</p>
+            <p className="text-base text-slate-400 italic">No cadences defined yet. Add cadences above to enable feedback collection.</p>
           )}
           {cadences.map((cad, idx) => (
             <div key={cad.name} className="border border-slate-100 dark:border-slate-800 rounded-lg p-3 space-y-2">
               <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-200">{cad.name}</h4>
-                <span className="text-[10px] text-slate-400">{cad.frequency}</span>
+                <h4 className="text-base font-semibold text-slate-800 dark:text-slate-200">{cad.name}</h4>
+                <span className="text-base text-slate-400">{cad.frequency}</span>
               </div>
               <div className="flex gap-2 items-center">
-                <span className="text-[11px] text-slate-500">Feedback (1-5):</span>
+                <span className="text-base text-slate-500">Feedback (1-5):</span>
                 <div className="flex gap-1">
                   {[1,2,3,4,5].map(star => (
                     <button
@@ -220,7 +220,7 @@ export default function Ch26OperatingCadences() {
                         // Update effectiveness directly via existing handler
                         handleFieldChange(idx, 'effectiveness', star);
                       }}
-                      className={`w-7 h-7 rounded-full text-xs font-bold transition-colors ${
+                      className={`w-7 h-7 rounded-full text-base font-bold transition-colors ${
                         cad.effectiveness >= star
                           ? 'bg-amber-400 text-white'
                           : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
@@ -235,7 +235,7 @@ export default function Ch26OperatingCadences() {
                 <textarea
                   placeholder="What worked well? What could be improved?"
                   rows={2}
-                  className="w-full text-xs bg-slate-50 dark:bg-slate-950 border border-slate-150 dark:border-slate-800 rounded px-2.5 py-1.5 text-slate-700 dark:text-slate-300 placeholder-slate-400"
+                  className="w-full text-base bg-slate-50 dark:bg-slate-950 border border-slate-150 dark:border-slate-800 rounded px-2.5 py-1.5 text-slate-700 dark:text-slate-300 placeholder-slate-400"
                   defaultValue=""
                 />
               </div>
@@ -246,10 +246,10 @@ export default function Ch26OperatingCadences() {
 
       {/* Tool 2: Cadence Health Score */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
           🩺 Cadence Health Score
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-base text-slate-500 dark:text-slate-400">
           Composite health score based on effectiveness, meeting load, and attendee coverage. Scores above 70% indicate a healthy rhythm.
         </p>
         {cadences.length > 0 && (() => {
@@ -273,12 +273,12 @@ export default function Ch26OperatingCadences() {
                 <span className="text-2xl font-extrabold tabular-nums" style={{ color: avgHealth >= 70 ? '#10b981' : avgHealth >= 50 ? '#f59e0b' : '#ef4444' }}>
                   {avgHealth}%
                 </span>
-                <span className="text-xs text-slate-500">Average Health Score</span>
+                <span className="text-base text-slate-500">Average Health Score</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {healthScores.map(hs => (
                   <div key={hs.name} className="border border-slate-100 dark:border-slate-800 rounded-lg p-2.5 space-y-1">
-                    <div className="flex justify-between text-xs">
+                    <div className="flex justify-between text-base">
                       <span className="font-semibold text-slate-700 dark:text-slate-300">{hs.name}</span>
                       <span className={`font-bold ${hs.score >= 70 ? 'text-emerald-500' : hs.score >= 50 ? 'text-amber-500' : 'text-rose-500'}`}>
                         {hs.score}%
@@ -293,7 +293,7 @@ export default function Ch26OperatingCadences() {
                         }}
                       />
                     </div>
-                    <div className="flex justify-between text-[9px] text-slate-400">
+                    <div className="flex justify-between text-base text-slate-400">
                       <span>Effectiveness: {Math.round(hs.effScore)}/40</span>
                       <span>Duration: {Math.round(hs.durScore)}/30</span>
                       <span>Attendees: {Math.round(hs.attendeeScore)}/30</span>
@@ -305,7 +305,7 @@ export default function Ch26OperatingCadences() {
           );
         })()}
         {cadences.length === 0 && (
-          <p className="text-xs text-slate-400 italic">Add cadences to calculate health scores.</p>
+          <p className="text-base text-slate-400 italic">Add cadences to calculate health scores.</p>
         )}
       </div>
     </div>

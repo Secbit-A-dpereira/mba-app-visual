@@ -60,7 +60,7 @@ export default function Ch21LaunchReadiness() {
             RevOps Launch Readiness Index
           </h2>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Assess GTM launch alignment across departments. Success is built on two-way accountability and removing bottleneck friction points before the "Fiscal Year Flip".
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function Ch21LaunchReadiness() {
         {/* Left Side: Index & Gauges */}
         <div className="md:col-span-1 space-y-6">
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-6 flex flex-col items-center justify-center text-center">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Readiness Score
             </h3>
 
@@ -101,7 +101,7 @@ export default function Ch21LaunchReadiness() {
                 <span className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 tabular-nums">
                   {stats.percent}%
                 </span>
-                <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                <span className="text-base text-slate-400 font-semibold uppercase tracking-wider">
                   Ready
                 </span>
               </div>
@@ -112,20 +112,20 @@ export default function Ch21LaunchReadiness() {
                 <span className="text-2xl font-bold text-slate-800 dark:text-slate-100 tabular-nums">
                   {stats.score}
                 </span>
-                <span className="text-[10px] text-slate-400 block">Total Points</span>
+                <span className="text-base text-slate-400 block">Total Points</span>
               </div>
               <div>
                 <span className={`text-2xl font-bold tabular-nums ${stats.risks > 0 ? 'text-red-500' : 'text-emerald-500'}`}>
                   {stats.risks}
                 </span>
-                <span className="text-[10px] text-slate-400 block">Risk Flags</span>
+                <span className="text-base text-slate-400 block">Risk Flags</span>
               </div>
             </div>
           </div>
 
           {/* Quick Department Legend */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Departmental Health
             </h4>
             <div className="space-y-2">
@@ -139,7 +139,7 @@ export default function Ch21LaunchReadiness() {
                 else if (ratio < 80) colorClass = 'text-amber-500';
 
                 return (
-                  <div key={dept} className="flex justify-between items-center text-xs">
+                  <div key={dept} className="flex justify-between items-center text-base">
                     <span className="text-slate-600 dark:text-slate-400 font-medium">{dept}</span>
                     <span className={`font-semibold tabular-nums ${colorClass}`}>{ratio}%</span>
                   </div>
@@ -152,27 +152,27 @@ export default function Ch21LaunchReadiness() {
         {/* Right Side: List & Scorers */}
         <div className="md:col-span-2 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
           <div className="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-3">
-            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">
               Launch Readiness Items
             </h3>
-            <span className="text-xs text-slate-400">Score 1-5 (1 = Not Started, 5 = Launch Ready)</span>
+            <span className="text-base text-slate-400">Score 1-5 (1 = Not Started, 5 = Launch Ready)</span>
           </div>
 
           <div className="divide-y divide-slate-100 dark:divide-slate-800 max-h-[60vh] overflow-y-auto pr-1">
             {items.map((item) => {
               const hasRisk = item.score > 0 && item.score < 3;
               return (
-                <div key={item.id} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                <div key={item.id} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-base">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-slate-800 dark:text-slate-200">{item.name}</span>
                       {hasRisk && (
-                        <span className="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/30 text-red-700 dark:text-red-400 text-[9px] font-bold uppercase tracking-wider">
+                        <span className="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/30 text-red-700 dark:text-red-400 text-base font-bold uppercase tracking-wider">
                           ⚠️ Risk Flag
                         </span>
                       )}
                     </div>
-                    <span className="text-[10px] text-slate-400 font-medium uppercase tracking-wider bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+                    <span className="text-base text-slate-400 font-medium uppercase tracking-wider bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
                       {item.category}
                     </span>
                   </div>
@@ -191,7 +191,7 @@ export default function Ch21LaunchReadiness() {
                         <button
                           key={scoreValue}
                           onClick={() => handleScoreChange(item.id, scoreValue)}
-                          className={`w-7 h-7 rounded-md font-bold transition-all text-xs focus:outline-none flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:scale-105 active:scale-95 ${
+                          className={`w-7 h-7 rounded-md font-bold transition-all text-base focus:outline-none flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:scale-105 active:scale-95 ${
                             isActive
                               ? activeStyle
                               : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-55'
@@ -211,13 +211,13 @@ export default function Ch21LaunchReadiness() {
 
       {/* ── NEW INTERACTIVE TOOL 1: Risk Heatmap (Dependency-Based) ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
           🔥 Risk Probability Heatmap
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Assign a risk level (Low / Medium / High) to each readiness item. The color‑coded matrix helps identify high‑priority friction points before launch.</p>
+        <p className="text-base text-slate-500 dark:text-slate-400">Assign a risk level (Low / Medium / High) to each readiness item. The color‑coded matrix helps identify high‑priority friction points before launch.</p>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-xs border-collapse">
+          <table className="w-full text-base border-collapse">
             <thead>
               <tr className="border-b border-slate-200 dark:border-slate-700">
                 <th className="text-left py-2 pr-4 font-semibold text-slate-500">Item</th>
@@ -246,7 +246,7 @@ export default function Ch21LaunchReadiness() {
                         <td key={level} className="text-center py-2 px-1">
                           <button
                             onClick={() => handleRiskChange(item.id, level)}
-                            className={`w-8 h-8 rounded-md border-2 transition-all text-xs ${selectedStyle}`}
+                            className={`w-8 h-8 rounded-md border-2 transition-all text-base ${selectedStyle}`}
                           >
                             {level === 'low' ? '🟢' : level === 'medium' ? '🟡' : '🔴'}
                           </button>
@@ -261,7 +261,7 @@ export default function Ch21LaunchReadiness() {
         </div>
 
         {/* Summary legend */}
-        <div className="flex gap-4 pt-2 text-xs text-slate-500 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex gap-4 pt-2 text-base text-slate-500 border-t border-slate-100 dark:border-slate-800">
           <span>🟢 Low: {riskSummary.low}</span>
           <span>🟡 Medium: {riskSummary.med}</span>
           <span>🔴 High: {riskSummary.high}</span>
@@ -270,10 +270,10 @@ export default function Ch21LaunchReadiness() {
 
       {/* ── NEW INTERACTIVE TOOL 2: Launch Timeline Gantt (Simplified) ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+        <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
           📅 Launch Timeline – Week‑by‑Week Progress
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Each completion milestone maps to a launch week. Hover or click to see the item’s readiness score.</p>
+        <p className="text-base text-slate-500 dark:text-slate-400">Each completion milestone maps to a launch week. Hover or click to see the item’s readiness score.</p>
 
         <div className="space-y-2">
           {items.map((item) => {
@@ -290,7 +290,7 @@ export default function Ch21LaunchReadiness() {
 
             return (
               <div key={item.id} className="flex items-center gap-3">
-                <span className="w-36 text-[10px] font-medium text-slate-700 dark:text-slate-300 truncate" title={item.name}>
+                <span className="w-36 text-base font-medium text-slate-700 dark:text-slate-300 truncate" title={item.name}>
                   {item.name}
                 </span>
                 {/* Gantt bar */}
@@ -300,7 +300,7 @@ export default function Ch21LaunchReadiness() {
                     style={{ width: barWidth }}
                   />
                 </div>
-                <span className="w-10 text-[10px] text-slate-400 tabular-nums text-right">
+                <span className="w-10 text-base text-slate-400 tabular-nums text-right">
                   W{week}
                 </span>
               </div>
@@ -308,11 +308,11 @@ export default function Ch21LaunchReadiness() {
           })}
         </div>
 
-        <div className="flex items-center gap-4 pt-2 text-[10px] text-slate-400 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex items-center gap-4 pt-2 text-base text-slate-400 border-t border-slate-100 dark:border-slate-800">
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500"></span> Early</span>
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-500"></span> Mid</span>
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500"></span> Late</span>
-          <span className="ml-auto text-[9px]">Lower score = earlier launch week</span>
+          <span className="ml-auto text-base">Lower score = earlier launch week</span>
         </div>
       </div>
     </div>

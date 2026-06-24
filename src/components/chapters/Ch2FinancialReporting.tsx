@@ -50,7 +50,7 @@ export default function Ch2FinancialReporting() {
     <div className="p-6 space-y-6 max-w-5xl mx-auto">
       <div className="space-y-1">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">Financial Reporting</h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Enter the income statement figures and click <strong>Calculate</strong> to derive key financial ratios.
         </p>
       </div>
@@ -60,14 +60,14 @@ export default function Ch2FinancialReporting() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 sm:grid-cols-4 gap-4">
           {FIELDS.map(({ key, label, placeholder }) => (
             <div key={key} className="space-y-1.5">
-              <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
+              <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
               <input
                 type="text"
                 inputMode="decimal"
                 placeholder={placeholder}
                 value={local[key] === 0 ? '' : local[key].toLocaleString('en-US')}
                 onChange={(e) => handleChange(key, e.target.value)}
-                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-base placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               />
             </div>
           ))}
@@ -87,11 +87,11 @@ export default function Ch2FinancialReporting() {
       {/* Results table */}
       {showResult && state.chapter2.ratios && (
         <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900/40 p-1">
-          <table className="w-full text-sm">
+          <table className="w-full text-base">
             <thead className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-850">
               <tr>
-                <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Metric</th>
-                <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Value</th>
+                <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Metric</th>
+                <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Value</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-850">
@@ -120,7 +120,7 @@ export default function Ch2FinancialReporting() {
             { key: 'unitsSold', label: 'Units Sold', placeholder: '150' },
           ].map(({ key, label, placeholder }) => (
             <div key={key} className="space-y-1.5">
-              <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
+              <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
               <input
                 type="text"
                 inputMode="decimal"
@@ -132,7 +132,7 @@ export default function Ch2FinancialReporting() {
                   setInvInputs((prev) => ({ ...prev, [key]: isNaN(val) ? 0 : val }));
                   setInvResult(null);
                 }}
-                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-base placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               />
             </div>
           ))}
@@ -163,12 +163,12 @@ export default function Ch2FinancialReporting() {
         </div>
         {invResult && (
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900/40 p-1 mt-4">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-850">
                 <tr>
-                  <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Method</th>
-                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">COGS</th>
-                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Ending Inventory</th>
+                  <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Method</th>
+                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">COGS</th>
+                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Ending Inventory</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-850">
@@ -201,7 +201,7 @@ export default function Ch2FinancialReporting() {
             { key: 'pricePerUnit', label: 'Price/Unit ($)', placeholder: '100' },
           ].map(({ key, label, placeholder }) => (
             <div key={key} className="space-y-1.5">
-              <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
+              <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">{label}</label>
               <input
                 type="text"
                 inputMode="decimal"
@@ -213,7 +213,7 @@ export default function Ch2FinancialReporting() {
                   setAbsInputs((prev) => ({ ...prev, [key]: isNaN(val) ? 0 : val }));
                   setAbsResult(null);
                 }}
-                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-base placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               />
             </div>
           ))}
@@ -241,11 +241,11 @@ export default function Ch2FinancialReporting() {
         </div>
         {absResult && (
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900/40 p-1 mt-4">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-850">
                 <tr>
-                  <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Metric</th>
-                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">Value</th>
+                  <th className="text-left px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Metric</th>
+                  <th className="text-right px-4 py-3 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-base">Value</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-850">

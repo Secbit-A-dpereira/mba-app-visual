@@ -17,7 +17,7 @@ export default function ExportButton() {
   return (
     <button
       onClick={handleExport}
-      className="px-3 py-1.5 text-[11px] font-medium rounded-md bg-emerald-600 hover:bg-emerald-500 text-white transition-colors flex items-center gap-1.5"
+      className="px-3 py-1.5 text-base font-medium rounded-md bg-emerald-600 hover:bg-emerald-500 text-white transition-colors flex items-center gap-1.5"
     >
       <span>📥</span> Export XLSX
     </button>

@@ -173,7 +173,7 @@ export default function Ch16SCAMPER() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           💡 SCAMPER Brainstorming
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Explore 7 creative thinking techniques to generate innovative ideas.
           Type your thoughts in each category and export them as Markdown.
         </p>
@@ -181,13 +181,13 @@ export default function Ch16SCAMPER() {
 
       {/* Top stats + export */}
       <div className="flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-4 rounded-xl shadow-sm">
-        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+        <p className="text-base font-semibold text-slate-500 dark:text-slate-400">
           {totalIdeas} idea{totalIdeas !== 1 ? 's' : ''} recorded across{' '}
           {SCAMPER_CATEGORIES.length} categories
         </p>
         <button
           onClick={copyToClipboard}
-          className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors flex items-center gap-1.5 cursor-pointer"
+          className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors flex items-center gap-1.5 cursor-pointer"
         >
           {copied ? (
             <>✅ Copied!</>
@@ -202,19 +202,19 @@ export default function Ch16SCAMPER() {
       {/* ─── NEW: Random Idea Generator ───────────────────────────── */}
       <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+          <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
             🎲 Random Idea Generator
           </h3>
           <button
             onClick={generateRandomPrompt}
-            className="px-3 py-1.5 text-[10px] font-semibold rounded-lg bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition-colors cursor-pointer"
+            className="px-3 py-1.5 text-base font-semibold rounded-lg bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition-colors cursor-pointer"
           >
             Generate Random
           </button>
         </div>
         {randomPrompt && (
           <div className="space-y-2">
-            <p className="text-xs text-slate-500 dark:text-slate-400 italic font-medium">{randomPrompt}</p>
+            <p className="text-base text-slate-500 dark:text-slate-400 italic font-medium">{randomPrompt}</p>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -222,12 +222,12 @@ export default function Ch16SCAMPER() {
                 onChange={(e) => setRandomIdeaInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && addRandomIdea()}
                 placeholder="Type your idea..."
-                className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                className="flex-1 px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
               />
               <button
                 onClick={addRandomIdea}
                 disabled={!randomIdeaInput.trim()}
-                className="px-4 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                className="px-4 py-1.5 text-base font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
               >
                 Add Idea
               </button>
@@ -259,15 +259,15 @@ export default function Ch16SCAMPER() {
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{cat.icon}</span>
                   <div className="text-left">
-                    <h4 className="text-sm font-semibold text-slate-850 dark:text-slate-200">
+                    <h4 className="text-base font-semibold text-slate-850 dark:text-slate-200">
                       {cat.label}
                     </h4>
-                    <p className="text-[10px] text-slate-450 dark:text-slate-500 mt-0.5 font-medium">
+                    <p className="text-base text-slate-450 dark:text-slate-500 mt-0.5 font-medium">
                       {items.length} idea{items.length !== 1 ? 's' : ''}
                     </p>
                   </div>
                 </div>
-                <span className="text-slate-400 dark:text-slate-500 text-xs font-bold">
+                <span className="text-slate-400 dark:text-slate-500 text-base font-bold">
                   {isExpanded ? '▲' : '▼'}
                 </span>
               </button>
@@ -275,7 +275,7 @@ export default function Ch16SCAMPER() {
               {/* Expanded content */}
               {isExpanded && (
                 <div className="px-4 pb-4 space-y-3 border-t border-slate-100 dark:border-slate-850 pt-3">
-                  <p className="text-xs text-slate-500 dark:text-slate-450 italic leading-relaxed font-medium">
+                  <p className="text-base text-slate-500 dark:text-slate-450 italic leading-relaxed font-medium">
                     {cat.prompt}
                   </p>
 
@@ -297,13 +297,13 @@ export default function Ch16SCAMPER() {
                         }
                       }}
                       rows={2}
-                      className="flex-1 px-3 py-1.5 text-xs rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-450 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none"
+                      className="flex-1 px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-450 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none"
                     />
                   </div>
                   <button
                     onClick={() => addIdea(cat.key)}
                     disabled={!(editTexts[cat.key] || '').trim()}
-                    className="w-full py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                    className="w-full py-1.5 text-base font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                   >
                     + Add Idea
                   </button>
@@ -316,7 +316,7 @@ export default function Ch16SCAMPER() {
                           key={item.id}
                           className="group flex flex-col gap-1 px-3 py-2 rounded-lg bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850"
                         >
-                          <div className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-350">
+                          <div className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-350">
                             <span className="text-emerald-500 font-bold mt-[1px] shrink-0">
                               •
                             </span>
@@ -326,7 +326,7 @@ export default function Ch16SCAMPER() {
                             <div className="flex gap-1 shrink-0">
                               <button
                                 onClick={() => toggleNote(item.id)}
-                                className={`text-[10px] px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
+                                className={`text-base px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
                                   notes[item.id]
                                     ? 'bg-blue-50 border-blue-200 text-blue-600 dark:bg-blue-955/10 dark:border-blue-900/50 dark:text-blue-400'
                                     : 'bg-slate-100 border-slate-200 text-slate-400 dark:bg-slate-850 dark:border-slate-700 dark:text-slate-500'
@@ -356,14 +356,14 @@ export default function Ch16SCAMPER() {
                                   if (e.key === 'Escape') toggleNote(item.id);
                                 }}
                                 placeholder="Add a note..."
-                                className="flex-1 px-2 py-1 text-[10px] rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                className="flex-1 px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                 autoFocus
                               />
-                              <button onClick={() => saveNote(item.id)} className="text-[10px] font-bold text-emerald-600 hover:text-emerald-700 px-1 cursor-pointer">✓</button>
-                              <button onClick={() => toggleNote(item.id)} className="text-[10px] font-bold text-slate-400 hover:text-red-500 px-1 cursor-pointer">✕</button>
+                              <button onClick={() => saveNote(item.id)} className="text-base font-bold text-emerald-600 hover:text-emerald-700 px-1 cursor-pointer">✓</button>
+                              <button onClick={() => toggleNote(item.id)} className="text-base font-bold text-slate-400 hover:text-red-500 px-1 cursor-pointer">✕</button>
                             </div>
                           ) : notes[item.id] ? (
-                            <div className="ml-5 text-[10px] text-slate-450 dark:text-slate-500 font-medium italic border-l-2 border-blue-200 dark:border-blue-900/50 pl-2">
+                            <div className="ml-5 text-base text-slate-450 dark:text-slate-500 font-medium italic border-l-2 border-blue-200 dark:border-blue-900/50 pl-2">
                               {notes[item.id]}
                             </div>
                           ) : null}
@@ -381,20 +381,20 @@ export default function Ch16SCAMPER() {
       {/* Markdown preview */}
       {totalIdeas > 0 && (
         <details className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden shadow-sm">
-          <summary className="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 cursor-pointer hover:bg-slate-50/50 dark:hover:bg-slate-900/40 transition-colors">
+          <summary className="px-4 py-3 text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 cursor-pointer hover:bg-slate-50/50 dark:hover:bg-slate-900/40 transition-colors">
             📄 Preview Markdown Export
           </summary>
-          <pre className="px-4 py-3 text-[10px] text-slate-500 dark:text-slate-450 bg-slate-950 overflow-x-auto border-t border-slate-200 dark:border-slate-850 whitespace-pre-wrap font-mono leading-relaxed">
+          <pre className="px-4 py-3 text-base text-slate-500 dark:text-slate-450 bg-slate-950 overflow-x-auto border-t border-slate-200 dark:border-slate-850 whitespace-pre-wrap font-mono leading-relaxed">
             {generateMarkdown()}
           </pre>
         </details>
       )}
 
       {/* Hint */}
-      <div className="text-xs text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
+      <div className="text-base text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
         <p>
           <strong>Tip:</strong> Click a category card to expand it and start
-          brainstorming. Press <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-250 dark:border-slate-700 text-slate-655 dark:text-slate-300 font-mono text-[9px]">Enter</kbd> to quickly add an idea, <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-250 dark:border-slate-700 text-slate-655 dark:text-slate-300 font-mono text-[9px]">Shift+Enter</kbd> for a new line. Use the <strong>Export as Markdown</strong> button to copy all ideas in a formatted report.
+          brainstorming. Press <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-250 dark:border-slate-700 text-slate-655 dark:text-slate-300 font-mono text-base">Enter</kbd> to quickly add an idea, <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-250 dark:border-slate-700 text-slate-655 dark:text-slate-300 font-mono text-base">Shift+Enter</kbd> for a new line. Use the <strong>Export as Markdown</strong> button to copy all ideas in a formatted report.
         </p>
       </div>
     </div>

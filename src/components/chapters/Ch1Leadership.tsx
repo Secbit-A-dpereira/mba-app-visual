@@ -98,7 +98,7 @@ function RadarChart({ profile }: { profile: LeadershipProfile }) {
             y={y}
             textAnchor="middle"
             dominantBaseline="central"
-            className="fill-slate-550 dark:fill-slate-400 text-[8px] font-semibold uppercase tracking-wider"
+            className="fill-slate-550 dark:fill-slate-400 text-base font-semibold uppercase tracking-wider"
           >
             {l.label}
           </text>
@@ -173,7 +173,7 @@ export default function Ch1Leadership() {
     <div className="p-4 md:p-6 space-y-4 md:space-y-6 max-w-full md:max-w-4xl mx-auto">
       <div className="space-y-1">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">Leadership Profile</h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Adjust each leadership trait to map your profile. The radar chart updates in real time.
         </p>
       </div>
@@ -183,7 +183,7 @@ export default function Ch1Leadership() {
         <div className="bg-white dark:bg-slate-900/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-sm space-y-5">
           {LABELS.map(({ key, label }, i) => (
             <div key={key} className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4">
-              <span className="w-28 text-xs font-semibold text-slate-550 dark:text-slate-400 uppercase tracking-wider truncate">{label}</span>
+              <span className="w-28 text-base font-semibold text-slate-550 dark:text-slate-400 uppercase tracking-wider truncate">{label}</span>
               <input
                 type="range"
                 min={1}
@@ -193,7 +193,7 @@ export default function Ch1Leadership() {
                 onChange={(e) => handleChange(key, Number(e.target.value))}
                 className="flex-grow h-2 md:h-1.5 rounded-full appearance-none cursor-pointer bg-slate-200 dark:bg-slate-700 accent-emerald-500"
               />
-              <span className="w-10 text-right text-xs font-semibold text-slate-700 dark:text-slate-350 tabular-nums">{profile[key]}/10</span>
+              <span className="w-10 text-right text-base font-semibold text-slate-700 dark:text-slate-350 tabular-nums">{profile[key]}/10</span>
             </div>
           ))}
         </div>
@@ -207,10 +207,10 @@ export default function Ch1Leadership() {
       {/* Leadership Style Assessment */}
       <div className="bg-white dark:bg-slate-900/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-sm space-y-5">
         <h3 className="text-lg font-bold text-slate-900 dark:text-white">Leadership Style Assessment</h3>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">Rate yourself on these “Be Human First” dimensions.</p>
+        <p className="text-slate-500 dark:text-slate-400 text-base">Rate yourself on these “Be Human First” dimensions.</p>
         {newLabels.map(({ key, label }) => (
           <div key={key} className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4">
-            <span className="w-28 text-xs font-semibold text-slate-550 dark:text-slate-400 uppercase tracking-wider truncate">{label}</span>
+            <span className="w-28 text-base font-semibold text-slate-550 dark:text-slate-400 uppercase tracking-wider truncate">{label}</span>
             <input
               type="range"
               min={1}
@@ -220,7 +220,7 @@ export default function Ch1Leadership() {
               onChange={(e) => setNewScores((prev) => ({ ...prev, [key]: Number(e.target.value) }))}
               className="flex-grow h-2 md:h-1.5 rounded-full appearance-none cursor-pointer bg-slate-200 dark:bg-slate-700 accent-emerald-500"
             />
-            <span className="w-10 text-right text-xs font-semibold text-slate-700 dark:text-slate-350 tabular-nums">{newScores[key]}/10</span>
+            <span className="w-10 text-right text-base font-semibold text-slate-700 dark:text-slate-350 tabular-nums">{newScores[key]}/10</span>
           </div>
         ))}
       </div>
@@ -228,7 +228,7 @@ export default function Ch1Leadership() {
       {/* Team Health Check */}
       <div className="bg-white dark:bg-slate-900/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-sm space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-white">Team Health Check</h3>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">Select the indicators that describe your current team environment.</p>
+        <p className="text-slate-500 dark:text-slate-400 text-base">Select the indicators that describe your current team environment.</p>
         {healthCheckLabels.map(({ key, label }) => (
           <label key={key} className="flex items-center gap-3 cursor-pointer">
             <input
@@ -237,7 +237,7 @@ export default function Ch1Leadership() {
               onChange={(e) => setHealthChecks((prev) => ({ ...prev, [key]: e.target.checked }))}
               className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-emerald-500 focus:ring-emerald-500"
             />
-            <span className="text-sm text-slate-700 dark:text-slate-300">{label}</span>
+            <span className="text-base text-slate-700 dark:text-slate-300">{label}</span>
           </label>
         ))}
       </div>
@@ -245,23 +245,23 @@ export default function Ch1Leadership() {
       {/* Leadership Action Plan */}
       <div className="bg-white dark:bg-slate-900/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-sm space-y-4">
         <h3 className="text-lg font-bold text-slate-900 dark:text-white">Leadership Action Plan</h3>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">Based on your scores, here are your top strengths and growth areas.</p>
+        <p className="text-slate-500 dark:text-slate-400 text-base">Based on your scores, here are your top strengths and growth areas.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <h4 className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Top Strengths</h4>
+            <h4 className="text-base font-semibold text-emerald-600 dark:text-emerald-400 mb-2">Top Strengths</h4>
             <ul className="space-y-1">
               {topStrengths.map((item) => (
-                <li key={item.key} className="text-sm text-slate-700 dark:text-slate-300">
+                <li key={item.key} className="text-base text-slate-700 dark:text-slate-300">
                   <span className="font-medium">{item.label}</span> ({item.score}/10)
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-amber-600 dark:text-amber-400 mb-2">Growth Areas</h4>
+            <h4 className="text-base font-semibold text-amber-600 dark:text-amber-400 mb-2">Growth Areas</h4>
             <ul className="space-y-1">
               {topGrowth.map((item) => (
-                <li key={item.key} className="text-sm text-slate-700 dark:text-slate-300">
+                <li key={item.key} className="text-base text-slate-700 dark:text-slate-300">
                   <span className="font-medium">{item.label}</span> ({item.score}/10)
                 </li>
               ))}
@@ -269,10 +269,10 @@ export default function Ch1Leadership() {
           </div>
         </div>
         <div className="mt-4">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Concrete Actions</h4>
+          <h4 className="text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Concrete Actions</h4>
           <ul className="space-y-2">
             {topGrowth.map((item) => (
-              <li key={item.key} className="text-sm text-slate-600 dark:text-slate-400">
+              <li key={item.key} className="text-base text-slate-600 dark:text-slate-400">
                 <span className="font-medium">{item.label}:</span> {actionSuggestions[item.key] || 'Identify a specific action to improve this area.'}
               </li>
             ))}

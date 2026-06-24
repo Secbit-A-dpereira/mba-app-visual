@@ -93,7 +93,7 @@ function SevenSSpider({ alignment }: { alignment: SevenSAlignment }) {
               y={labelPt.y}
               textAnchor="middle"
               dominantBaseline="central"
-              className={`text-[9px] font-bold uppercase tracking-wider ${isWeak ? 'fill-red-500' : 'fill-slate-500 dark:fill-slate-400'}`}
+              className={`text-base font-bold uppercase tracking-wider ${isWeak ? 'fill-red-500' : 'fill-slate-500 dark:fill-slate-400'}`}
             >
               {SEVEN_S_LABELS[i].label}
             </text>
@@ -119,11 +119,11 @@ function SevenSSlider({ label, description, value, onChange, isWeak }: {
     }`}>
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-2">
-          <span className={`text-xs font-semibold ${isWeak ? 'text-red-700 dark:text-red-400' : 'text-slate-800 dark:text-slate-200'}`}>
+          <span className={`text-base font-semibold ${isWeak ? 'text-red-700 dark:text-red-400' : 'text-slate-800 dark:text-slate-200'}`}>
             {label}
           </span>
           {isWeak && (
-            <span className="text-[9px] font-bold bg-red-50 text-red-600 dark:bg-red-955/40 dark:text-red-450 border border-red-100 dark:border-red-900/50 px-1.5 py-0.5 rounded">
+            <span className="text-base font-bold bg-red-50 text-red-600 dark:bg-red-955/40 dark:text-red-450 border border-red-100 dark:border-red-900/50 px-1.5 py-0.5 rounded">
               WEAK
             </span>
           )}
@@ -132,7 +132,7 @@ function SevenSSlider({ label, description, value, onChange, isWeak }: {
           {value}
         </span>
       </div>
-      <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-normal mb-2">{description}</p>
+      <p className="text-base text-slate-400 dark:text-slate-500 leading-normal mb-2">{description}</p>
       <input
         type="range"
         min={1}
@@ -142,7 +142,7 @@ function SevenSSlider({ label, description, value, onChange, isWeak }: {
         onChange={(e) => onChange(Number(e.target.value))}
         className="w-full h-1.5 bg-slate-200 dark:bg-slate-750 rounded-lg appearance-none cursor-pointer accent-emerald-500"
       />
-      <div className="flex justify-between text-[9px] font-bold text-slate-400 dark:text-slate-550 mt-1 uppercase tracking-wider">
+      <div className="flex justify-between text-base font-bold text-slate-400 dark:text-slate-550 mt-1 uppercase tracking-wider">
         <span>1 Low</span>
         <span>10 High</span>
       </div>
@@ -176,14 +176,14 @@ function PriorityActionPlan({ alignment, weakNodes }: { alignment: SevenSAlignme
 
   return (
     <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-3">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+      <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
         🎯 Priority Action Plan (Weak Nodes)
       </h3>
       <div className="space-y-2">
         {actions.map((a) => (
           <div
             key={a.id}
-            className={`flex items-start gap-3 p-3 rounded-lg border text-xs transition-all ${
+            className={`flex items-start gap-3 p-3 rounded-lg border text-base transition-all ${
               checked[a.id]
                 ? 'bg-emerald-50/30 dark:bg-emerald-955/10 border-emerald-200 dark:border-emerald-900/40'
                 : 'bg-slate-50 dark:bg-slate-950/30 border-slate-150 dark:border-slate-850'
@@ -220,10 +220,10 @@ function GoalSetting({ alignment }: { alignment: SevenSAlignment }) {
 
   return (
     <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-3">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+      <h3 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
         🎯 Set Improvement Goals
       </h3>
-      <p className="text-[10px] text-slate-450 dark:text-slate-500 font-medium">
+      <p className="text-base text-slate-450 dark:text-slate-500 font-medium">
         For any element, define a target score (1–10). Gap is shown.
       </p>
       <div className="space-y-2">
@@ -232,7 +232,7 @@ function GoalSetting({ alignment }: { alignment: SevenSAlignment }) {
           const goal = goals[key];
           const gap = goal !== undefined ? goal - currentScore : null;
           return (
-            <div key={key} className="flex items-center gap-3 text-xs">
+            <div key={key} className="flex items-center gap-3 text-base">
               <span className="w-20 font-semibold text-slate-700 dark:text-slate-300">{label}</span>
               <span className="tabular-nums text-slate-500 dark:text-slate-400">{currentScore} →</span>
               <input
@@ -242,7 +242,7 @@ function GoalSetting({ alignment }: { alignment: SevenSAlignment }) {
                 value={goal ?? ''}
                 onChange={(e) => setGoal(key, Number(e.target.value))}
                 placeholder="goal"
-                className="w-14 px-2 py-1 rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-center text-xs font-semibold text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-14 px-2 py-1 rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-center text-base font-semibold text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
               {gap !== null && (
                 <span className={`tabular-nums font-bold ${gap > 0 ? 'text-emerald-600' : gap < 0 ? 'text-red-500' : 'text-slate-400'}`}>
@@ -283,7 +283,7 @@ export default function Ch14SevenS() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           🧭 McKinsey 7S Alignment
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Rate each element 1–10. Scores below 4 represent <span className="text-red-500 dark:text-red-400 font-semibold">weak nodes</span>. The spiderweb diagram updates in real time.
         </p>
       </div>
@@ -293,7 +293,7 @@ export default function Ch14SevenS() {
         <div className="lg:col-span-7 space-y-5">
           {/* Hard elements */}
           <div className="space-y-3">
-            <h3 className="text-xs font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
+            <h3 className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
               🔧 Hard Elements
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -312,7 +312,7 @@ export default function Ch14SevenS() {
 
           {/* Soft elements */}
           <div className="space-y-3">
-            <h3 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+            <h3 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
               🌱 Soft Elements
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -339,7 +339,7 @@ export default function Ch14SevenS() {
           {/* Alignment Score */}
           <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 p-5 rounded-xl shadow-sm space-y-4">
             <div>
-              <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-450 dark:text-slate-500 mb-1">
+              <div className="flex justify-between text-base font-bold uppercase tracking-wider text-slate-450 dark:text-slate-500 mb-1">
                 <span>Overall Alignment</span>
                 <span className="text-slate-800 dark:text-slate-250 tabular-nums">{result.averageAlignment.toFixed(1)}/10</span>
               </div>
@@ -358,24 +358,24 @@ export default function Ch14SevenS() {
             <div className="grid grid-cols-1 grid-cols-1 md:grid-cols-2 gap-3 text-center">
               <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
                 <div className="text-lg font-bold text-emerald-600 dark:text-emerald-450 tabular-nums">{hardAvg}</div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-0.5">Hard Elements</div>
+                <div className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-0.5">Hard Elements</div>
               </div>
               <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3">
                 <div className="text-lg font-bold text-emerald-600 dark:text-emerald-450 tabular-nums">{softAvg}</div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-0.5">Soft Elements</div>
+                <div className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-0.5">Soft Elements</div>
               </div>
             </div>
 
             {/* Weak Nodes */}
             <div className="pt-2 border-t border-slate-100 dark:border-slate-850">
-              <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 mb-2.5">
+              <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 mb-2.5">
                 ⚠️ Weak Nodes Detected
               </h4>
               {weakNodes.length === 0 ? (
-                <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">No weak nodes — all elements are at or above 4.</p>
+                <p className="text-base font-semibold text-emerald-600 dark:text-emerald-400">No weak nodes — all elements are at or above 4.</p>
               ) : (
                 <div className="space-y-2">
-                  <p className="text-xs text-slate-450 dark:text-slate-500 font-medium">
+                  <p className="text-base text-slate-450 dark:text-slate-500 font-medium">
                     {weakNodes.length} element{weakNodes.length !== 1 ? 's' : ''} below threshold:
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -384,8 +384,8 @@ export default function Ch14SevenS() {
                       return (
                         <div key={key} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50/20 dark:bg-red-955/10 border border-red-200 dark:border-red-900/50">
                           <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                          <span className="text-xs font-semibold text-red-750 dark:text-red-400">{label}</span>
-                          <span className="text-xs font-bold text-red-550 dark:text-red-400 ml-1">{alignment[key]}/10</span>
+                          <span className="text-base font-semibold text-red-750 dark:text-red-400">{label}</span>
+                          <span className="text-base font-bold text-red-550 dark:text-red-400 ml-1">{alignment[key]}/10</span>
                         </div>
                       );
                     })}

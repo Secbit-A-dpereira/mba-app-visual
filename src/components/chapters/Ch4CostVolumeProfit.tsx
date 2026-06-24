@@ -92,7 +92,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
         <p className="mb-4 font-mono">Fórmula: BEP (unidades) = Custos Fixos / (Preço - Custo Variável)</p>
         <div className="grid grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium">Custos Fixos (€)</label>
+            <label className="block text-base font-medium">Custos Fixos (€)</label>
             <input
               type="range"
               min="0"
@@ -110,12 +110,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1000"
             value={fixedCosts}
             onChange={(e) => setFixedCosts(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span className="ml-2">{fixedCosts}</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Preço Unitário (€)</label>
+            <label className="block text-base font-medium">Preço Unitário (€)</label>
             <input
               type="range"
               min="1"
@@ -133,12 +133,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={price}
             onChange={(e) => setPrice(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span className="ml-2">{price}</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Custo Variável Unitário (€)</label>
+            <label className="block text-base font-medium">Custo Variável Unitário (€)</label>
             <input
               type="range"
               min="0"
@@ -155,7 +155,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={variableCost}
             onChange={(e) => setVariableCost(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span className="ml-2">{variableCost}</span>
           </div>
@@ -195,7 +195,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           Fórmula: Margem de Segurança (%) = (Vendas Reais - Vendas BEP) / Vendas Reais × 100
         </p>
         <div>
-          <label className="block text-sm font-medium">Vendas Reais (€)</label>
+          <label className="block text-base font-medium">Vendas Reais (€)</label>
           <input
             type="range"
             min="0"
@@ -213,7 +213,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1000"
             value={actualSalesRevenue}
             onChange={(e) => setActualSalesRevenue(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <span className="ml-2">{actualSalesRevenue}</span>
         </div>
@@ -234,7 +234,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
         </p>
         <p className="mb-4 font-mono">Fórmula: Grau de Alavancagem = MC Total / Lucro Operacional</p>
         <div>
-          <label className="block text-sm font-medium">Quantidade Vendida (unidades)</label>
+          <label className="block text-base font-medium">Quantidade Vendida (unidades)</label>
           <input
             type="range"
             min={breakEvenUnits}
@@ -251,7 +251,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="10"
             value={salesUnits}
             onChange={(e) => setSalesUnits(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <span className="ml-2">{salesUnits}</span>
         </div>
@@ -286,7 +286,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           <div>
             <h3 className="font-medium">Produto A</h3>
             <div>
-              <label className="block text-sm">Preço (€)</label>
+              <label className="block text-base">Preço (€)</label>
               <input
                 type="range"
                 min="1"
@@ -302,12 +302,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             max="500"
             value={priceA}
             onChange={(e) => setPriceA(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
               <span>{priceA}</span>
             </div>
             <div>
-              <label className="block text-sm">Custo Variável (€)</label>
+              <label className="block text-base">Custo Variável (€)</label>
               <input
                 type="range"
                 min="0"
@@ -322,7 +322,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             min="0"
             value={varCostA}
             onChange={(e) => setVarCostA(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
               <span>{varCostA}</span>
             </div>
@@ -331,7 +331,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           <div>
             <h3 className="font-medium">Produto B</h3>
             <div>
-              <label className="block text-sm">Preço (€)</label>
+              <label className="block text-base">Preço (€)</label>
               <input
                 type="range"
                 min="1"
@@ -347,12 +347,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             max="500"
             value={priceB}
             onChange={(e) => setPriceB(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
               <span>{priceB}</span>
             </div>
             <div>
-              <label className="block text-sm">Custo Variável (€)</label>
+              <label className="block text-base">Custo Variável (€)</label>
               <input
                 type="range"
                 min="0"
@@ -367,7 +367,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             min="0"
             value={varCostB}
             onChange={(e) => setVarCostB(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
               <span>{varCostB}</span>
             </div>
@@ -375,7 +375,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           </div>
         </div>
         <div className="mt-2">
-          <label className="block text-sm font-medium">Mix do Produto A (0‑1):</label>
+          <label className="block text-base font-medium">Mix do Produto A (0‑1):</label>
           <input
             type="range"
             min="0"
@@ -393,7 +393,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="0.01"
             value={mixA}
             onChange={(e) => setMixA(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <span>{mixA.toFixed(2)}</span>
         </div>
@@ -424,7 +424,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           Unidades Alvo = (Custos Fixos + Lucro Alvo) / Margem de Contribuição Unitária
         </p>
         <div>
-          <label className="block text-sm font-medium">Lucro Alvo (€)</label>
+          <label className="block text-base font-medium">Lucro Alvo (€)</label>
           <input
             type="number"
             min="0"
@@ -457,7 +457,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
           BEP (após impostos, unidades) = Custos Fixos / (MCU × (1 – Taxa de Imposto))
         </p>
         <div>
-          <label className="block text-sm font-medium">Taxa de Imposto (%)</label>
+          <label className="block text-base font-medium">Taxa de Imposto (%)</label>
           <input
             type="number"
             min="0"
@@ -493,7 +493,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
         </p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium">Lucro Líquido Alvo (€)</label>
+            <label className="block text-base font-medium">Lucro Líquido Alvo (€)</label>
             <input
               type="number"
               min="0"
@@ -503,7 +503,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Taxa de Imposto (%)</label>
+            <label className="block text-base font-medium">Taxa de Imposto (%)</label>
             <input
               type="number"
               min="0"
@@ -536,7 +536,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
         </p>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium">Δ Preço (%)</label>
+            <label className="block text-base font-medium">Δ Preço (%)</label>
             <input
               type="range"
               min="-50"
@@ -554,12 +554,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={sensitivityPriceChange}
             onChange={(e) => setSensitivityPriceChange(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{sensitivityPriceChange}%</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Δ Custo Variável (%)</label>
+            <label className="block text-base font-medium">Δ Custo Variável (%)</label>
             <input
               type="range"
               min="-50"
@@ -577,12 +577,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={sensitivityVCChange}
             onChange={(e) => setSensitivityVCChange(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{sensitivityVCChange}%</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Δ Custos Fixos (%)</label>
+            <label className="block text-base font-medium">Δ Custos Fixos (%)</label>
             <input
               type="range"
               min="-50"
@@ -600,12 +600,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={sensitivityFCChange}
             onChange={(e) => setSensitivityFCChange(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{sensitivityFCChange}%</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Δ Volume Vendas (%)</label>
+            <label className="block text-base font-medium">Δ Volume Vendas (%)</label>
             <input
               type="range"
               min="-50"
@@ -623,7 +623,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={sensitivityVolumeChange}
             onChange={(e) => setSensitivityVolumeChange(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{sensitivityVolumeChange}%</span>
           </div>
@@ -654,7 +654,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
         </p>
         <div className="grid grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium">Variação Preço (%)</label>
+            <label className="block text-base font-medium">Variação Preço (%)</label>
             <input
               type="range"
               min="-50"
@@ -672,12 +672,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={priceChangePct}
             onChange={(e) => setPriceChangePct(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{priceChangePct}%</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Variação CV (%)</label>
+            <label className="block text-base font-medium">Variação CV (%)</label>
             <input
               type="range"
               min="-50"
@@ -695,12 +695,12 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={varCostChangePct}
             onChange={(e) => setVarCostChangePct(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{varCostChangePct}%</span>
           </div>
           <div>
-            <label className="block text-sm font-medium">Variação CF (%)</label>
+            <label className="block text-base font-medium">Variação CF (%)</label>
             <input
               type="range"
               min="-50"
@@ -718,7 +718,7 @@ const Ch4CostVolumeProfit: React.FC = () => {
             step="1"
             value={fixedCostChangePct}
             onChange={(e) => setFixedCostChangePct(Number(e.target.value))}
-            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="hidden md:block w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 text-base bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
             <span>{fixedCostChangePct}%</span>
           </div>

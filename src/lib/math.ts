@@ -88,7 +88,7 @@ export function calcStartupMetrics(s: { seedInvestment: number; monthlyBurn: num
   const ltv = churnDecimal > 0 ? avgRevenuePerUser / churnDecimal : Infinity;
   const cac = 50; // simplified
   const ltvCacRatio = ltv / cac;
-  let breakEvenMonth = runway;
+  const breakEvenMonth = runway;
   return { runway, ltv: Math.round(ltv), cac, ltvCacRatio: Math.round(ltvCacRatio * 10) / 10, breakEvenMonth };
 }
 

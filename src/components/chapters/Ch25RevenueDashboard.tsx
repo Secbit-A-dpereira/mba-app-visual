@@ -103,7 +103,7 @@ export default function Ch25RevenueDashboard() {
             Revenue & Metrics Hub
           </h2>
         </div>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Input monthly performance, visualize cash metrics via active trend paths, manage early pipeline warning signals, and inspect your SaaS metrics compared to global benchmarks.
         </p>
       </div>
@@ -111,27 +111,27 @@ export default function Ch25RevenueDashboard() {
       {/* Trailing Trajectory Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Current Monthly Revenue</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Current Monthly Revenue</span>
           <span className="text-2xl font-extrabold text-slate-850 dark:text-slate-100 tabular-nums">
             {currency(currentFin.revenue)}
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Based on latest month reporting</span>
+          <span className="text-base text-slate-400 block mt-1">Based on latest month reporting</span>
         </div>
 
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Annual Recurring Revenue (ARR)</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Annual Recurring Revenue (ARR)</span>
           <span className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-450 tabular-nums">
             {currency(currentFin.arr)}
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Run rate ARR trajectory</span>
+          <span className="text-base text-slate-400 block mt-1">Run rate ARR trajectory</span>
         </div>
 
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 shadow-sm">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Customer Churn Rate</span>
+          <span className="text-base font-bold text-slate-400 uppercase tracking-wider block mb-1">Customer Churn Rate</span>
           <span className={`text-2xl font-extrabold tabular-nums ${currentFin.churn > 1.5 ? 'text-red-500' : 'text-emerald-500'}`}>
             {currentFin.churn.toFixed(1)}%
           </span>
-          <span className="text-[10px] text-slate-400 block mt-1">Monthly customer attrition</span>
+          <span className="text-base text-slate-400 block mt-1">Monthly customer attrition</span>
         </div>
       </div>
 
@@ -139,7 +139,7 @@ export default function Ch25RevenueDashboard() {
         {/* Trend entries & SVG Line Chart */}
         <div className="lg:col-span-8 bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
-            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">
               Month-over-Month Financial Trends
             </h3>
             <div className="flex bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg self-start sm:self-center">
@@ -147,7 +147,7 @@ export default function Ch25RevenueDashboard() {
                 <button
                   key={m}
                   onClick={() => setActiveMetric(m)}
-                  className={`px-3 py-1 text-[10px] font-bold rounded transition-all capitalize ${
+                  className={`px-3 py-1 text-base font-bold rounded transition-all capitalize ${
                     activeMetric === m
                       ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm'
                       : 'text-slate-500'
@@ -163,7 +163,7 @@ export default function Ch25RevenueDashboard() {
             {/* Monthly form inputs */}
             <div className="space-y-2 max-h-[30vh] overflow-y-auto pr-1">
               {trends.map((t, idx) => (
-                <div key={t.month} className="grid grid-cols-12 gap-2 items-center text-xs">
+                <div key={t.month} className="grid grid-cols-12 gap-2 items-center text-base">
                   <span className="col-span-3 font-bold text-slate-650 dark:text-slate-450">{t.month}</span>
                   <div className="col-span-9 grid grid-cols-3 gap-1">
                     <input
@@ -171,14 +171,14 @@ export default function Ch25RevenueDashboard() {
                       value={t.revenue || ''}
                       onChange={(e) => handleTrendChange(idx, 'revenue', parseInt(e.target.value))}
                       placeholder="Rev"
-                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px]"
+                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base"
                     />
                     <input
                       type="number"
                       value={t.arr || ''}
                       onChange={(e) => handleTrendChange(idx, 'arr', parseInt(e.target.value))}
                       placeholder="ARR"
-                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px]"
+                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base"
                     />
                     <input
                       type="number"
@@ -186,7 +186,7 @@ export default function Ch25RevenueDashboard() {
                       value={t.churn || ''}
                       onChange={(e) => handleTrendChange(idx, 'churn', parseFloat(e.target.value))}
                       placeholder="Churn"
-                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px]"
+                      className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base"
                     />
                   </div>
                 </div>
@@ -205,10 +205,10 @@ export default function Ch25RevenueDashboard() {
                 </defs>
 
                 {/* Y Axis Grid/labels */}
-                <text x="5" y="15" className="fill-slate-400 text-[8px] font-bold">
+                <text x="5" y="15" className="fill-slate-400 text-base font-bold">
                   {activeMetric === 'churn' ? `${chartData.maxVal}%` : `€{Math.round(chartData.maxVal / 1000)}k`}
                 </text>
-                <text x="5" y={chartData.height - chartData.paddingBottom} className="fill-slate-400 text-[8px] font-bold">
+                <text x="5" y={chartData.height - chartData.paddingBottom} className="fill-slate-400 text-base font-bold">
                   {activeMetric === 'churn' ? `${chartData.minVal}%` : `€{Math.round(chartData.minVal / 1000)}k`}
                 </text>
                 <line x1={chartData.paddingLeft} y1={chartData.height - chartData.paddingBottom} x2={chartData.width} y2={chartData.height - chartData.paddingBottom} className="stroke-slate-200 dark:stroke-slate-800" strokeWidth="1" />
@@ -227,7 +227,7 @@ export default function Ch25RevenueDashboard() {
                 {chartData.points.map((p, i) => (
                   <g key={i}>
                     <circle cx={p.x} cy={p.y} r="4" className="fill-white stroke-emerald-500 stroke-2" />
-                    <text x={p.x} y={chartData.height - 8} textAnchor="middle" className="fill-slate-400 text-[8px] font-bold">
+                    <text x={p.x} y={chartData.height - 8} textAnchor="middle" className="fill-slate-400 text-base font-bold">
                       {p.month}
                     </text>
                   </g>
@@ -241,15 +241,15 @@ export default function Ch25RevenueDashboard() {
         <div className="lg:col-span-4 space-y-6">
           {/* Benchmarks Comparisons */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+            <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
               SaaS Benchmark Audit
             </h3>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-base">
               {/* NRR */}
               <div className="flex items-center justify-between gap-2">
                 <div className="space-y-0.5">
                   <span className="font-semibold text-slate-700 dark:text-slate-400">Net Retention (NRR)</span>
-                  <span className="text-[10px] text-slate-400 block">Benchmark: &gt;110%</span>
+                  <span className="text-base text-slate-400 block">Benchmark: &gt;110%</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -266,7 +266,7 @@ export default function Ch25RevenueDashboard() {
               <div className="flex items-center justify-between gap-2">
                 <div className="space-y-0.5">
                   <span className="font-semibold text-slate-700 dark:text-slate-400">LTV : CAC Ratio</span>
-                  <span className="text-[10px] text-slate-400 block">Benchmark: &gt;3.0x</span>
+                  <span className="text-base text-slate-400 block">Benchmark: &gt;3.0x</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -284,7 +284,7 @@ export default function Ch25RevenueDashboard() {
               <div className="flex items-center justify-between gap-2">
                 <div className="space-y-0.5">
                   <span className="font-semibold text-slate-700 dark:text-slate-400">Annual Churn</span>
-                  <span className="text-[10px] text-slate-400 block">Benchmark: &lt;5.0%</span>
+                  <span className="text-base text-slate-400 block">Benchmark: &lt;5.0%</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -302,7 +302,7 @@ export default function Ch25RevenueDashboard() {
               <div className="flex items-center justify-between gap-2">
                 <div className="space-y-0.5">
                   <span className="font-semibold text-slate-700 dark:text-slate-400">Payback Period (Mo)</span>
-                  <span className="text-[10px] text-slate-400 block">Benchmark: &lt;12 Mo</span>
+                  <span className="text-base text-slate-400 block">Benchmark: &lt;12 Mo</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -319,10 +319,10 @@ export default function Ch25RevenueDashboard() {
 
           {/* Leading Indicators */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+            <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
               Leading Metrics
             </h3>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-base">
               {indicators.map((ind, idx) => {
                 const ratio = ind.value / (ind.target || 1);
                 const isHealthy = ratio >= 1;
@@ -340,14 +340,14 @@ export default function Ch25RevenueDashboard() {
                         type="number"
                         value={ind.value || ''}
                         onChange={(e) => handleIndicatorChange(idx, 'value', parseFloat(e.target.value))}
-                        className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] text-right"
+                        className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base text-right"
                         placeholder="Value"
                       />
                       <input
                         type="number"
                         value={ind.target || ''}
                         onChange={(e) => handleIndicatorChange(idx, 'target', parseFloat(e.target.value))}
-                        className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] text-right"
+                        className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-base text-right"
                         placeholder="Target"
                       />
                     </div>
@@ -362,10 +362,10 @@ export default function Ch25RevenueDashboard() {
       {/* NEW SCENARIO SIMULATOR SECTION */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-          <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
             Scenario Simulator (Next Month Projection)
           </h3>
-          <div className="space-y-3 text-xs">
+          <div className="space-y-3 text-base">
             <div className="grid grid-cols-2 gap-2 items-center">
               <label className="font-semibold text-slate-600 dark:text-slate-400">Projected Monthly Growth (%)</label>
               <input
@@ -392,15 +392,15 @@ export default function Ch25RevenueDashboard() {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Projected Revenue</span>
+                <span className="text-base font-bold uppercase tracking-wider text-slate-400">Projected Revenue</span>
                 <span className="block text-lg font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">{currency(projectedNext.revenue)}</span>
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Projected ARR</span>
+                <span className="text-base font-bold uppercase tracking-wider text-slate-400">Projected ARR</span>
                 <span className="block text-lg font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">{currency(projectedNext.arr)}</span>
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Projected Churn</span>
+                <span className="text-base font-bold uppercase tracking-wider text-slate-400">Projected Churn</span>
                 <span className="block text-lg font-extrabold text-red-500 tabular-nums">{projectedNext.churn.toFixed(1)}%</span>
               </div>
             </div>
@@ -408,10 +408,10 @@ export default function Ch25RevenueDashboard() {
         </div>
 
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-          <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2">
             Cash Burn & Runway Estimate
           </h3>
-          <div className="space-y-3 text-xs">
+          <div className="space-y-3 text-base">
             <div className="grid grid-cols-2 gap-2 items-center">
               <label className="font-semibold text-slate-600 dark:text-slate-400">Monthly Cash Burn (€)</label>
               <input

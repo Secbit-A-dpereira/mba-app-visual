@@ -38,13 +38,13 @@ function BiasToggle({ label, description, checked, onChange }: {
         />
       </button>
       <div className="flex-1 min-w-0">
-        <label className="text-xs font-semibold text-slate-750 dark:text-slate-300 cursor-pointer select-none">
+        <label className="text-base font-semibold text-slate-750 dark:text-slate-300 cursor-pointer select-none">
           {label}
         </label>
-        <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5 leading-relaxed">{description}</p>
+        <p className="text-base text-slate-400 dark:text-slate-500 mt-0.5 leading-relaxed">{description}</p>
       </div>
       {checked && (
-        <span className="flex-shrink-0 text-red-500 text-xs font-bold mt-0.5">⚠️</span>
+        <span className="flex-shrink-0 text-red-500 text-base font-bold mt-0.5">⚠️</span>
       )}
     </div>
   );
@@ -128,7 +128,7 @@ export default function Ch13DecisionMaking() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           🧠 Bias Mitigation Audit
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Identify and check cognitive biases present in your decision process to mitigate risk.
         </p>
       </div>
@@ -136,7 +136,7 @@ export default function Ch13DecisionMaking() {
       {/* Checklist */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
+          <span className="text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
             Cognitive Biases — {activeCount} of {BIAS_ITEMS.length} detected
           </span>
           <button
@@ -144,7 +144,7 @@ export default function Ch13DecisionMaking() {
               const reset = Object.fromEntries(BIAS_ITEMS.map(b => [b.key, false])) as unknown as typeof bias;
               updateChapter('chapter13', { bias: reset, risk: null });
             }}
-            className="text-[10px] font-bold text-slate-400 hover:text-red-500 transition-colors uppercase tracking-wider cursor-pointer"
+            className="text-base font-bold text-slate-400 hover:text-red-500 transition-colors uppercase tracking-wider cursor-pointer"
           >
             Clear All
           </button>
@@ -166,7 +166,7 @@ export default function Ch13DecisionMaking() {
       <button
         onClick={handleCalculate}
         disabled={activeCount === 0}
-        className="w-full py-2.5 px-6 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+        className="w-full py-2.5 px-6 rounded-lg font-bold text-base uppercase tracking-wider transition-all duration-200 bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
       >
         {activeCount === 0
           ? 'No biases toggled — all clear'
@@ -180,8 +180,8 @@ export default function Ch13DecisionMaking() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4">
             <div className={`w-3 h-3 rounded-full ${ratingColor.badge} flex-shrink-0 animate-pulse`} />
             <div className="flex-1">
-              <div className="text-sm font-bold">{risk} — Bias Risk Rating</div>
-              <p className="text-xs opacity-90 mt-1 leading-relaxed">
+              <div className="text-base font-bold">{risk} — Bias Risk Rating</div>
+              <p className="text-base opacity-90 mt-1 leading-relaxed">
                 {risk === 'Safe' && 'No cognitive biases detected. Decision process appears sound.'}
                 {risk === 'Moderate' && `${activeCount} bias${activeCount !== 1 ? 'es' : ''} identified. Consider mitigation strategies before finalizing.`}
                 {risk === 'Critical' && `${activeCount} bias${activeCount !== 1 ? 'es' : ''} flagged — high risk of flawed decision-making. Run a structured debiasing session.`}
@@ -193,10 +193,10 @@ export default function Ch13DecisionMaking() {
           {/* Active biases summary */}
           {risk !== 'Safe' && (
             <div className="mt-4 pt-4 border-t border-slate-200/20 dark:border-slate-800/40">
-              <p className="text-[10px] font-bold uppercase tracking-wider mb-2 opacity-70">Active Biases</p>
+              <p className="text-base font-bold uppercase tracking-wider mb-2 opacity-70">Active Biases</p>
               <div className="flex flex-wrap gap-2">
                 {BIAS_ITEMS.filter(b => bias[b.key]).map((b) => (
-                  <span key={b.key} className="inline-flex items-center px-2 py-0.5 rounded bg-white/10 dark:bg-black/10 text-[10px] font-semibold border border-white/10">
+                  <span key={b.key} className="inline-flex items-center px-2 py-0.5 rounded bg-white/10 dark:bg-black/10 text-base font-semibold border border-white/10">
                     {b.label}
                   </span>
                 ))}
@@ -208,29 +208,29 @@ export default function Ch13DecisionMaking() {
 
       {/* ── NEW: Group Decision Quality Score ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+        <h3 className="text-base font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
           👥 Group Decision Quality Score
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Assess how likely your group is to make a good decision.</p>
+        <p className="text-base text-slate-500 dark:text-slate-400">Assess how likely your group is to make a good decision.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">Team Size</label>
-            <input type="number" min={1} max={20} value={teamSize} onChange={(e) => setTeamSize(Math.max(1, Math.min(20, parseInt(e.target.value) || 5)))} className="w-full px-2 py-1 text-xs border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700" />
+            <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase">Team Size</label>
+            <input type="number" min={1} max={20} value={teamSize} onChange={(e) => setTeamSize(Math.max(1, Math.min(20, parseInt(e.target.value) || 5)))} className="w-full px-2 py-1 text-base border rounded bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700" />
           </div>
           <div className="flex items-center gap-2 pt-5">
             <input type="checkbox" id="diverse" checked={diverse} onChange={() => setDiverse(!diverse)} className="cursor-pointer" />
-            <label htmlFor="diverse" className="text-xs font-semibold text-slate-600 dark:text-slate-400 cursor-pointer">Diverse Perspectives</label>
+            <label htmlFor="diverse" className="text-base font-semibold text-slate-600 dark:text-slate-400 cursor-pointer">Diverse Perspectives</label>
           </div>
         </div>
         <div>
-          <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">Psychological Safety {psychSafety}%</label>
+          <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase">Psychological Safety {psychSafety}%</label>
           <input type="range" min={0} max={100} value={psychSafety} onChange={(e) => setPsychSafety(parseInt(e.target.value))} className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-700 accent-emerald-500 cursor-pointer" />
         </div>
-        <button onClick={calcGroupScore} className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm transition-colors cursor-pointer">
+        <button onClick={calcGroupScore} className="px-4 py-1.5 text-base font-semibold rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm transition-colors cursor-pointer">
           Calculate Group Score
         </button>
         {groupScore !== null && (
-          <div className={`text-sm font-bold ${groupScore >= 70 ? 'text-emerald-600 dark:text-emerald-400' : groupScore >= 40 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'}`}>
+          <div className={`text-base font-bold ${groupScore >= 70 ? 'text-emerald-600 dark:text-emerald-400' : groupScore >= 40 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'}`}>
             📊 Group Decision Quality: {groupScore}/100
           </div>
         )}
@@ -238,23 +238,23 @@ export default function Ch13DecisionMaking() {
 
       {/* ── NEW: Debiasing Strategies Picker ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+        <h3 className="text-base font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
           🛠️ Debiasing Strategies
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Select strategies to counteract the biases you identified.</p>
+        <p className="text-base text-slate-500 dark:text-slate-400">Select strategies to counteract the biases you identified.</p>
         <div className="space-y-2">
           {strategies.map((s) => (
             <div key={s.id} className="flex items-start gap-3 py-2 px-3 rounded-lg bg-slate-50/50 dark:bg-slate-900/20 border border-slate-100 dark:border-slate-800/50">
               <input type="checkbox" id={s.id} checked={selectedStrategies.includes(s.id)} onChange={() => toggleStrategy(s.id)} className="mt-0.5 cursor-pointer" />
               <div>
-                <label htmlFor={s.id} className="text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">{s.label}</label>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">{s.description}</p>
+                <label htmlFor={s.id} className="text-base font-bold text-slate-700 dark:text-slate-300 cursor-pointer">{s.label}</label>
+                <p className="text-base text-slate-500 dark:text-slate-400 mt-0.5">{s.description}</p>
               </div>
             </div>
           ))}
         </div>
         {selectedStrategies.length > 0 && (
-          <div className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <div className="text-base font-semibold text-emerald-600 dark:text-emerald-400">
             ✅ {selectedStrategies.length} debiasing strateg{selectedStrategies.length === 1 ? 'y' : 'ies'} selected.
           </div>
         )}

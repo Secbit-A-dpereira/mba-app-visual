@@ -11,8 +11,8 @@ function Card({ icon, title, color, children, className = '' }: { icon: string; 
     <div className={`bg-white dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden ${className}`}>
       <div className={`px-3 py-2 border-b border-slate-200 dark:border-slate-700 bg-gradient-to-r ${color}`}>
         <div className="flex items-center gap-2">
-          <span className="text-sm">{icon}</span>
-          <h4 className="text-xs font-semibold text-white">{title}</h4>
+          <span className="text-base">{icon}</span>
+          <h4 className="text-base font-semibold text-white">{title}</h4>
         </div>
       </div>
       <div className="p-3 space-y-1.5">{children}</div>
@@ -24,10 +24,10 @@ function StatRow({ label, value, sub, good }: { label: string; value: string; su
   const color = good !== undefined ? (good ? 'text-emerald-400' : 'text-red-400') : 'text-slate-200';
   return (
     <div className="flex items-center justify-between">
-      <span className="text-[10px] text-slate-400">{label}</span>
+      <span className="text-base text-slate-400">{label}</span>
       <div className="text-right">
-        <span className={`text-xs font-semibold tabular-nums ${color}`}>{value}</span>
-        {sub && <span className="text-[9px] text-slate-500 ml-1">{sub}</span>}
+        <span className={`text-base font-semibold tabular-nums ${color}`}>{value}</span>
+        {sub && <span className="text-base text-slate-500 ml-1">{sub}</span>}
       </div>
     </div>
   );
@@ -36,12 +36,12 @@ function StatRow({ label, value, sub, good }: { label: string; value: string; su
 function PhaseHeader({ number, title, subtitle }: { number: string; title: string; subtitle: string }) {
   return (
     <div className="col-span-full flex items-start gap-3 mt-4 mb-1">
-      <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+      <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white text-base font-bold shrink-0">
         {number}
       </div>
       <div>
-        <h4 className="text-sm font-bold text-slate-100">{title}</h4>
-        <p className="text-[10px] text-slate-500">{subtitle}</p>
+        <h4 className="text-base font-bold text-slate-100">{title}</h4>
+        <p className="text-base text-slate-500">{subtitle}</p>
       </div>
       <div className="flex-1 border-t border-slate-700/60 mt-4" />
     </div>
@@ -98,7 +98,7 @@ export default function Ch20Dashboard() {
       <div className="flex items-center justify-between mb-2">
         <div>
           <h3 className="text-base font-semibold text-slate-100">🖥️ Dashboard — Visão Geral</h3>
-          <p className="text-xs text-slate-500 mt-0.5">Todos os indicadores organizados por fase de lançamento</p>
+          <p className="text-base text-slate-500 mt-0.5">Todos os indicadores organizados por fase de lançamento</p>
         </div>
         <ExportButton />
       </div>
@@ -123,10 +123,10 @@ export default function Ch20Dashboard() {
               <StatRow label="Mercado" value={`${threeM.marketScore.toFixed(1)}/10`} />
               <StatRow label="Management" value={`${threeM.managementScore.toFixed(1)}/10`} />
               <StatRow label="Money" value={`${threeM.moneyScore.toFixed(1)}/10`} />
-              <p className="text-[9px] text-slate-500 mt-1">{threeM.recommendation}</p>
+              <p className="text-base text-slate-500 mt-1">{threeM.recommendation}</p>
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 
@@ -160,7 +160,7 @@ export default function Ch20Dashboard() {
               <StatRow label="ROE" value={pct(s.chapter2.ratios.roe)} good={s.chapter2.ratios.roe >= 0.15} />
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 
@@ -172,7 +172,7 @@ export default function Ch20Dashboard() {
               <StatRow label="Margem Contrib." value={currency(cvp.contributionMargin)} />
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 
@@ -184,7 +184,7 @@ export default function Ch20Dashboard() {
               <StatRow label="Payback" value={`${fin.paybackPeriod} anos`} good={fin.paybackPeriod <= 3} />
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 
@@ -196,7 +196,7 @@ export default function Ch20Dashboard() {
               <StatRow label="LTV" value={currency(startupM.ltv)} />
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 
@@ -293,7 +293,7 @@ export default function Ch20Dashboard() {
               <StatRow label="Saúde" value={bscSummary.total > 0 ? `${Math.round((bscSummary.onTrack / bscSummary.total) * 100)}%` : '—'} good={bscSummary.total > 0 && (bscSummary.onTrack / bscSummary.total) >= 0.7} />
             </>
           ) : (
-            <p className="text-[10px] text-slate-500 italic">Sem dados</p>
+            <p className="text-base text-slate-500 italic">Sem dados</p>
           )}
         </Card>
 

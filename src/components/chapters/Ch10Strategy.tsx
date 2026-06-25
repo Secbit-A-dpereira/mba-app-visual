@@ -111,7 +111,7 @@ function generateId(): string {
 
       {/* Labels */}
       {axes.map((a, i) => (
-        <text key={i} x={a.labelX} y={a.labelY} textAnchor={a.textAnchor} dominantBaseline="middle" className="fill-slate-500 dark:fill-slate-400 text-[9px] font-bold uppercase tracking-wider">
+        <text key={i} x={a.labelX} y={a.labelY} textAnchor={a.textAnchor} dominantBaseline="middle" className="fill-slate-500 dark:fill-slate-400 text-base font-bold uppercase tracking-wider">
           {a.label}
         </text>
       ))}
@@ -195,7 +195,7 @@ export default function Ch10Strategy() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           🏢 Chapter 10: Strategy
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Analyze your competitive environment with Porter&apos;s Five Forces and assess your resources with the VRIO Framework.
         </p>
       </div>
@@ -203,10 +203,10 @@ export default function Ch10Strategy() {
       {/* ── Porter's Five Forces ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
             ⚔️ Porter&apos;s Five Forces
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Rate each force from 1 (weak) to 10 (strong). Higher values = stronger force = less attractive industry.
           </p>
         </div>
@@ -220,8 +220,8 @@ export default function Ch10Strategy() {
               return (
                 <div key={key} className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4">
                   <div className="w-40 shrink-0">
-                    <span className="block text-xs font-semibold text-slate-700 dark:text-slate-350 truncate">{meta.label}</span>
-                    <span className="block text-[10px] text-slate-400 dark:text-slate-500 truncate">{meta.description}</span>
+                    <span className="block text-base font-semibold text-slate-700 dark:text-slate-350 truncate">{meta.label}</span>
+                    <span className="block text-base text-slate-400 dark:text-slate-500 truncate">{meta.description}</span>
                   </div>
                   <input
                     type="range"
@@ -231,7 +231,7 @@ export default function Ch10Strategy() {
                     onChange={(e) => handleForceChange(key, parseInt(e.target.value))}
                     className="flex-grow h-2 md:h-1.5 rounded-full appearance-none cursor-pointer bg-slate-200 dark:bg-slate-750 accent-emerald-500"
                   />
-                  <span className="w-10 text-right text-xs font-semibold text-slate-700 dark:text-slate-300 tabular-nums">
+                  <span className="w-10 text-right text-base font-semibold text-slate-700 dark:text-slate-300 tabular-nums">
                     {val}/10
                   </span>
                 </div>
@@ -246,8 +246,8 @@ export default function Ch10Strategy() {
         </div>
 
         {/* Interpretation */}
-        <div className="text-[11px] font-medium text-slate-505 dark:text-slate-400 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 space-y-1">
-          <p className="font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider text-[10px]">Interpretation:</p>
+        <div className="text-base font-medium text-slate-505 dark:text-slate-400 bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-3 space-y-1">
+          <p className="font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider text-base">Interpretation:</p>
           <ul className="list-disc list-inside space-y-0.5">
             <li><strong>1–3 (Low):</strong> Weak force — favorable industry condition</li>
             <li><strong>4–7 (Moderate):</strong> Moderate force — requires attention</li>
@@ -259,10 +259,10 @@ export default function Ch10Strategy() {
       {/* ── VRIO Matrix ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-450 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-450 dark:text-slate-555 uppercase tracking-wider">
             💎 VRIO Framework
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Add your strategic assets and check which VRIO criteria they meet. The implication column shows your competitive position.
           </p>
         </div>
@@ -270,13 +270,13 @@ export default function Ch10Strategy() {
         {/* Add Asset */}
         {showAddAsset ? (
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-150 dark:border-slate-850 rounded-xl p-5 space-y-4 shadow-sm animate-in fade-in duration-200">
-            <h5 className="text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-wider">Add New Asset</h5>
+            <h5 className="text-base font-bold text-slate-550 dark:text-slate-400 uppercase tracking-wider">Add New Asset</h5>
             <input
               type="text"
               placeholder="Asset name (e.g., Patent, Brand, Team Culture)"
               value={assetName}
               onChange={(e) => setAssetName(e.target.value)}
-              className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
               onKeyDown={(e) => e.key === 'Enter' && addAsset()}
             />
             {/* Checkboxes */}
@@ -306,10 +306,10 @@ export default function Ch10Strategy() {
                       className="mt-0.5 rounded border-slate-350 dark:border-slate-700 text-emerald-600 focus:ring-emerald-555 w-4 h-4 cursor-pointer accent-emerald-500"
                     />
                     <div>
-                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      <span className="text-base font-semibold text-slate-700 dark:text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                         {label}
                       </span>
-                      <p className="text-[9px] text-slate-400 dark:text-slate-500 mt-0.5 leading-normal">{desc}</p>
+                      <p className="text-base text-slate-400 dark:text-slate-500 mt-0.5 leading-normal">{desc}</p>
                     </div>
                   </label>
                 );
@@ -319,13 +319,13 @@ export default function Ch10Strategy() {
               <button
                 onClick={addAsset}
                 disabled={!assetName.trim()}
-                className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
               >
                 Add Asset
               </button>
               <button
                 onClick={() => { setShowAddAsset(false); setAssetName(''); setAssetValuable(false); setAssetRare(false); setAssetInimitable(false); setAssetOrganized(false); }}
-                className="px-4 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-805 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
+                className="px-4 py-1.5 text-base font-semibold rounded-lg border border-slate-200 dark:border-slate-805 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -334,7 +334,7 @@ export default function Ch10Strategy() {
         ) : (
           <button
             onClick={() => setShowAddAsset(true)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors cursor-pointer"
+            className="px-4 py-2 text-base font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-colors cursor-pointer"
           >
             + Add Asset
           </button>
@@ -343,16 +343,16 @@ export default function Ch10Strategy() {
         {/* VRIO Table */}
         {assets.length > 0 ? (
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-1">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-850">
                 <tr>
-                  <th className="text-left py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Asset</th>
-                  <th className="text-center py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">V</th>
-                  <th className="text-center py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">R</th>
-                  <th className="text-center py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">I</th>
-                  <th className="text-center py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">O</th>
-                  <th className="text-left py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Implication</th>
-                  <th className="text-center py-3 px-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-12"></th>
+                  <th className="text-left py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Asset</th>
+                  <th className="text-center py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">V</th>
+                  <th className="text-center py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">R</th>
+                  <th className="text-center py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">I</th>
+                  <th className="text-center py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-16">O</th>
+                  <th className="text-left py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Implication</th>
+                  <th className="text-center py-3 px-4 text-base font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-12"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-850">
@@ -363,27 +363,27 @@ export default function Ch10Strategy() {
                     <tr key={asset.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors even:bg-slate-50/20 dark:even:bg-slate-905/10">
                       <td className="py-2.5 px-4 font-semibold text-slate-800 dark:text-slate-200">{asset.name}</td>
                       <td className="py-2.5 px-4 text-center">
-                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold ${asset.valuable ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-base font-bold ${asset.valuable ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
                           {asset.valuable ? '✓' : '✗'}
                         </span>
                       </td>
                       <td className="py-2.5 px-4 text-center">
-                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold ${asset.rare ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-base font-bold ${asset.rare ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
                           {asset.rare ? '✓' : '✗'}
                         </span>
                       </td>
                       <td className="py-2.5 px-4 text-center">
-                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold ${asset.inimitable ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-base font-bold ${asset.inimitable ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
                           {asset.inimitable ? '✓' : '✗'}
                         </span>
                       </td>
                       <td className="py-2.5 px-4 text-center">
-                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold ${asset.organized ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-base font-bold ${asset.organized ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50' : 'bg-red-50 text-red-500 dark:bg-red-950/40 dark:text-red-400 border border-red-100 dark:border-red-900/50'}`}>
                           {asset.organized ? '✓' : '✗'}
                         </span>
                       </td>
                       <td className="py-2.5 px-4">
-                        <span className={`inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full border ${badgeClass}`}>
+                        <span className={`inline-block px-2.5 py-0.5 text-base font-semibold rounded-full border ${badgeClass}`}>
                           {implication}
                         </span>
                       </td>
@@ -403,7 +403,7 @@ export default function Ch10Strategy() {
             </table>
           </div>
         ) : (
-          <div className="text-center py-8 text-xs font-medium text-slate-400 dark:text-slate-505 bg-slate-50/50 dark:bg-slate-900/20 rounded-xl border border-dashed border-slate-200 dark:border-slate-800">
+          <div className="text-center py-8 text-base font-medium text-slate-400 dark:text-slate-505 bg-slate-50/50 dark:bg-slate-900/20 rounded-xl border border-dashed border-slate-200 dark:border-slate-800">
             No assets added yet. Click &ldquo;+ Add Asset&rdquo; to start your VRIO analysis.
           </div>
         )}
@@ -412,10 +412,10 @@ export default function Ch10Strategy() {
       {/* ── NEW: BCG Matrix ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
             📊 BCG Matrix
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Plot your products by Market Share (x-axis) and Market Growth (y-axis). Drag sliders from 1 (low) to 10 (high).
           </p>
         </div>
@@ -427,17 +427,17 @@ export default function Ch10Strategy() {
               placeholder="Product name"
               value={bcgName}
               onChange={(e) => setBcgName(e.target.value)}
-              className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
             />
             <div>
-              <label className="text-xs font-medium text-slate-600 dark:text-slate-400">Market Share (1-10): {bcgShare}</label>
+              <label className="text-base font-medium text-slate-600 dark:text-slate-400">Market Share (1-10): {bcgShare}</label>
               <input type="range" min={1} max={10} value={bcgShare} onChange={(e) => setBcgShare(Number(e.target.value))} className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
             </div>
             <div>
-              <label className="text-xs font-medium text-slate-600 dark:text-slate-400">Market Growth (1-10): {bcgGrowth}</label>
+              <label className="text-base font-medium text-slate-600 dark:text-slate-400">Market Growth (1-10): {bcgGrowth}</label>
               <input type="range" min={1} max={10} value={bcgGrowth} onChange={(e) => setBcgGrowth(Number(e.target.value))} className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500" />
             </div>
-            <button onClick={addBcg} disabled={!bcgName.trim()} className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
+            <button onClick={addBcg} disabled={!bcgName.trim()} className="px-4 py-1.5 text-base font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
               + Add Product
             </button>
           </div>
@@ -446,16 +446,16 @@ export default function Ch10Strategy() {
           <div className="relative w-full h-64 bg-slate-50 dark:bg-slate-950/40 rounded-lg border border-slate-200 dark:border-slate-800">
             <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
               <div className="border-r border-b border-slate-300 dark:border-slate-700 p-2">
-                <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400">⭐ Star</span>
+                <span className="text-base font-bold text-emerald-600 dark:text-emerald-400">⭐ Star</span>
               </div>
               <div className="border-b border-slate-300 dark:border-slate-700 p-2">
-                <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400">❓ Question Mark</span>
+                <span className="text-base font-bold text-amber-600 dark:text-amber-400">❓ Question Mark</span>
               </div>
               <div className="border-r border-slate-300 dark:border-slate-700 p-2">
-                <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400">💰 Cash Cow</span>
+                <span className="text-base font-bold text-blue-600 dark:text-blue-400">💰 Cash Cow</span>
               </div>
               <div className="p-2">
-                <span className="text-[10px] font-bold text-red-600 dark:text-red-400">🐶 Dog</span>
+                <span className="text-base font-bold text-red-600 dark:text-red-400">🐶 Dog</span>
               </div>
             </div>
             {/* Product points */}
@@ -465,7 +465,7 @@ export default function Ch10Strategy() {
               return (
                 <div key={i} className="absolute flex items-center gap-1 transform -translate-x-1/2 -translate-y-1/2 z-10" style={{ left: `${left}%`, top: `${top}%` }}>
                   <div className="w-3 h-3 rounded-full bg-emerald-500 shadow" />
-                  <span className="text-[8px] font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap">{p.name}</span>
+                  <span className="text-base font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap">{p.name}</span>
                 </div>
               );
             })}
@@ -477,10 +477,10 @@ export default function Ch10Strategy() {
             {bcgProducts.map((p, i) => {
               const quadrant = getBcgQuadrant(p.marketShare, p.marketGrowth);
               return (
-                <div key={i} className="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400">
+                <div key={i} className="flex items-center gap-2 text-base font-medium text-slate-600 dark:text-slate-400">
                   <span className="font-semibold text-slate-800 dark:text-slate-200">{p.name}</span>
                   <span className="text-slate-400">→</span>
-                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                  <span className={`px-2 py-0.5 rounded-full text-base font-bold ${
                     quadrant === 'Star' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-300' :
                     quadrant === 'Cash Cow' ? 'bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-300' :
                     quadrant === 'Question Mark' ? 'bg-amber-50 text-amber-600 dark:bg-amber-950/40 dark:text-amber-300' :
@@ -496,10 +496,10 @@ export default function Ch10Strategy() {
       {/* ── NEW: Porter's Generic Strategies ── */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-5 shadow-sm">
         <div>
-          <h4 className="text-xs font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
+          <h4 className="text-base font-bold text-slate-400 dark:text-slate-555 uppercase tracking-wider">
             ⚡ Porter&apos;s Generic Strategies
           </h4>
-          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
+          <p className="text-base text-slate-400 dark:text-slate-500 font-medium leading-normal mt-1">
             Select a generic strategy to see its definition and typical actions.
           </p>
         </div>
@@ -509,7 +509,7 @@ export default function Ch10Strategy() {
             <button
               key={s.id}
               onClick={() => setSelectedStrategy(s.id)}
-              className={`px-4 py-1.5 text-xs font-semibold rounded-full border transition-colors cursor-pointer ${
+              className={`px-4 py-1.5 text-base font-semibold rounded-full border transition-colors cursor-pointer ${
                 selectedStrategy === s.id
                   ? 'bg-emerald-600 text-white border-emerald-600'
                   : 'bg-slate-50 dark:bg-slate-950/40 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-600'
@@ -522,10 +522,10 @@ export default function Ch10Strategy() {
 
         {selectedStrategy && (
           <div className="bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-850 rounded-lg p-4 space-y-2">
-            <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
+            <p className="text-base font-bold text-slate-800 dark:text-slate-200">
               {genericStrategies.find(s => s.id === selectedStrategy)?.label}
             </p>
-            <p className="text-xs font-medium text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-base font-medium text-slate-600 dark:text-slate-400 leading-relaxed">
               {genericStrategies.find(s => s.id === selectedStrategy)?.desc}
             </p>
           </div>

@@ -116,7 +116,7 @@ export default function Ch17StartupMarketing() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           📈 Startup Marketing Calculator
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Estimate your customer acquisition, revenue potential, and cost efficiency based on key marketing inputs.
         </p>
       </div>
@@ -126,10 +126,10 @@ export default function Ch17StartupMarketing() {
         {/* Target Audience Reach */}
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-3 shadow-sm">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-slate-450 dark:text-slate-500 uppercase tracking-wider">
+            <label className="text-base font-bold text-slate-450 dark:text-slate-500 uppercase tracking-wider">
               👥 Target Audience Reach
             </label>
-            <span className="text-[9px] font-bold text-slate-400 dark:text-slate-650 uppercase tracking-wider">Addressable</span>
+            <span className="text-base font-bold text-slate-400 dark:text-slate-650 uppercase tracking-wider">Addressable</span>
           </div>
           <input
             type="number"
@@ -138,7 +138,7 @@ export default function Ch17StartupMarketing() {
             onChange={(e) =>
               update('targetAudienceReach', parseFloat(e.target.value) || 0)
             }
-            className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
+            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
           />
           <input
             type="range"
@@ -156,10 +156,10 @@ export default function Ch17StartupMarketing() {
         {/* Conversion Rate */}
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-3 shadow-sm">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-slate-450 dark:text-slate-500 uppercase tracking-wider">
+            <label className="text-base font-bold text-slate-450 dark:text-slate-500 uppercase tracking-wider">
               📊 Conversion Rate (%)
             </label>
-            <span className="text-[9px] font-bold text-slate-400 dark:text-slate-655 uppercase tracking-wider">% of Reach</span>
+            <span className="text-base font-bold text-slate-400 dark:text-slate-655 uppercase tracking-wider">% of Reach</span>
           </div>
           <input
             type="number"
@@ -170,7 +170,7 @@ export default function Ch17StartupMarketing() {
             onChange={(e) =>
               update('conversionRate', parseFloat(e.target.value) || 0)
             }
-            className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
+            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
           />
           <input
             type="range"
@@ -188,13 +188,13 @@ export default function Ch17StartupMarketing() {
         {/* CAC */}
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-3 shadow-sm">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-slate-455 dark:text-slate-500 uppercase tracking-wider">
+            <label className="text-base font-bold text-slate-455 dark:text-slate-500 uppercase tracking-wider">
               💰 Cost per Acquisition (CAC)
             </label>
-            <span className="text-[9px] font-bold text-slate-400 dark:text-slate-655 uppercase tracking-wider">USD</span>
+            <span className="text-base font-bold text-slate-400 dark:text-slate-655 uppercase tracking-wider">USD</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-slate-400 dark:text-slate-600 font-bold text-sm select-none">$</span>
+            <span className="text-slate-400 dark:text-slate-600 font-bold text-base select-none">$</span>
             <input
               type="number"
               min={0}
@@ -202,7 +202,7 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 update('cac', parseFloat(e.target.value) || 0)
               }
-              className="flex-1 px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
+              className="flex-1 px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
             />
           </div>
           <input
@@ -219,10 +219,10 @@ export default function Ch17StartupMarketing() {
         {/* Viral Coefficient */}
         <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-3 shadow-sm">
           <div className="flex items-center justify-between">
-            <label className="text-[10px] font-bold text-slate-455 dark:text-slate-500 uppercase tracking-wider">
+            <label className="text-base font-bold text-slate-455 dark:text-slate-500 uppercase tracking-wider">
               🔄 Viral Coefficient (k)
             </label>
-            <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-450 uppercase tracking-wider">{viralLabel}</span>
+            <span className="text-base font-bold text-emerald-600 dark:text-emerald-450 uppercase tracking-wider">{viralLabel}</span>
           </div>
           <input
             type="number"
@@ -233,7 +233,7 @@ export default function Ch17StartupMarketing() {
             onChange={(e) =>
               update('viralCoefficient', parseFloat(e.target.value) || 0)
             }
-            className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
+            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-855 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-mono"
           />
           <input
             type="range"
@@ -246,7 +246,7 @@ export default function Ch17StartupMarketing() {
             }
             className="w-full h-1.5 bg-slate-200 dark:bg-slate-750 rounded-lg appearance-none cursor-pointer accent-emerald-500"
           />
-          <div className="flex justify-between text-[9px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
+          <div className="flex justify-between text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
             <span>0 (none)</span>
             <span>1 (exponential)</span>
             <span>2 (hyper)</span>
@@ -256,19 +256,19 @@ export default function Ch17StartupMarketing() {
 
       {/* Results grid */}
       <div className="space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
           📊 Calculated Metrics
         </h4>
         <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-4 gap-4">
           {/* Initial Customers */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 text-center shadow-sm">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
               Initial Customers
             </p>
             <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-2 font-mono tabular-nums">
               {formatNum(initialCustomers)}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium mt-1">
+            <p className="text-base text-slate-450 dark:text-slate-505 font-medium mt-1">
               Reach × {conversionRate}%
             </p>
           </div>
@@ -276,17 +276,17 @@ export default function Ch17StartupMarketing() {
           {/* Total Customers (with viral) */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 text-center shadow-sm relative">
             {hasViralGrowth && (
-              <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 dark:bg-amber-955/40 dark:text-amber-450 border border-amber-100 dark:border-amber-900/50">
+              <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-base font-bold bg-amber-50 text-amber-700 dark:bg-amber-955/40 dark:text-amber-450 border border-amber-100 dark:border-amber-900/50">
                 viral
               </span>
             )}
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
               Total Customers
             </p>
             <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-2 font-mono tabular-nums">
               {formatNum(totalCustomers)}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium mt-1">
+            <p className="text-base text-slate-450 dark:text-slate-505 font-medium mt-1">
               {hasViralGrowth
                 ? `k=${viralCoefficient.toFixed(2)}`
                 : viralCoefficient >= 1
@@ -297,20 +297,20 @@ export default function Ch17StartupMarketing() {
 
           {/* Revenue Projection */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 text-center shadow-sm">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
               Revenue Projection
             </p>
             <p className="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-2 font-mono tabular-nums">
               {formatCurrency(revenueProjection)}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium mt-1">
+            <p className="text-base text-slate-450 dark:text-slate-505 font-medium mt-1">
               ~{formatCurrency(avgRevenuePerCustomer)} / cust
             </p>
           </div>
 
           {/* Cost Efficiency */}
           <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 text-center shadow-sm">
-            <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            <p className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
               Cost Efficiency
             </p>
             <p className="text-2xl font-bold mt-2 font-mono tabular-nums">
@@ -326,7 +326,7 @@ export default function Ch17StartupMarketing() {
                 {costEfficiencyRatio}x
               </span>
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-550 font-medium mt-1">
+            <p className="text-base text-slate-450 dark:text-slate-550 font-medium mt-1">
               {roi >= 0 ? '+' : ''}{roi.toFixed(0)}% ROI
             </p>
           </div>
@@ -335,44 +335,44 @@ export default function Ch17StartupMarketing() {
 
       {/* Detailed breakdown */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           📋 Detailed Breakdown
         </h4>
         <div className="grid grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Marketing Spend
             </p>
-            <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1 font-mono tabular-nums">
+            <p className="text-base font-bold text-slate-800 dark:text-slate-200 mt-1 font-mono tabular-nums">
               {formatCurrency(totalMarketingCost)}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium mt-0.5">
+            <p className="text-base text-slate-450 dark:text-slate-505 font-medium mt-0.5">
               {formatNum(initialCustomers)} customers × {formatCurrency(cac)} CAC
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Avg. Revenue / Customer
             </p>
-            <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1 font-mono tabular-nums">
+            <p className="text-base font-bold text-slate-800 dark:text-slate-200 mt-1 font-mono tabular-nums">
               {formatCurrency(avgRevenuePerCustomer)}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium mt-0.5">
+            <p className="text-base text-slate-450 dark:text-slate-505 font-medium mt-0.5">
               Assumed 3× CAC ({formatCurrency(cac)})
             </p>
           </div>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Viral Amplification
             </p>
-            <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+            <p className="text-base font-bold text-slate-800 dark:text-slate-200 mt-1">
               {hasViralGrowth
                 ? `${(1 / (1 - viralCoefficient)).toFixed(1)}× multiplier`
                 : viralCoefficient >= 1
                   ? 'Unbounded growth'
                   : 'None'}
             </p>
-            <p className="text-[9px] text-slate-450 dark:text-slate-550 font-medium mt-0.5">
+            <p className="text-base text-slate-450 dark:text-slate-550 font-medium mt-0.5">
               1/(1−k) formula (k={viralCoefficient.toFixed(2)})
             </p>
           </div>
@@ -381,13 +381,13 @@ export default function Ch17StartupMarketing() {
 
       {/* Insights */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           💡 Key Insights
         </h4>
         <ul className="space-y-3 font-medium text-slate-655 dark:text-slate-400">
           <li className="flex items-start gap-2.5">
             <span className="text-emerald-500 font-bold shrink-0 mt-[2px]">•</span>
-            <span className="text-xs leading-relaxed">
+            <span className="text-base leading-relaxed">
               <strong>Conversion impact:</strong>{' '}
               {conversionRate >= 5
                 ? 'Strong conversion — your funnel is efficient.'
@@ -398,7 +398,7 @@ export default function Ch17StartupMarketing() {
           </li>
           <li className="flex items-start gap-2.5">
             <span className="text-emerald-500 font-bold shrink-0 mt-[2px]">•</span>
-            <span className="text-xs leading-relaxed">
+            <span className="text-base leading-relaxed">
               <strong>Viral leverage:</strong>{' '}
               {viralCoefficient >= 0.5
                 ? 'Strong viral loop — focus on referral mechanics.'
@@ -409,7 +409,7 @@ export default function Ch17StartupMarketing() {
           </li>
           <li className="flex items-start gap-2.5">
             <span className="text-emerald-500 font-bold shrink-0 mt-[2px]">•</span>
-            <span className="text-xs leading-relaxed">
+            <span className="text-base leading-relaxed">
               <strong>Cost efficiency:</strong>{' '}
               {costEfficiencyRatio >= 3
                 ? 'Healthy — each dollar spent generates ' +
@@ -425,12 +425,12 @@ export default function Ch17StartupMarketing() {
 
       {/* ============= NEW TOOL 1: LTV SIMULATOR ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           💵 Lifetime Value (LTV) Simulator
         </h4>
         <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Monthly Revenue / Customer
             </label>
             <input
@@ -439,11 +439,11 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setLtvInputs({ ...ltvInputs, monthlyRevenuePerCustomer: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Monthly Churn Rate (%)
             </label>
             <input
@@ -453,11 +453,11 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setLtvInputs({ ...ltvInputs, monthlyChurnRate: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Direct Cost / Customer / Month
             </label>
             <input
@@ -466,11 +466,11 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setLtvInputs({ ...ltvInputs, directCostPerCustomer: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Discount Rate (% annual)
             </label>
             <input
@@ -479,37 +479,37 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setLtvInputs({ ...ltvInputs, discountRate: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
         </div>
         <div className="grid grid-cols-3 gap-4">
           <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-3 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Avg. Lifetime (months)</p>
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Avg. Lifetime (months)</p>
             <p className="text-lg font-bold font-mono tabular-nums text-slate-800 dark:text-slate-200">{ltvMonths}</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-3 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Simple LTV</p>
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Simple LTV</p>
             <p className="text-lg font-bold font-mono tabular-nums text-emerald-600 dark:text-emerald-400">{formatCurrency(ltvSimpleRounded)}</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-3 text-center">
-            <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Discounted LTV</p>
+            <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Discounted LTV</p>
             <p className="text-lg font-bold font-mono tabular-nums text-emerald-600 dark:text-emerald-400">{formatCurrency(ltvDiscounted)}</p>
           </div>
         </div>
-        <p className="text-[9px] text-slate-400 dark:text-slate-505 font-medium">
+        <p className="text-base text-slate-400 dark:text-slate-505 font-medium">
           Discounted LTV uses monthly discount factor from annual rate. Useful to compare customer value with CAC.
         </p>
       </div>
 
       {/* ============= NEW TOOL 2: BREAK-EVEN CUSTOMER COUNT ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           💲 Break-Even Customer Count
         </h4>
         <div className="grid grid-cols-3 gap-4">
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Fixed Costs ($)
             </label>
             <input
@@ -518,11 +518,11 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setBeInputs({ ...beInputs, fixedCosts: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Avg Revenue / Sale ($)
             </label>
             <input
@@ -531,11 +531,11 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setBeInputs({ ...beInputs, avgRevenuePerSale: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <label className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
               Avg COGS / Sale ($)
             </label>
             <input
@@ -544,24 +544,24 @@ export default function Ch17StartupMarketing() {
               onChange={(e) =>
                 setBeInputs({ ...beInputs, avgCogsPerSale: parseFloat(e.target.value) || 0 })
               }
-              className="w-full px-2 py-1 text-xs rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-2 py-1 text-base rounded bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
         </div>
         <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-4 text-center">
-          <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <p className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Customers Needed to Break Even
           </p>
           <p className="text-2xl font-bold font-mono tabular-nums mt-1 text-slate-800 dark:text-slate-200">
             {beCustomers === Infinity ? '∞' : formatNum(beCustomers)}
           </p>
-          <p className="text-[9px] text-slate-450 dark:text-slate-505 mt-1">
+          <p className="text-base text-slate-450 dark:text-slate-505 mt-1">
             Contribution margin per customer: {formatCurrency(beContributionPerCustomer)}
           </p>
         </div>
       </div>
 
-      <div className="text-xs text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
+      <div className="text-base text-slate-450 dark:text-slate-500 bg-white dark:bg-slate-900/20 rounded-xl border border-slate-200 dark:border-slate-800/80 p-4 font-medium leading-relaxed">
         <p>
           <strong>Note:</strong> Revenue projection assumes an average LTV of 3×
           CAC (rule of thumb). Adjust your CAC and conversion rate to match

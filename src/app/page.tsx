@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MBAProvider, useMBA } from '@/context/MBAContext';
 import ChapterView from '@/components/chapters/ChapterView';
 import Ch20Dashboard from '@/components/chapters/Ch20Dashboard';
@@ -104,27 +104,27 @@ function HelpPanel({ chapterId, onClose }: { chapterId: number; onClose: () => v
         transition-all duration-300
       ">
         <div className="flex items-center justify-between mb-3 md:hidden">
-          <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">📖 {help.title}</p>
-          <button onClick={onClose} aria-label="Close help panel" className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
+          <p className="text-base font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">📖 {help.title}</p>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
         </div>
-        <div className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
+        <div className="space-y-4 text-base text-slate-600 dark:text-slate-400">
           <div className="hidden md:block pb-3 border-b border-slate-100 dark:border-slate-800">
-            <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">📖 {help.title}</p>
+            <p className="text-base font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">📖 {help.title}</p>
           </div>
           <div>
-            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-xs uppercase tracking-wider mb-1.5">🎯 Purpose</p>
+            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-base uppercase tracking-wider mb-1.5">🎯 Purpose</p>
             <p className="leading-relaxed">{help.purpose}</p>
           </div>
           <div>
-            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-xs uppercase tracking-wider mb-1.5">📋 What You Need</p>
+            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-base uppercase tracking-wider mb-1.5">📋 What You Need</p>
             <p className="leading-relaxed">{help.data}</p>
           </div>
           <div>
-            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-xs uppercase tracking-wider mb-1.5">💡 How to Fill</p>
+            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-base uppercase tracking-wider mb-1.5">💡 How to Fill</p>
             <p className="leading-relaxed">{help.fill}</p>
           </div>
           <div>
-            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-xs uppercase tracking-wider mb-1.5">📊 How to Interpret</p>
+            <p className="font-semibold text-emerald-600 dark:text-emerald-400 text-base uppercase tracking-wider mb-1.5">📊 How to Interpret</p>
             <p className="leading-relaxed">{help.interpret}</p>
           </div>
         </div>
@@ -156,7 +156,7 @@ function MBAApp() {
   const chapter = !showDashboard ? ALL_CHAPTERS.find(c => c.id === activeChapter) : null;
 
   // Sidebar mobile drawer
-  const renderSidebar = () => (
+  const Sidebar = () => (
     <>
       {/* Mobile overlay */}
       {sidebarOpen && (
@@ -175,43 +175,43 @@ function MBAApp() {
       `}>
         <div className="px-4 py-3 border-b border-slate-150 dark:border-slate-850/80 shrink-0 flex items-center justify-between">
           <div>
-            <h1 className="text-sm font-bold text-emerald-600 dark:text-emerald-500 tracking-tight">The Visual MBA</h1>
-            <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider">Executive Toolkit</p>
+            <h1 className="text-base font-bold text-emerald-600 dark:text-emerald-500 tracking-tight">The Visual MBA</h1>
+            <p className="text-base text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider">Executive Toolkit</p>
           </div>
-          <button onClick={() => setSidebarOpen(false)} aria-label="Close sidebar" className="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
+          <button onClick={() => setSidebarOpen(false)} className="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 text-lg">✕</button>
         </div>
         <nav className="flex-1 overflow-y-auto overflow-x-hidden py-1.5 px-1.5 space-y-0 min-h-0">
           {/* Dashboard home button */}
           <button
             onClick={() => { goToDashboard(); if (window.innerWidth < 768) setSidebarOpen(false); }}
-            className={`w-full text-left px-2.5 py-1.5 text-xs rounded-md flex items-center gap-2 transition-colors mb-1 ${
+            className={`w-full text-left px-2.5 py-1.5 text-base rounded-md flex items-center gap-2 transition-colors mb-1 ${
               showDashboard
                 ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-405 font-semibold'
                 : 'hover:bg-slate-100/60 dark:hover:bg-slate-900/60 text-slate-500 dark:text-slate-400'
             }`}
           >
-            <span className="text-xs shrink-0">📋</span>
+            <span className="text-base shrink-0">📋</span>
             <span className="font-semibold">Dashboard</span>
           </button>
           <div className="border-t border-slate-100 dark:border-slate-800/50 mb-1" />
           {PHASES.map(phase => (
             <div key={phase.id} className="mb-1.5">
-              <div className="px-2.5 py-1 text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+              <div className="px-2.5 py-1 text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
                 <span>{phase.id === 1 ? '01' : phase.id === 2 ? '02' : phase.id === 3 ? '03' : phase.id === 4 ? '04' : '05'}</span>
                 <span>{phase.title}</span>
-                <span className="text-[8px] text-slate-500/60 font-normal lowercase">— {phase.subtitle}</span>
+                <span className="text-base text-slate-500/60 font-normal lowercase">— {phase.subtitle}</span>
               </div>
               {phase.chapters.map(ch => (
                 <button
                   key={ch.id}
                   onClick={() => handleChapterClick(ch.id)}
-                  className={`w-full text-left px-2.5 py-1 text-xs rounded-md flex items-center gap-2 transition-colors
+                  className={`w-full text-left px-2.5 py-1 text-base rounded-md flex items-center gap-2 transition-colors
                     ${activeChapter === ch.id
                       ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-405 font-semibold'
                       : 'hover:bg-slate-100/60 dark:hover:bg-slate-900/60 text-slate-500 dark:text-slate-400'
                     }`}
                 >
-                  <span className="text-xs shrink-0">{ch.icon}</span>
+                  <span className="text-base shrink-0">{ch.icon}</span>
                   <span className="truncate">Ch.{ch.id} {ch.title}</span>
                 </button>
               ))}
@@ -219,11 +219,11 @@ function MBAApp() {
           ))}
         </nav>
         <div className="p-2.5 border-t border-slate-150 dark:border-slate-850/80 bg-slate-50/40 dark:bg-slate-950/40 space-y-0.5 shrink-0">
-          <button onClick={resetToBlank} className="w-full text-left px-2 py-1 text-[11px] rounded-md hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-450 transition-colors flex items-center gap-2 font-medium">
+          <button onClick={resetToBlank} className="w-full text-left px-2 py-1 text-base rounded-md hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-450 transition-colors flex items-center gap-2 font-medium">
             <span>✨</span> New Canvas
           </button>
           {isBlank && (
-            <button onClick={resetToExample} className="w-full text-left px-2 py-1 text-[11px] rounded-md hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-450 transition-colors flex items-center gap-2 font-medium">
+            <button onClick={resetToExample} className="w-full text-left px-2 py-1 text-base rounded-md hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-450 transition-colors flex items-center gap-2 font-medium">
               <span>📋</span> Load Example
             </button>
           )}
@@ -235,17 +235,17 @@ function MBAApp() {
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
       <div className="flex h-screen bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100">
-        {renderSidebar()}
+        {Sidebar()}
 
         {/* Main */}
         <main className="flex-1 flex flex-col overflow-hidden min-w-0">
           {/* Top bar */}
           <header className="h-12 md:h-12 border-b border-slate-200 dark:border-slate-850 flex items-center justify-between px-3 md:px-4 bg-white dark:bg-slate-900/50 backdrop-blur-sm shrink-0">
             <div className="flex items-center gap-2 md:gap-3 min-w-0">
-              <button onClick={() => setSidebarOpen(!sidebarOpen)} aria-label="Toggle sidebar" className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-350 text-lg transition-colors focus:outline-none cursor-pointer shrink-0">
+              <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-350 text-lg transition-colors focus:outline-none cursor-pointer shrink-0">
                 ☰
               </button>
-              <h2 className="font-semibold text-xs md:text-sm truncate">
+              <h2 className="font-semibold text-base md:text-base truncate">
                 {showDashboard ? (
                   <><span className="text-emerald-500">📋</span> Dashboard</>
                 ) : (
@@ -257,7 +257,7 @@ function MBAApp() {
               {!showDashboard && chapter && HELP_MAP[chapter.id] && (
                 <button
                   onClick={() => setShowHelp(!showHelp)}
-                  className={`p-1.5 text-xs rounded-md border transition-colors cursor-pointer ${
+                  className={`p-1.5 text-base rounded-md border transition-colors cursor-pointer ${
                     showHelp
                       ? 'bg-emerald-50 dark:bg-emerald-950/60 border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400'
                       : 'border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400'
@@ -269,7 +269,7 @@ function MBAApp() {
               )}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-1.5 text-xs rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="p-1.5 text-base rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 aria-label="Toggle Dark Mode"
               >
                 {darkMode ? '☀️' : '🌙'}

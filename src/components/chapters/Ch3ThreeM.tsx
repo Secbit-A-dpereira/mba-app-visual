@@ -28,11 +28,11 @@ export default function Ch3ThreeM() {
       {/* Management card */}
       <div className="bg-white rounded-xl shadow-md p-6">
         <h3 className="text-xl font-semibold mb-2">📊 Gestão (Management)</h3>
-        <p className="text-sm text-gray-500 mb-4">
+        <p className="text-base text-gray-500 mb-4">
           OKRs (Objectives and Key Results) – framework para alinhar objectivos. 
           Fórmula: Eficácia = % de Key Results atingidos.
         </p>
-        <label className="block mb-1 text-sm font-medium">
+        <label className="block mb-1 text-base font-medium">
           % de Key Results atingidos: {okrScore}%
         </label>
         <input
@@ -51,11 +51,11 @@ export default function Ch3ThreeM() {
       {/* Marketing card */}
       <div className="bg-white rounded-xl shadow-md p-6">
         <h3 className="text-xl font-semibold mb-2">📢 Marketing</h3>
-        <p className="text-sm text-gray-500 mb-4">
+        <p className="text-base text-gray-500 mb-4">
           Funil de conversão – AIDA (Atenção, Interesse, Desejo, Acção). 
           Fórmula: Leads = Tráfego × Taxa de Conversão (%).
         </p>
-        <label className="block mb-1 text-sm font-medium">
+        <label className="block mb-1 text-base font-medium">
           Tráfego mensal: {traffic}
         </label>
         <input
@@ -67,7 +67,7 @@ export default function Ch3ThreeM() {
           onChange={(e) => setTraffic(Number(e.target.value))}
           className="w-full"
         />
-        <label className="block mt-3 mb-1 text-sm font-medium">
+        <label className="block mt-3 mb-1 text-base font-medium">
           Taxa de conversão: {conversionRate}%
         </label>
         <input
@@ -87,10 +87,10 @@ export default function Ch3ThreeM() {
       {/* Money card */}
       <div className="bg-white rounded-xl shadow-md p-6">
         <h3 className="text-xl font-semibold mb-2">💰 Money</h3>
-        <p className="text-sm text-gray-500 mb-4">
+        <p className="text-base text-gray-500 mb-4">
           ROI – Retorno sobre Investimento. Fórmula: ROI = (Lucro / Custo) × 100.
         </p>
-        <label className="block mb-1 text-sm font-medium">
+        <label className="block mb-1 text-base font-medium">
           Receita: ${revenue}
         </label>
         <input
@@ -102,7 +102,7 @@ export default function Ch3ThreeM() {
           onChange={(e) => setRevenue(Number(e.target.value))}
           className="w-full"
         />
-        <label className="block mt-3 mb-1 text-sm font-medium">
+        <label className="block mt-3 mb-1 text-base font-medium">
           Custo: ${cost}
         </label>
         <input

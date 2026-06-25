@@ -63,12 +63,12 @@ function CAGEGauge({ value }: { value: number }) {
   return (
     <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 space-y-4 shadow-sm">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+        <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
           Market Friction Index
         </span>
         <span className="text-2xl font-bold tabular-nums text-slate-900 dark:text-slate-100">
           {value.toFixed(1)}
-          <span className="text-xs text-slate-400 dark:text-slate-500 font-normal"> / 10</span>
+          <span className="text-base text-slate-400 dark:text-slate-500 font-normal"> / 10</span>
         </span>
       </div>
 
@@ -90,7 +90,7 @@ function CAGEGauge({ value }: { value: number }) {
       </div>
 
       {/* Scale labels */}
-      <div className="flex justify-between text-[9px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mt-1">
+      <div className="flex justify-between text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider mt-1">
         <span>Low Friction</span>
         <span>High Friction</span>
       </div>
@@ -98,11 +98,11 @@ function CAGEGauge({ value }: { value: number }) {
       {/* Status badge + recommendation */}
       <div className="flex items-center gap-3 pt-2.5 border-t border-slate-100 dark:border-slate-855">
         <span
-          className={`px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded-full ${badgeColor}`}
+          className={`px-2.5 py-0.5 text-base font-bold uppercase tracking-wider rounded-full ${badgeColor}`}
         >
           {label}
         </span>
-        <span className="text-xs font-semibold text-slate-500 dark:text-slate-405">
+        <span className="text-base font-semibold text-slate-500 dark:text-slate-405">
           {desc}
         </span>
       </div>
@@ -125,7 +125,7 @@ function DimensionCard({
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="text-base">{dim.icon}</span>
-            <h4 className="text-sm font-semibold text-slate-850 dark:text-slate-200">
+            <h4 className="text-base font-semibold text-slate-850 dark:text-slate-200">
               {dim.label}
             </h4>
           </div>
@@ -133,7 +133,7 @@ function DimensionCard({
             {dim.facets.map((f) => (
               <span
                 key={f}
-                className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 border border-slate-150 dark:border-slate-850 px-2 py-0.5 rounded bg-slate-50/50 dark:bg-slate-950/20"
+                className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 border border-slate-150 dark:border-slate-850 px-2 py-0.5 rounded bg-slate-50/50 dark:bg-slate-950/20"
               >
                 {f}
               </span>
@@ -155,7 +155,7 @@ function DimensionCard({
         className="w-full h-1.5 bg-slate-200 dark:bg-slate-755 rounded-lg appearance-none cursor-pointer accent-emerald-500"
       />
 
-      <div className="flex justify-between text-[9px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
+      <div className="flex justify-between text-base font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
         <span>Low (1)</span>
         <span>High (10)</span>
       </div>
@@ -215,7 +215,7 @@ export default function Ch19CAGE() {
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           🌐 CAGE Distance Framework
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-base">
           Assess international market entry barriers across 4 dimensions: Cultural, Administrative, Geographic, and Economic.
         </p>
       </div>
@@ -223,7 +223,7 @@ export default function Ch19CAGE() {
       {/* Country inputs */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
-          <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+          <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
             Home Country
           </label>
           <input
@@ -231,11 +231,11 @@ export default function Ch19CAGE() {
             placeholder="e.g., United States"
             value={cage.homeCountry}
             onChange={(e) => handleInput('homeCountry', e.target.value)}
-            className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
           />
         </div>
         <div className="space-y-1">
-          <label className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+          <label className="text-base font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
             Target Country
           </label>
           <input
@@ -243,7 +243,7 @@ export default function Ch19CAGE() {
             placeholder="e.g., Brazil"
             value={cage.targetCountry}
             onChange={(e) => handleInput('targetCountry', e.target.value)}
-            className="w-full px-3 py-1.5 text-sm rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+            className="w-full px-3 py-1.5 text-base rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-850 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-650 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
           />
         </div>
       </div>
@@ -265,10 +265,10 @@ export default function Ch19CAGE() {
 
       {/* Interpretation guide */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-3">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550">
           📖 Interpretation Guide
         </h4>
-        <ul className="space-y-2 text-xs font-medium text-slate-550 dark:text-slate-400">
+        <ul className="space-y-2 text-base font-medium text-slate-550 dark:text-slate-400">
           <li className="flex items-start gap-1">
             <strong className="text-emerald-600 dark:text-emerald-450 shrink-0">
               Low (1.0–3.9):
@@ -292,10 +292,10 @@ export default function Ch19CAGE() {
 
       {/* ============= NEW TOOL 1: SIMILARITY RADAR ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           🕸️ Similarity Radar
         </h4>
-        <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium">
+        <p className="text-base text-slate-450 dark:text-slate-505 font-medium">
           Each axis shows the distance score for that dimension. The closer the bar to the center, the lower the distance (more similar).
         </p>
         <div className="relative w-72 h-72 mx-auto">
@@ -335,7 +335,7 @@ export default function Ch19CAGE() {
             return (
               <span
                 key={item.label}
-                className="absolute text-[8px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap"
+                className="absolute text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap"
                 style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
               >
                 {item.label} ({item.value})
@@ -347,19 +347,19 @@ export default function Ch19CAGE() {
 
       {/* ============= NEW TOOL 2: COUNTRY COMPARATOR ============= */}
       <div className="bg-white dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
+        <h4 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-555">
           ⚖️ Country Comparator
         </h4>
-        <p className="text-[9px] text-slate-450 dark:text-slate-505 font-medium">
+        <p className="text-base text-slate-450 dark:text-slate-505 font-medium">
           Compare two country profiles side by side. The difference in friction index shows how much more (or less) distant the target market is.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Home side */}
           <div className="space-y-3">
-            <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Profile A (Home)</h5>
+            <h5 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Profile A (Home)</h5>
             {CAGE_DIMENSIONS.map((dim) => (
               <div key={dim.key} className="space-y-1">
-                <div className="flex justify-between text-[9px] font-semibold">
+                <div className="flex justify-between text-base font-semibold">
                   <span className="text-slate-500">{dim.label}</span>
                   <span className="text-slate-800 dark:text-slate-200">{comparator.home[dim.key]}</span>
                 </div>
@@ -375,17 +375,17 @@ export default function Ch19CAGE() {
               </div>
             ))}
             <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-3 text-center">
-              <span className="text-[9px] font-bold uppercase tracking-wider text-blue-600">Friction Index</span>
-              <p className="text-sm font-bold font-mono tabular-nums text-blue-800">{homeIndex.toFixed(1)}</p>
+              <span className="text-base font-bold uppercase tracking-wider text-blue-600">Friction Index</span>
+              <p className="text-base font-bold font-mono tabular-nums text-blue-800">{homeIndex.toFixed(1)}</p>
             </div>
           </div>
 
           {/* Target side */}
           <div className="space-y-3">
-            <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Profile B (Target)</h5>
+            <h5 className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Profile B (Target)</h5>
             {CAGE_DIMENSIONS.map((dim) => (
               <div key={dim.key} className="space-y-1">
-                <div className="flex justify-between text-[9px] font-semibold">
+                <div className="flex justify-between text-base font-semibold">
                   <span className="text-slate-500">{dim.label}</span>
                   <span className="text-slate-800 dark:text-slate-200">{comparator.target[dim.key]}</span>
                 </div>
@@ -401,15 +401,15 @@ export default function Ch19CAGE() {
               </div>
             ))}
             <div className="bg-amber-50 dark:bg-amber-950/30 rounded-lg p-3 text-center">
-              <span className="text-[9px] font-bold uppercase tracking-wider text-amber-600">Friction Index</span>
-              <p className="text-sm font-bold font-mono tabular-nums text-amber-800">{targetIndex.toFixed(1)}</p>
+              <span className="text-base font-bold uppercase tracking-wider text-amber-600">Friction Index</span>
+              <p className="text-base font-bold font-mono tabular-nums text-amber-800">{targetIndex.toFixed(1)}</p>
             </div>
           </div>
         </div>
 
         {/* Difference */}
         <div className="bg-slate-50 dark:bg-slate-950/40 rounded-lg p-4 text-center">
-          <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <span className="text-base font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Distance Difference (B – A)
           </span>
           <p className={`text-2xl font-bold font-mono tabular-nums mt-1 ${
@@ -417,7 +417,7 @@ export default function Ch19CAGE() {
           }`}>
             {compareDiff > 0 ? '+' : ''}{compareDiff.toFixed(1)}
           </p>
-          <p className="text-[9px] text-slate-450 dark:text-slate-505 mt-1">
+          <p className="text-base text-slate-450 dark:text-slate-505 mt-1">
             {compareDiff > 0 ? 'Target market has higher barriers (more distant)' : compareDiff < 0 ? 'Target market has lower barriers (more similar)' : 'Same friction level'}
           </p>
         </div>

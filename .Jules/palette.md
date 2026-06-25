@@ -1,0 +1,3 @@
+## 2024-05-18 - Improve 9-Box Matrix Interactions
+**Learning:** Clicking a whole card to cycle one property causes UX issues when there are two properties (performance and potential) that need to be cycled independently. Relying on whole-card clicks can also prevent users from interacting with other elements inside the card, like a delete button, or clicking to select without cycling.
+**Action:** Removed the onClick handler from the main card container in the 9-Box matrix. Added explicit, icon-based buttons for cycling "performance" and "potential" independently, with clear aria-labels for accessibility.

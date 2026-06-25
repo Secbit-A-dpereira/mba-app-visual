@@ -180,7 +180,7 @@ export default function Ch8NineBox() {
           👥 HR 9-Box Matrix
         </h2>
         <p className="text-slate-500 dark:text-slate-400 text-xs">
-          Map team members by Performance (rows) vs Potential (columns). Click a member card to cycle their position. Hover any box for strategic guidance.
+          Map team members by Performance (rows) vs Potential (columns). Hover a member card to use arrows to cycle their position. Hover any box for strategic guidance.
         </p>
       </div>
 
@@ -308,13 +308,9 @@ export default function Ch8NineBox() {
                     {members.map((member) => (
                       <div
                         key={member.id}
-                        onClick={() => {
-                          const nextPerf = nextPosition(perf);
-                          moveMember(member.id, nextPerf as 1|2|3, pot);
-                        }}
-                        title="Click to cycle performance level"
                         className={`
-                          group relative px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-all
+                          group relative px-2.5 py-1.5 rounded-lg text-xs transition-all
+
                           ${isHovered
                             ? 'bg-white/20 text-white hover:bg-white/30'
                             : 'bg-slate-50 dark:bg-slate-950/60 border border-slate-150 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900/80 shadow-sm'
@@ -338,12 +334,26 @@ export default function Ch8NineBox() {
                         }`}>
                           {member.role}
                         </span>
-                        {/* Cycle indicator */}
-                        {!isHovered && (
-                          <span className="absolute right-1 bottom-1 text-[9px] text-slate-300 dark:text-slate-600 opacity-0 group-hover:opacity-100">
-                            ⇄
-                          </span>
-                        )}
+                        {/* Action buttons */}
+                        <div className="absolute right-1 bottom-1 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <button
+                            onClick={(e) => { e.stopPropagation(); moveMember(member.id, perf, nextPosition(pot) as 1|2|3); }}
+                            className="bg-slate-200/50 hover:bg-slate-300/80 dark:bg-slate-800/50 dark:hover:bg-slate-700/80 rounded px-1 text-[10px] cursor-pointer"
+                            aria-label="Cycle Potential"
+                            title="Cycle Potential"
+                          >
+                            ↔
+                          </button>
+                          <button
+                            onClick={(e) => { e.stopPropagation(); moveMember(member.id, nextPosition(perf) as 1|2|3, pot); }}
+                            className="bg-slate-200/50 hover:bg-slate-300/80 dark:bg-slate-800/50 dark:hover:bg-slate-700/80 rounded px-1 text-[10px] cursor-pointer"
+                            aria-label="Cycle Performance"
+                            title="Cycle Performance"
+                          >
+                            ↕
+                          </button>
+                        </div>
+
                       </div>
                     ))}
                   </div>

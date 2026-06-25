@@ -1,3 +1,3 @@
-## 2024-05-18 - Improve 9-Box Matrix Interactions
-**Learning:** Clicking a whole card to cycle one property causes UX issues when there are two properties (performance and potential) that need to be cycled independently. Relying on whole-card clicks can also prevent users from interacting with other elements inside the card, like a delete button, or clicking to select without cycling.
-**Action:** Removed the onClick handler from the main card container in the 9-Box matrix. Added explicit, icon-based buttons for cycling "performance" and "potential" independently, with clear aria-labels for accessibility.
+## 2024-06-23 - Focus Rings and ARIA Labels on Main Layout Controls
+**Learning:** In standard icon-only buttons (like `✕` close controls or `☰` hamburger menus) within the main App structure, standardizing on a focus ring format (`focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded`) alongside descriptive `aria-label`s makes keyboard navigation significantly more reliable without disturbing visual layout. The combination guarantees visual feedback for keyboard users without causing unappealing focus rings for mouse users.
+**Action:** Always verify icon-only buttons have an `aria-label` and `focus-visible` ring. Implement this pattern for all new icon buttons added across the site.

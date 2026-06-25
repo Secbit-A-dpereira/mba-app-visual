@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MBAProvider, useMBA } from '@/context/MBAContext';
 import ChapterView from '@/components/chapters/ChapterView';
 import Ch20Dashboard from '@/components/chapters/Ch20Dashboard';
@@ -156,7 +156,7 @@ function MBAApp() {
   const chapter = !showDashboard ? ALL_CHAPTERS.find(c => c.id === activeChapter) : null;
 
   // Sidebar mobile drawer
-  const Sidebar = () => (
+  const renderSidebar = () => (
     <>
       {/* Mobile overlay */}
       {sidebarOpen && (
@@ -235,7 +235,7 @@ function MBAApp() {
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
       <div className="flex h-screen bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100">
-        <Sidebar />
+        {renderSidebar()}
 
         {/* Main */}
         <main className="flex-1 flex flex-col overflow-hidden min-w-0">

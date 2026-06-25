@@ -234,7 +234,7 @@ export default function Ch21LaunchReadiness() {
                     <td className="py-2 pr-4 text-slate-700 dark:text-slate-300">{item.name}</td>
                     {(['low', 'medium', 'high'] as const).map(level => {
                       const isSelected = current === level;
-                      let colorMap = {
+                      const colorMap = {
                         low: 'border-emerald-400 bg-emerald-50 dark:bg-emerald-900/20',
                         medium: 'border-amber-400 bg-amber-50 dark:bg-amber-900/20',
                         high: 'border-red-400 bg-red-50 dark:bg-red-900/20',
